@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — AIModelCalc</title>
+  <meta name="description" content="Frequently asked questions about AIModelCalc — the free AI model cost calculator for GPT-4o, Claude, Gemini, and more.">
+  <link rel="canonical" href="https://aimodelcalc.com/faq.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0d1117; --bg2: #161b22; --card: #1c2333;
+      --primary: #3c84ff; --primary-light: #0d1f3c; --primary-pale: #0a1628;
+      --text: #e6edf3; --text2: #c9d1d9; --muted: #8b949e;
+      --border: #30363d; --radius: 22px; --radius-sm: 12px; --radius-pill: 999px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.2);
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      background: rgba(13,17,23,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); padding: 0 40px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+    }
+    .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; display: flex; align-items: center; gap: 2px; }
+    .logo-ai { color: #3c84ff; } .logo-model { color: #fff; } .logo-calc { color: #677a9a; }
+    nav a {
+      font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none;
+      padding: 7px 16px; border-radius: var(--radius-pill); border: 1px solid var(--border);
+      background: var(--card); transition: all 0.15s;
+    }
+    nav a:hover { color: var(--primary); border-color: var(--primary); }
+
+    /* AD */
+    .ad-zone { background: var(--primary-pale); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: var(--radius-sm); letter-spacing: 0.04em; }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-wrap { display: flex; justify-content: center; padding: 16px 40px; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .ad-wrap.bottom { border-bottom: none; border-top: 1px solid var(--border); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 48px 40px 36px; text-align: center; }
+    .page-hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
+    .page-hero h1 em { color: var(--primary); font-style: normal; }
+    .page-hero p { font-size: 15px; color: var(--muted); }
+
+    /* CONTENT */
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 20px; }
+
+    .faq-group { margin-bottom: 40px; }
+    .faq-group-title {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--primary); margin-bottom: 16px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); margin-bottom: 10px; overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 18px 22px; font-size: 14px; font-weight: 600; color: var(--text);
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      font-family: 'Inter', sans-serif; transition: color 0.15s;
+    }
+    .faq-q:hover { color: var(--primary); }
+    .faq-chevron { font-size: 16px; color: var(--muted); transition: transform 0.2s; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      display: none; padding: 0 22px 18px; font-size: 13px; color: var(--muted);
+      line-height: 1.8; border-top: 1px solid var(--border);
+    }
+    .faq-a p { padding-top: 16px; }
+    .faq-a a { color: var(--primary); text-decoration: none; }
+    .faq-a a:hover { text-decoration: underline; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* FOOTER */
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo"><span class="logo-ai">AI</span><span class="logo-model">Model</span><span class="logo-calc">Calc</span></a>
+  <nav style="display:flex;gap:8px;">
+    <a href="/">← Calculator</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </nav>
+</header>
+
+<div class="ad-wrap">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1>Frequently Asked <em>Questions</em></h1>
+  <p>Everything you need to know about using AIModelCalc</p>
+</div>
+
+<div class="wrap">
+
+  <div class="faq-group">
+    <div class="faq-group-title">About AIModelCalc</div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">What is AIModelCalc? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>AIModelCalc is a free, browser-based tool that lets you calculate and compare AI API costs across all major providers — OpenAI, Anthropic, Google, Meta, Mistral, xAI, and Cohere. No signup required, no data sent to our servers.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">Is it free to use? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Yes, completely free. AIModelCalc is supported by display advertising. You'll never be asked to create an account or pay anything.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">Do you store my inputs? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>No. All calculations run entirely in your browser using JavaScript. Your token counts, request volumes, and any other inputs are never transmitted to our servers and are gone when you close the tab.</p></div>
+    </div>
+  </div>
+
+  <div class="faq-group">
+    <div class="faq-group-title">Pricing Data</div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">How accurate is the pricing data? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>We aim to keep pricing current with official provider documentation. However, AI providers change their prices frequently — always verify against the official pricing pages before making financial decisions. Our data is updated regularly and dated in the hero badge.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">Which providers and models are covered? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>We currently track 14 models across 6 providers: OpenAI (GPT-4o, GPT-4o mini, GPT-3.5 Turbo, o1, o3-mini), Anthropic (Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Haiku, Claude 3 Opus), Google (Gemini 1.5 Flash, Gemini 1.5 Pro, Gemini 2.0 Flash), Meta (Llama 3.1 70B, Llama 3.1 8B), Mistral (Mistral Large, Mistral 7B), xAI (Grok-2), and Cohere (Command R+).</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">How often is pricing updated? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>We review and update pricing at least monthly, and sooner when major providers announce changes. The last update date is shown in the "Updated — Live pricing" badge at the top of the homepage.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">Does the calculator account for cached tokens? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Yes. The Cost Calculator (Tool 1) includes a "Cached Input %" field. Cached tokens are priced at a 90% discount from the standard input rate, consistent with how OpenAI and Anthropic handle prompt caching.</p></div>
+    </div>
+  </div>
+
+  <div class="faq-group">
+    <div class="faq-group-title">Using the Tools</div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">What is the Cost Calculator (Tool 1)? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Tool 1 lets you enter your expected token usage — input tokens, output tokens, monthly request volume, and cached input percentage — and instantly calculates your cost per request, monthly total, and annual total for any model.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">What is the Model Comparison Table (Tool 2)? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Tool 2 shows all models side-by-side with their input price, output price, context window size, speed rating, and best use case. You can filter by provider and sort any column to find the right model for your needs.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">What is the Monthly Bill Estimator (Tool 3)? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Tool 3 lets you select a use case (Customer Chatbot, Code Copilot, Doc Summarizer, etc.) or enter custom parameters, then shows you what you'd pay per month across all supported models — ranked from cheapest to most expensive.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">What does "context window" mean? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>The context window is the maximum number of tokens a model can process in a single request (prompt + response combined). Larger context windows let you send longer documents or maintain longer conversations without truncation.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">What do the speed dots mean in the comparison table? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>The speed dots (● ● ● ◌ ◌) represent a relative speed rating for each model based on typical tokens-per-second throughput. More filled dots = faster output. This is a qualitative indicator, not a guaranteed benchmark.</p></div>
+    </div>
+  </div>
+
+  <div class="faq-group">
+    <div class="faq-group-title">Pricing & Business</div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">Why are some models much more expensive? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Premium models like Claude 3 Opus and o1 are designed for complex reasoning tasks and are priced accordingly. Smaller models like Gemini 1.5 Flash and GPT-4o mini are optimized for speed and cost at high volume. The best model depends on your quality requirements and budget.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">Do providers offer volume discounts? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Some providers offer enterprise pricing or volume discounts for high-usage customers. The prices shown in AIModelCalc reflect standard pay-as-you-go API rates. Contact individual providers directly for enterprise pricing.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">I found a pricing error. How do I report it? <span class="faq-chevron">▾</span></button>
+      <div class="faq-a"><p>Please email us at <a href="mailto:hello@aimodelcalc.com">hello@aimodelcalc.com</a> with the model name and the correct price from the provider's official documentation. We'll review and update as quickly as possible.</p></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ad-wrap bottom">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/faq.html">FAQ</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </div>
+  <p class="footer-copy">AIModelCalc © 2026 — Free AI model cost calculator. Prices are estimates; verify with official provider documentation.</p>
+</footer>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

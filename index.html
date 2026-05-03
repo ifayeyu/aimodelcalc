@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Model Cost Calculator — Compare GPT-4o, Claude, Gemini Pricing | AIModelCalc</title>
+  <meta name="description" content="Free AI model cost calculator. Compare API pricing for GPT-4o, Claude 3.5 Sonnet, Gemini, Llama, Mistral and more. Calculate your monthly AI bill instantly.">
+  <meta name="keywords" content="AI model cost calculator, GPT-4o pricing, Claude API cost, Gemini API pricing, AI API cost comparison, LLM cost calculator, AI monthly bill estimator, cheapest AI model">
+  <link rel="canonical" href="https://aimodelcalc.com/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Model Cost Calculator — AIModelCalc",
+    "url": "https://aimodelcalc.com",
+    "description": "Compare AI API pricing across GPT-4o, Claude, Gemini, Llama, Mistral and more. Calculate your exact monthly AI costs instantly.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    :root {
+      --bg:           #0d1117;
+      --bg2:          #161b22;
+      --card:         #1c2333;
+      --primary:      #3c84ff;
+      --primary-mid:  #3c84ff;
+      --primary-light:#0d1f3c;
+      --primary-pale: #0a1628;
+      --text:         #e6edf3;
+      --text2:        #c9d1d9;
+      --muted:        #8b949e;
+      --border:       #30363d;
+      --border2:      #444c56;
+      --green:        #3fb950;
+      --green-bg:     #0d1f0f;
+      --amber:        #d29922;
+      --amber-bg:     #1f1a07;
+      --red:          #f85149;
+      --red-bg:       #1f0d0d;
+      --radius:       22px;
+      --radius-sm:    12px;
+      --radius-pill:  999px;
+      --shadow:       0 2px 8px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.2);
+      --shadow-sm:    0 1px 4px rgba(0,0,0,0.25);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: rgba(13,17,23,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; display: flex; align-items: center; gap: 2px; }
+    .logo-ai    { color: #3c84ff; }
+    .logo-model { color: #ffffff; }
+    .logo-calc  { color: #677a9a; }
+
+    .header-nav { display: flex; gap: 4px; }
+    .header-nav a {
+      font-size: 13px; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      padding: 7px 16px; border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      transition: all 0.15s;
+    }
+    .header-nav a:hover { color: var(--primary); border-color: var(--border); background: var(--card); }
+    @media (max-width: 680px) { .header-nav { display: none; } header { padding: 0 20px; } }
+
+    /* ── AD ZONES ── */
+    .ad-zone {
+      background: var(--primary-pale);
+      border: 1.5px dashed var(--border2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 11px;
+      border-radius: var(--radius-sm); letter-spacing: 0.04em;
+    }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-rect   { width: 300px; height: 250px; }
+    .ad-center { display: flex; justify-content: center; padding: 20px 20px; }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 20px 20px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--card); color: var(--primary);
+      font-size: 12px; font-weight: 600;
+      padding: 6px 16px; border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 15px;
+    }
+    .hero-badge-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; display: inline-block; }
+    .hero h1 {
+      font-size: 36px; font-weight: 800;
+      line-height: 1.12; letter-spacing: -1px;
+      margin-bottom: 15px; color: var(--text);
+      white-space: nowrap;
+    }
+    .hero h1 em { color: var(--primary-mid); font-style: normal; }
+    .hero p { font-size: 14px; color: var(--muted); max-width: 580px; margin: 0 auto 15px; line-height: 1.75; }
+
+    .hero-stats {
+      display: flex; gap: 48px; justify-content: center; flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat strong { display: block; font-size: 34px; font-weight: 800; color: var(--text); letter-spacing: -1px; margin-bottom: 4px; }
+    .hero-stat span { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+    /* ── SECTION NAV ── */
+    .section-nav {
+      display: flex; gap: 10px; justify-content: center;
+      padding: 0 20px 20px; flex-wrap: wrap;
+    }
+    .section-nav a {
+      font-size: 13px; font-weight: 600;
+      color: var(--text2); text-decoration: none;
+      padding: 9px 22px; border-radius: var(--radius-pill);
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.15s;
+    }
+    .section-nav a:hover {
+      color: var(--primary-mid);
+      border-color: var(--primary);
+      background: var(--primary-pale);
+      box-shadow: 0 4px 16px rgba(60,132,255,0.15);
+      transform: translateY(-1px);
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page { max-width: 1120px; margin: 0 auto; padding: 0 20px 80px; }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 0; }
+    .section-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+    }
+    .step-pill {
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 5px 14px; border-radius: var(--radius-pill);
+      background: #111827; color: #fff;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .section-header h2 { font-size: 21px; font-weight: 700; color: var(--text); }
+    .section-header p  { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    /* ── TOOL 1: COST CALCULATOR ── */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 20px;
+    }
+    @media (max-width: 820px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field label {
+      font-size: 11px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    .ig {
+      display: flex; align-items: stretch;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--primary-pale);
+      overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .ig:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(60,132,255,0.2);
+    }
+    .ig-sym {
+      display: flex; align-items: center;
+      padding: 0 12px; color: var(--muted);
+      background: var(--bg2);
+      border-right: 1.5px solid var(--border);
+      font-size: 13px; font-weight: 500;
+    }
+    .ig-field {
+      flex: 1; border: none; outline: none;
+      padding: 11px 14px;
+      background: transparent;
+      color: var(--text);
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    select.ig-field { cursor: pointer; }
+    select.ig-field option { background: #1c2333; color: var(--text); }
+
+    .field input[type=range] { width: 100%; accent-color: var(--primary); cursor: pointer; }
+    .range-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .calc-btn {
+      width: 100%; margin-top: 24px;
+      background: var(--primary); color: #fff;
+      border: none; border-radius: var(--radius-pill);
+      padding: 14px; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.15s;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .calc-btn:hover { background: var(--primary-mid); box-shadow: 0 4px 16px rgba(60,132,255,0.35); transform: translateY(-1px); }
+
+    /* RESULTS PANEL */
+    .result-panel {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .result-title {
+      font-size: 11px; font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .result-item { display: flex; flex-direction: column; gap: 5px; }
+    .result-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .result-value {
+      font-size: 32px; font-weight: 800;
+      color: var(--primary-mid); letter-spacing: -1px;
+    }
+    .result-value.green { color: var(--green); }
+    .result-value.highlight { color: var(--text); }
+    .result-divider { border: none; border-top: 1px solid var(--border); }
+    .result-breakdown { display: flex; flex-direction: column; gap: 10px; }
+    .result-row { display: flex; justify-content: space-between; font-size: 13px; }
+    .result-row span:first-child { color: var(--muted); }
+    .result-row span:last-child  { color: var(--text2); font-weight: 600; font-family: 'SF Mono', 'Fira Code', monospace; }
+
+    /* ── TOOL 2: COMPARISON TABLE ── */
+    .filter-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .filter-btn {
+      font-size: 12px; font-weight: 600;
+      padding: 7px 18px; border-radius: var(--radius-pill);
+      border: 1.5px solid var(--border);
+      background: var(--primary-pale); color: var(--muted);
+      cursor: pointer; transition: all 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover { color: var(--primary); border-color: var(--primary-mid); background: var(--primary-light); }
+    .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1.5px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead { background: var(--primary-pale); }
+    thead th {
+      padding: 13px 16px; text-align: left;
+      font-size: 11px; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.08em; white-space: nowrap;
+      border-bottom: 1.5px solid var(--border);
+      cursor: pointer; user-select: none;
+    }
+    thead th:hover { color: var(--primary); }
+    thead th .sort-icon { margin-left: 4px; opacity: 0.35; }
+    thead th.sorted .sort-icon { opacity: 1; color: var(--primary); }
+
+    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--primary-pale); }
+    tbody td { padding: 14px 16px; vertical-align: middle; }
+
+    .model-info { display: flex; flex-direction: column; gap: 2px; }
+    .model-name { font-weight: 700; color: var(--text); }
+    .model-provider { font-size: 11px; color: var(--muted); }
+
+    .provider-badge {
+      display: inline-block;
+      font-size: 10px; font-weight: 700;
+      padding: 3px 9px; border-radius: var(--radius-pill);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .badge-openai    { background: rgba(16,163,127,0.18); color: #3ecf8e; }
+    .badge-anthropic { background: rgba(210,130,70,0.18); color: #e8934a; }
+    .badge-google    { background: rgba(66,133,244,0.18); color: #79a8f8; }
+    .badge-meta      { background: rgba(24,119,242,0.18); color: #5b9cf6; }
+    .badge-mistral   { background: rgba(220,90,0,0.18);   color: #f0783c; }
+    .badge-xai       { background: rgba(180,180,180,0.1); color: #aaa; }
+    .badge-cohere    { background: rgba(130,60,200,0.18); color: #b47fe8; }
+
+    .price-cell { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; font-weight: 600; color: var(--text); }
+    .price-cheap { color: var(--green); }
+    .price-mid   { color: var(--amber); }
+    .price-exp   { color: var(--red); }
+
+    .ctx-pill {
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: var(--radius-pill);
+      background: var(--primary-light); color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .speed-bar { display: flex; align-items: center; gap: 8px; }
+    .speed-dots { display: flex; gap: 4px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border2); }
+    .dot.on { background: var(--primary); }
+
+    /* ── TOOL 3: MONTHLY BILL ESTIMATOR ── */
+    .estimator-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+    }
+    @media (max-width: 820px) { .estimator-grid { grid-template-columns: 1fr; } }
+
+    .use-case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+    @media (max-width: 560px) { .use-case-grid { grid-template-columns: 1fr 1fr; } }
+
+    .use-case-btn {
+      padding: 10px 8px; border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border);
+      background: var(--primary-pale); color: var(--muted);
+      font-size: 12px; font-weight: 600; text-align: center;
+      cursor: pointer; transition: all 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .use-case-btn:hover { border-color: var(--primary-mid); color: var(--primary); background: var(--primary-light); }
+    .use-case-btn.active {
+      background: var(--primary); color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(60,132,255,0.3);
+    }
+    .use-case-icon { display: block; font-size: 20px; margin-bottom: 6px; }
+
+    /* BILL RESULTS */
+    .bill-results { display: flex; flex-direction: column; gap: 10px; max-height: 420px; overflow-y: auto; padding-right: 4px; }
+    .bill-model-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px; border-radius: var(--radius-sm);
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      gap: 12px;
+    }
+    .bill-model-row.cheapest {
+      border-color: var(--green);
+      background: var(--green-bg);
+      box-shadow: 0 2px 12px rgba(63,185,80,0.15);
+    }
+    .bill-model-left { display: flex; flex-direction: column; gap: 4px; }
+    .bill-model-name { font-size: 13px; font-weight: 700; color: var(--text); }
+    .bill-model-sub  { font-size: 11px; color: var(--muted); }
+    .bill-cost {
+      font-size: 20px; font-weight: 800;
+      color: var(--text2);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      letter-spacing: -0.5px;
+    }
+    .bill-cost.cheapest { color: var(--green); }
+    .cheapest-tag {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      background: var(--green); color: #fff;
+      padding: 3px 9px; border-radius: var(--radius-pill);
+      letter-spacing: 0.06em;
+    }
+    .bill-right { display: flex; align-items: center; gap: 8px; }
+
+    /* ── PROVIDER KEY ── */
+    .provider-key { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .key-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+
+    /* ── INFO CARDS ── */
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    @media (max-width: 720px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
+    }
+    .info-card-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+    .info-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .info-card p  { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 36px 40px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 1120px; margin: 0 auto; }
+    .footer-links { display: flex; gap: 28px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 13px; color: var(--primary-mid);
+      text-decoration: none; font-weight: 500;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--muted); line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo">
+    <span class="logo-ai">AI</span><span class="logo-model">Model</span><span class="logo-calc">Calc</span>
+  </a>
+  <nav class="header-nav">
+    <a href="#calculator">Cost Calculator</a>
+    <a href="#compare">Compare Models</a>
+    <a href="#estimator">Monthly Bill</a>
+    <a href="/faq.html">FAQ</a>
+  </nav>
+</header>
+
+<!-- TOP AD -->
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge"><span class="hero-badge-dot"></span> Updated April 2026 — Live pricing</div>
+  <h1>Compare <em>AI Model Costs</em> Instantly</h1>
+  <p>Calculate and compare API pricing across GPT-4o, Claude, Gemini, Llama, Mistral and more. Know your exact AI costs before you build.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>14</strong><span>Models tracked</span></div>
+    <div class="hero-stat"><strong>6</strong><span>Providers</span></div>
+    <div class="hero-stat"><strong>Free</strong><span>No signup needed</span></div>
+  </div>
+</div>
+
+<!-- SECTION NAV -->
+<div class="section-nav">
+  <a href="#calculator">⚡ Cost Calculator</a>
+  <a href="#compare">📊 Compare Models</a>
+  <a href="#estimator">💰 Monthly Bill Estimator</a>
+</div>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════
+       TOOL 1 — COST CALCULATOR
+  ══════════════════════════════════════ -->
+  <div class="section" id="calculator">
+    <div class="card">
+      <div class="section-header">
+        <div class="step-pill">Tool 1</div>
+        <div>
+          <h2>AI API Cost Calculator</h2>
+          <p>Enter your token usage to see the exact cost for any model</p>
+        </div>
+      </div>
+
+    <div class="calc-grid">
+      <div>
+        <div class="form-grid">
+          <div class="field" style="grid-column: 1/-1">
+            <label>Select Model</label>
+            <div class="ig">
+              <select class="ig-field" id="calc-model" onchange="calcCost()">
+                <optgroup label="OpenAI">
+                  <option value="gpt4o">GPT-4o</option>
+                  <option value="gpt4omini">GPT-4o mini</option>
+                  <option value="gpt35turbo">GPT-3.5 Turbo</option>
+                  <option value="o1">o1</option>
+                  <option value="o3mini">o3-mini</option>
+                </optgroup>
+                <optgroup label="Anthropic">
+                  <option value="claude35sonnet">Claude 3.5 Sonnet</option>
+                  <option value="claude35haiku">Claude 3.5 Haiku</option>
+                  <option value="claude3haiku">Claude 3 Haiku</option>
+                  <option value="claude3opus">Claude 3 Opus</option>
+                </optgroup>
+                <optgroup label="Google">
+                  <option value="gemini15flash">Gemini 1.5 Flash</option>
+                  <option value="gemini15pro">Gemini 1.5 Pro</option>
+                  <option value="gemini20flash">Gemini 2.0 Flash</option>
+                </optgroup>
+                <optgroup label="Meta">
+                  <option value="llama3170b">Llama 3.1 70B</option>
+                  <option value="llama318b">Llama 3.1 8B</option>
+                </optgroup>
+                <optgroup label="Mistral">
+                  <option value="mistrallarge">Mistral Large</option>
+                  <option value="mistral7b">Mistral 7B</option>
+                </optgroup>
+                <optgroup label="xAI">
+                  <option value="grok2">Grok-2</option>
+                </optgroup>
+                <optgroup label="Cohere">
+                  <option value="commandrplus">Command R+</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Input Tokens</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="calc-input-tokens" value="10000" min="0" oninput="calcCost()">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Output Tokens</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="calc-output-tokens" value="2000" min="0" oninput="calcCost()">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Requests per Month</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="calc-requests" value="1000" min="0" oninput="calcCost()">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Cached Input %</label>
+            <div class="ig">
+              <div class="ig-sym">%</div>
+              <input class="ig-field" type="number" id="calc-cache" value="0" min="0" max="100" oninput="calcCost()">
+            </div>
+          </div>
+        </div>
+
+        <!-- 300×250 AD inside left column, below inputs -->
+        <div class="ad-zone ad-rect" style="margin-top: 20px;">Advertisement · 300 × 250</div>
+      </div><!-- /left col -->
+
+      <!-- RESULTS PANEL — right column -->
+      <div class="result-panel">
+        <div class="result-title">Cost Breakdown</div>
+        <div class="result-item">
+          <div class="result-label">Cost per request</div>
+          <div class="result-value green" id="res-per-req">$0.0000</div>
+        </div>
+        <hr class="result-divider">
+        <div class="result-item">
+          <div class="result-label">Monthly total</div>
+          <div class="result-value" id="res-monthly">$0.00</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Annual total</div>
+          <div class="result-value highlight" id="res-annual">$0.00</div>
+        </div>
+        <hr class="result-divider">
+        <div class="result-breakdown">
+          <div class="result-row"><span>Input cost/req</span><span id="res-input-cost">$0.0000</span></div>
+          <div class="result-row"><span>Output cost/req</span><span id="res-output-cost">$0.0000</span></div>
+          <div class="result-row"><span>Input price/1M</span><span id="res-input-price">—</span></div>
+          <div class="result-row"><span>Output price/1M</span><span id="res-output-price">—</span></div>
+        </div>
+      </div>
+    </div><!-- /calc-grid -->
+    </div><!-- /card Tool 1 -->
+  </div>
+
+  <!-- MID AD -->
+  <div class="ad-center">
+    <div class="ad-zone ad-leader">Advertisement</div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TOOL 2 — COMPARISON TABLE
+  ══════════════════════════════════════ -->
+  <div class="section" id="compare">
+    <div class="card">
+      <div class="section-header">
+        <div class="step-pill">Tool 2</div>
+        <div>
+          <h2>AI Model Comparison Table</h2>
+          <p>Compare pricing, context window, and speed across all major models</p>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <button class="filter-btn active" onclick="filterTable('all', this)">All Models</button>
+        <button class="filter-btn" onclick="filterTable('openai', this)">OpenAI</button>
+        <button class="filter-btn" onclick="filterTable('anthropic', this)">Anthropic</button>
+        <button class="filter-btn" onclick="filterTable('google', this)">Google</button>
+        <button class="filter-btn" onclick="filterTable('meta', this)">Meta</button>
+        <button class="filter-btn" onclick="filterTable('mistral', this)">Mistral</button>
+        <button class="filter-btn" onclick="filterTable('other', this)">Other</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="compare-table">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">Model <span class="sort-icon">↕</span></th>
+              <th onclick="sortTable(1)">Provider <span class="sort-icon">↕</span></th>
+              <th onclick="sortTable(2)">Input $/1M <span class="sort-icon">↕</span></th>
+              <th onclick="sortTable(3)">Output $/1M <span class="sort-icon">↕</span></th>
+              <th onclick="sortTable(4)">Context <span class="sort-icon">↕</span></th>
+              <th>Speed</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody id="compare-tbody"></tbody>
+        </table>
+      </div>
+
+    </div><!-- /card Tool 2 -->
+  </div>
+
+  <!-- MID AD -->
+  <div class="ad-center">
+    <div class="ad-zone ad-leader">Advertisement</div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TOOL 3 — MONTHLY BILL ESTIMATOR
+  ══════════════════════════════════════ -->
+  <div class="section" id="estimator">
+    <div class="card">
+      <div class="section-header">
+        <div class="step-pill">Tool 3</div>
+        <div>
+          <h2>Monthly AI Bill Estimator</h2>
+          <p>Choose your use case and see what you'd pay across all models per month</p>
+        </div>
+      </div>
+
+    <div class="estimator-grid">
+      <div>
+        <div class="use-case-grid">
+          <button class="use-case-btn active" onclick="setUseCase('chatbot', this)">
+            <span class="use-case-icon">🤖</span>Customer Chatbot
+          </button>
+          <button class="use-case-btn" onclick="setUseCase('copilot', this)">
+            <span class="use-case-icon">💻</span>Code Copilot
+          </button>
+          <button class="use-case-btn" onclick="setUseCase('summarizer', this)">
+            <span class="use-case-icon">📄</span>Doc Summarizer
+          </button>
+          <button class="use-case-btn" onclick="setUseCase('content', this)">
+            <span class="use-case-icon">✍️</span>Content Writer
+          </button>
+          <button class="use-case-btn" onclick="setUseCase('rag', this)">
+            <span class="use-case-icon">🔍</span>RAG Pipeline
+          </button>
+          <button class="use-case-btn" onclick="setUseCase('custom', this)">
+            <span class="use-case-icon">⚙️</span>Custom
+          </button>
+        </div>
+
+        <div class="form-grid" id="estimator-form">
+          <div class="field">
+            <label>Requests / Day</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="est-requests" value="500" min="1" oninput="calcBill()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Avg Input Tokens</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="est-input" value="500" min="1" oninput="calcBill()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Avg Output Tokens</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="est-output" value="200" min="1" oninput="calcBill()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Days / Month</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="est-days" value="30" min="1" max="31" oninput="calcBill()">
+            </div>
+          </div>
+        </div>
+
+        <!-- 300×250 AD — bottom left -->
+        <div class="ad-zone ad-rect" style="margin-top: 16px;">Advertisement · 300 × 250</div>
+      </div>
+
+      <!-- BILL RESULTS — scrollable -->
+      <div class="bill-results" id="bill-results"></div>
+    </div>
+    </div><!-- /card Tool 3 -->
+  </div>
+
+  <!-- INFO CARDS -->
+  <div class="info-grid">
+    <div class="info-card">
+      <span class="info-card-icon">💡</span>
+      <h3>How AI pricing works</h3>
+      <p>AI APIs charge per token — roughly ¾ of a word. Most models charge separately for input (your prompt) and output (the response). Output tokens are typically 3–5× more expensive than input tokens.</p>
+    </div>
+    <div class="info-card">
+      <span class="info-card-icon">🏆</span>
+      <h3>Cheapest models in 2026</h3>
+      <p>For high-volume applications, Gemini 1.5 Flash, GPT-4o mini, and Claude 3 Haiku offer the best price-to-performance ratio. For complex reasoning, GPT-4o and Claude 3.5 Sonnet lead on quality.</p>
+    </div>
+    <div class="info-card">
+      <span class="info-card-icon">📉</span>
+      <h3>Reduce your AI costs</h3>
+      <p>Use prompt caching to reduce input costs by up to 90%. Batch API calls where possible. Route simple queries to cheaper models (Haiku/Flash) and reserve premium models for complex tasks.</p>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- BOTTOM AD -->
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Calculator</a>
+      <a href="/faq.html">FAQs</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+    </div>
+    <div class="footer-copy">
+      AIModelCalc © 2026 — Free AI model cost calculator & API pricing comparison.<br>
+      Prices are approximate and may vary. Always verify with the provider's official pricing page. Not financial advice.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── MODEL DATA ──────────────────────────────────────────────────────────────
+const MODELS = [
+  // OpenAI
+  { id:'gpt4o',         name:'GPT-4o',            provider:'openai',    badge:'OpenAI',    input:2.50,  output:10.00, ctx:'128K', speed:4, best:'General purpose, vision',       tier:'flagship' },
+  { id:'gpt4omini',     name:'GPT-4o mini',        provider:'openai',    badge:'OpenAI',    input:0.15,  output:0.60,  ctx:'128K', speed:5, best:'High-volume, cost-sensitive',   tier:'budget'   },
+  { id:'gpt35turbo',    name:'GPT-3.5 Turbo',      provider:'openai',    badge:'OpenAI',    input:0.50,  output:1.50,  ctx:'16K',  speed:5, best:'Legacy apps, simple tasks',     tier:'budget'   },
+  { id:'o1',            name:'o1',                  provider:'openai',    badge:'OpenAI',    input:15.00, output:60.00, ctx:'128K', speed:2, best:'Complex reasoning, math',       tier:'premium'  },
+  { id:'o3mini',        name:'o3-mini',             provider:'openai',    badge:'OpenAI',    input:1.10,  output:4.40,  ctx:'128K', speed:3, best:'Reasoning on a budget',         tier:'mid'      },
+  // Anthropic
+  { id:'claude35sonnet',name:'Claude 3.5 Sonnet',  provider:'anthropic', badge:'Anthropic', input:3.00,  output:15.00, ctx:'200K', speed:4, best:'Coding, analysis, writing',     tier:'flagship' },
+  { id:'claude35haiku', name:'Claude 3.5 Haiku',   provider:'anthropic', badge:'Anthropic', input:0.80,  output:4.00,  ctx:'200K', speed:5, best:'Fast tasks, large context',     tier:'budget'   },
+  { id:'claude3haiku',  name:'Claude 3 Haiku',     provider:'anthropic', badge:'Anthropic', input:0.25,  output:1.25,  ctx:'200K', speed:5, best:'Cheapest Anthropic model',      tier:'budget'   },
+  { id:'claude3opus',   name:'Claude 3 Opus',      provider:'anthropic', badge:'Anthropic', input:15.00, output:75.00, ctx:'200K', speed:2, best:'Most capable, complex tasks',   tier:'premium'  },
+  // Google
+  { id:'gemini15flash', name:'Gemini 1.5 Flash',   provider:'google',    badge:'Google',    input:0.075, output:0.30,  ctx:'1M',   speed:5, best:'Cheapest model, huge context',  tier:'budget'   },
+  { id:'gemini15pro',   name:'Gemini 1.5 Pro',     provider:'google',    badge:'Google',    input:1.25,  output:5.00,  ctx:'2M',   speed:3, best:'Largest context window',        tier:'mid'      },
+  { id:'gemini20flash', name:'Gemini 2.0 Flash',   provider:'google',    badge:'Google',    input:0.10,  output:0.40,  ctx:'1M',   speed:5, best:'Fastest Google model',          tier:'budget'   },
+  // Meta
+  { id:'llama3170b',    name:'Llama 3.1 70B',      provider:'meta',      badge:'Meta',      input:0.88,  output:0.88,  ctx:'128K', speed:4, best:'Open source, self-hostable',    tier:'mid'      },
+  { id:'llama318b',     name:'Llama 3.1 8B',       provider:'meta',      badge:'Meta',      input:0.18,  output:0.18,  ctx:'128K', speed:5, best:'Cheapest open source',          tier:'budget'   },
+  // Mistral
+  { id:'mistrallarge',  name:'Mistral Large',      provider:'mistral',   badge:'Mistral',   input:2.00,  output:6.00,  ctx:'128K', speed:4, best:'European data compliance',      tier:'flagship' },
+  { id:'mistral7b',     name:'Mistral 7B',         provider:'mistral',   badge:'Mistral',   input:0.25,  output:0.25,  ctx:'32K',  speed:5, best:'Lightweight, fast inference',   tier:'budget'   },
+  // xAI
+  { id:'grok2',         name:'Grok-2',             provider:'xai',       badge:'xAI',       input:2.00,  output:10.00, ctx:'131K', speed:4, best:'Real-time data, X integration', tier:'flagship' },
+  // Cohere
+  { id:'commandrplus',  name:'Command R+',         provider:'cohere',    badge:'Cohere',    input:2.50,  output:10.00, ctx:'128K', speed:3, best:'RAG, enterprise search',        tier:'flagship' },
+];
+
+const BADGE_CLASS = { openai:'badge-openai', anthropic:'badge-anthropic', google:'badge-google', meta:'badge-meta', mistral:'badge-mistral', xai:'badge-xai', cohere:'badge-cohere' };
+
+// ── UTILS ──────────────────────────────────────────────────────────────────
+const fmt = (n, d=2) => n < 0.001 ? n.toFixed(6) : n < 0.01 ? n.toFixed(5) : n < 1 ? n.toFixed(4) : n.toFixed(d);
+const $ = id => document.getElementById(id);
+
+// ── TOOL 1: COST CALCULATOR ───────────────────────────────────────────────
+function calcCost() {
+  const modelId = $('calc-model').value;
+  const model   = MODELS.find(m => m.id === modelId);
+  if (!model) return;
+
+  const inputTok  = parseFloat($('calc-input-tokens').value)  || 0;
+  const outputTok = parseFloat($('calc-output-tokens').value) || 0;
+  const requests  = parseFloat($('calc-requests').value)      || 0;
+  const cacheP    = parseFloat($('calc-cache').value)         || 0;
+
+  const cachedInput = inputTok * (cacheP / 100);
+  const freshInput  = inputTok - cachedInput;
+  const cacheDisc   = 0.1; // 90% discount on cached tokens (Anthropic/OpenAI standard)
+
+  const inputCostPerReq  = (freshInput * model.input / 1e6) + (cachedInput * model.input * cacheDisc / 1e6);
+  const outputCostPerReq = outputTok * model.output / 1e6;
+  const costPerReq       = inputCostPerReq + outputCostPerReq;
+  const monthly          = costPerReq * requests;
+  const annual           = monthly * 12;
+
+  $('res-per-req').textContent     = '$' + fmt(costPerReq, 6);
+  $('res-monthly').textContent     = '$' + fmt(monthly);
+  $('res-annual').textContent      = '$' + fmt(annual);
+  $('res-input-cost').textContent  = '$' + fmt(inputCostPerReq, 6);
+  $('res-output-cost').textContent = '$' + fmt(outputCostPerReq, 6);
+  $('res-input-price').textContent = '$' + model.input + '/1M';
+  $('res-output-price').textContent= '$' + model.output + '/1M';
+}
+
+// ── TOOL 2: COMPARISON TABLE ──────────────────────────────────────────────
+let currentFilter = 'all';
+let sortCol = 2, sortAsc = true;
+
+function renderTable() {
+  let data = [...MODELS];
+  if (currentFilter !== 'all') {
+    const otherProviders = ['xai','cohere'];
+    if (currentFilter === 'other') {
+      data = data.filter(m => otherProviders.includes(m.provider));
+    } else {
+      data = data.filter(m => m.provider === currentFilter);
+    }
+  }
+
+  data.sort((a, b) => {
+    let va, vb;
+    if (sortCol === 0) { va = a.name; vb = b.name; return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va); }
+    if (sortCol === 1) { va = a.badge; vb = b.badge; return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va); }
+    if (sortCol === 2) { va = a.input; vb = b.input; }
+    if (sortCol === 3) { va = a.output; vb = b.output; }
+    if (sortCol === 4) { va = parseInt(a.ctx); vb = parseInt(b.ctx); }
+    return sortAsc ? va - vb : vb - va;
+  });
+
+  const priceClass = v => v <= 0.5 ? 'price-cheap' : v <= 3 ? 'price-mid' : 'price-exp';
+  const speedDots  = n => Array.from({length:5}, (_,i) => `<div class="dot ${i<n?'on':''}"></div>`).join('');
+
+  $('compare-tbody').innerHTML = data.map(m => `
+    <tr data-provider="${m.provider}">
+      <td><div class="model-info"><div class="model-name">${m.name}</div></div></td>
+      <td><span class="provider-badge ${BADGE_CLASS[m.provider]}">${m.badge}</span></td>
+      <td class="price-cell ${priceClass(m.input)}">$${m.input}</td>
+      <td class="price-cell ${priceClass(m.output)}">$${m.output}</td>
+      <td><span class="ctx-pill">${m.ctx}</span></td>
+      <td><div class="speed-bar"><div class="speed-dots">${speedDots(m.speed)}</div></div></td>
+      <td style="color:var(--muted);font-size:12px;">${m.best}</td>
+    </tr>
+  `).join('');
+}
+
+function filterTable(provider, btn) {
+  currentFilter = provider;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+
+function sortTable(col) {
+  if (sortCol === col) sortAsc = !sortAsc;
+  else { sortCol = col; sortAsc = true; }
+  document.querySelectorAll('thead th').forEach((th,i) => {
+    th.classList.toggle('sorted', i === col);
+  });
+  renderTable();
+}
+
+// ── TOOL 3: MONTHLY BILL ESTIMATOR ───────────────────────────────────────
+const USE_CASES = {
+  chatbot:   { requests:500,  input:300,  output:150, days:30, label:'Customer Chatbot' },
+  copilot:   { requests:200,  input:800,  output:400, days:22, label:'Code Copilot' },
+  summarizer:{ requests:300,  input:2000, output:300, days:30, label:'Doc Summarizer' },
+  content:   { requests:100,  input:400,  output:1200,days:30, label:'Content Writer' },
+  rag:       { requests:1000, input:1500, output:200, days:30, label:'RAG Pipeline' },
+  custom:    { requests:500,  input:500,  output:200, days:30, label:'Custom' },
+};
+
+function setUseCase(key, btn) {
+  const uc = USE_CASES[key];
+  $('est-requests').value = uc.requests;
+  $('est-input').value    = uc.input;
+  $('est-output').value   = uc.output;
+  $('est-days').value     = uc.days;
+  document.querySelectorAll('.use-case-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calcBill();
+}
+
+function calcBill() {
+  const requests = parseFloat($('est-requests').value) || 0;
+  const inputTok = parseFloat($('est-input').value)    || 0;
+  const outputTok= parseFloat($('est-output').value)   || 0;
+  const days     = parseFloat($('est-days').value)     || 30;
+
+  const monthlyReqs = requests * days;
+
+  const costs = MODELS.map(m => {
+    const cost = monthlyReqs * ((inputTok * m.input / 1e6) + (outputTok * m.output / 1e6));
+    return { ...m, cost };
+  }).sort((a,b) => a.cost - b.cost);
+
+  $('bill-results').innerHTML = costs.map((m, i) => `
+    <div class="bill-model-row ${i===0?'cheapest':''}">
+      <div class="bill-model-left">
+        <div class="bill-model-name">${m.name}</div>
+        <div class="bill-model-sub"><span class="provider-badge ${BADGE_CLASS[m.provider]}">${m.badge}</span></div>
+      </div>
+      <div class="bill-right">
+        ${i===0 ? '<span class="cheapest-tag">Cheapest</span>' : ''}
+        <div class="bill-cost ${i===0?'cheapest':''}">$${fmt(m.cost)}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+calcCost();
+renderTable();
+calcBill();
+</script>
+
+</body>
+</html>
