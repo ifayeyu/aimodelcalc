@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-4o API Pricing 2026: Cost Per Token, Calculator & Comparison</title>
+  <meta name="description" content="GPT-4o API pricing in 2026: $2.50/M input tokens, $10/M output tokens. See how GPT-4o compares to Claude, Gemini, and other models. Free cost calculator.">
+  <link rel="canonical" href="https://aimodelcalc.com/gpt-4o-pricing.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GPT-4o API Pricing 2026: Cost Per Token, Calculator & Comparison",
+    "description": "Complete breakdown of GPT-4o API pricing in 2026, including cost per token, monthly estimates, and comparison to Claude and Gemini.",
+    "url": "https://aimodelcalc.com/gpt-4o-pricing.html",
+    "publisher": { "@type": "Organization", "name": "AIModelCalc", "url": "https://aimodelcalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does GPT-4o API cost per token?",
+        "acceptedAnswer": { "@type": "Answer", "text": "GPT-4o costs $2.50 per million input tokens and $10.00 per million output tokens as of 2026. Cached input tokens are discounted to $1.25 per million." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GPT-4o cheaper than Claude Sonnet?",
+        "acceptedAnswer": { "@type": "Answer", "text": "GPT-4o input tokens ($2.50/M) are slightly cheaper than Claude Sonnet 4 ($3.00/M), but GPT-4o output tokens ($10.00/M) are cheaper than Claude Sonnet ($15.00/M). For output-heavy workloads, GPT-4o is more cost-effective." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cheapest alternative to GPT-4o?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For lower cost, consider GPT-4o mini ($0.15/M input, $0.60/M output), Gemini 2.5 Flash ($0.15/M input), or Claude 3.5 Haiku ($0.80/M input). These models offer 80–90% of GPT-4o quality at 5–10% of the cost." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0d1117; --bg2: #161b22; --card: #1c2333;
+      --primary: #3c84ff; --primary-pale: #0a1628;
+      --text: #e6edf3; --text2: #c9d1d9; --muted: #8b949e;
+      --border: #30363d; --radius: 22px; --radius-sm: 12px; --radius-pill: 999px;
+      --green: #3fb950; --amber: #d29922;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+    header {
+      background: rgba(13,17,23,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); padding: 0 40px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+    }
+    .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; display: flex; align-items: center; gap: 2px; }
+    .logo-ai { color: #3c84ff; } .logo-model { color: #fff; } .logo-calc { color: #677a9a; }
+    nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 16px; border-radius: var(--radius-pill); border: 1px solid var(--border); background: var(--card); transition: all 0.15s; }
+    nav a:hover { color: var(--primary); border-color: var(--primary); }
+
+    .ad-zone { background: var(--primary-pale); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: var(--radius-sm); letter-spacing: 0.04em; }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-wrap { display: flex; justify-content: center; padding: 16px 40px; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .ad-wrap.bottom { border-bottom: none; border-top: 1px solid var(--border); }
+
+    .page-hero { padding: 48px 40px 36px; text-align: center; max-width: 860px; margin: 0 auto; }
+    .page-hero h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; line-height: 1.2; }
+    .page-hero h1 em { color: var(--primary); font-style: normal; }
+    .page-hero p { font-size: 15px; color: var(--muted); max-width: 600px; margin: 0 auto; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 80px; }
+
+    .article-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 44px 48px; margin-bottom: 20px; }
+    @media (max-width: 600px) { .article-card { padding: 28px 22px; } }
+
+    .article-card h2 { font-size: 18px; font-weight: 700; color: var(--text); margin: 36px 0 12px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .article-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-card h3 { font-size: 15px; font-weight: 600; color: var(--text2); margin: 20px 0 8px; }
+    .article-card p { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.8; }
+    .article-card ul, .article-card ol { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
+    .article-card ul li, .article-card ol li { margin-bottom: 6px; }
+    .article-card a { color: var(--primary); text-decoration: none; }
+    .article-card a:hover { text-decoration: underline; }
+    strong { color: var(--text2); }
+
+    .pricing-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+    .pricing-table th { background: var(--bg2); color: var(--muted); font-weight: 600; text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .pricing-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text2); }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .pricing-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+    .badge-green { background: rgba(63,185,80,0.15); color: var(--green); }
+    .badge-amber { background: rgba(210,153,34,0.15); color: var(--amber); }
+    .badge-blue { background: rgba(60,132,255,0.15); color: var(--primary); }
+
+    .highlight-box { background: var(--primary-pale); border-left: 3px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: var(--text2); }
+
+    .cta-box { background: var(--primary-pale); border: 1px solid rgba(60,132,255,0.3); border-radius: var(--radius-sm); padding: 24px 28px; text-align: center; margin: 24px 0; }
+    .cta-box p { color: var(--text2); margin-bottom: 14px; }
+    .cta-btn { display: inline-block; background: var(--primary); color: #fff; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: var(--radius-pill); text-decoration: none; transition: opacity 0.15s; }
+    .cta-btn:hover { opacity: 0.88; text-decoration: none; }
+
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo"><span class="logo-ai">AI</span><span class="logo-model">Model</span><span class="logo-calc">Calc</span></a>
+  <nav style="display:flex;gap:8px;">
+    <a href="/">← Calculator</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </nav>
+</header>
+
+<div class="ad-wrap">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1><em>GPT-4o</em> API Pricing 2026:<br>Cost Per Token, Calculator & Comparison</h1>
+  <p>Complete breakdown of GPT-4o API costs, monthly estimates, and how it stacks up against Claude, Gemini, and other leading models.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="article-card">
+
+    <h2>GPT-4o API Pricing at a Glance</h2>
+    <p>As of 2026, GPT-4o is priced at <strong>$2.50 per million input tokens</strong> and <strong>$10.00 per million output tokens</strong> on OpenAI's standard pay-as-you-go API.</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr><th>Token Type</th><th>Price per 1M Tokens</th><th>Price per 1K Tokens</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Input (prompt)</td><td>$2.50</td><td>$0.0025</td></tr>
+        <tr><td>Cached Input</td><td>$1.25</td><td>$0.00125</td></tr>
+        <tr><td>Output (completion)</td><td>$10.00</td><td>$0.0100</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <strong>Quick estimate:</strong> A typical chatbot exchange (500 input + 300 output tokens) costs approximately <strong>$0.00425</strong> — meaning you can run ~235 conversations per dollar.
+    </div>
+
+    <h2>GPT-4o vs. Other Top Models (2026)</h2>
+    <p>How does GPT-4o compare to its closest competitors on price?</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr><th>Model</th><th>Provider</th><th>Input /1M</th><th>Output /1M</th><th>Context</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>GPT-4o</strong></td><td>OpenAI</td><td>$2.50</td><td>$10.00</td><td>128K</td></tr>
+        <tr><td>GPT-4o mini</td><td>OpenAI</td><td>$0.15</td><td>$0.60</td><td>128K</td></tr>
+        <tr><td>Claude Sonnet 4</td><td>Anthropic</td><td>$3.00</td><td>$15.00</td><td>200K</td></tr>
+        <tr><td>Claude Haiku 3.5</td><td>Anthropic</td><td>$0.80</td><td>$4.00</td><td>200K</td></tr>
+        <tr><td>Gemini 2.5 Flash</td><td>Google</td><td>$0.15</td><td>$0.60</td><td>1M</td></tr>
+        <tr><td>Gemini 2.5 Pro</td><td>Google</td><td>$2.00</td><td>$12.00</td><td>1M</td></tr>
+        <tr><td>Claude Opus 4</td><td>Anthropic</td><td>$5.00</td><td>$25.00</td><td>200K</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Monthly Cost Estimates for GPT-4o</h2>
+    <p>Real-world costs depend heavily on your input/output ratio and request volume. Here are estimates for common use cases:</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr><th>Use Case</th><th>Monthly Requests</th><th>Avg Tokens/Request</th><th>Est. Monthly Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Small chatbot</td><td>10,000</td><td>500 in / 300 out</td><td>~$42.50</td></tr>
+        <tr><td>Customer support</td><td>50,000</td><td>800 in / 400 out</td><td>~$300</td></tr>
+        <tr><td>Document summarizer</td><td>5,000</td><td>2,000 in / 500 out</td><td>~$75</td></tr>
+        <tr><td>Code assistant</td><td>20,000</td><td>1,000 in / 800 out</td><td>~$210</td></tr>
+        <tr><td>High-volume API</td><td>500,000</td><td>300 in / 200 out</td><td>~$1,375</td></tr>
+      </tbody>
+    </table>
+
+    <h2>When to Use GPT-4o vs. Cheaper Alternatives</h2>
+    <p>GPT-4o sits in the mid-tier of 2026 pricing — not the cheapest, but not the most expensive. Here's when each tier makes sense:</p>
+
+    <h3>Use GPT-4o when:</h3>
+    <ul>
+      <li>You need reliable, well-rounded performance across reasoning, coding, and language tasks</li>
+      <li>Your application requires the OpenAI ecosystem (function calling, Assistants API, fine-tuning)</li>
+      <li>You need a large 128K context window for long documents</li>
+      <li>Quality is more important than minimizing token costs</li>
+    </ul>
+
+    <h3>Consider GPT-4o mini instead when:</h3>
+    <ul>
+      <li>You're running high-volume, repetitive tasks where quality is "good enough"</li>
+      <li>Your monthly token spend exceeds $500 and margins matter</li>
+      <li>Latency and cost are more important than peak reasoning ability</li>
+    </ul>
+
+    <h3>Consider Claude Sonnet or Gemini 2.5 Pro when:</h3>
+    <ul>
+      <li>You need a longer context window (200K–1M tokens)</li>
+      <li>Your use case benefits from Anthropic's stronger instruction-following or Google's multimodal capabilities</li>
+    </ul>
+
+    <h2>How to Calculate Your GPT-4o Costs</h2>
+    <p>The formula is straightforward:</p>
+    <div class="highlight-box">
+      <strong>Monthly cost</strong> = (Input tokens × $0.0000025) + (Output tokens × $0.00001)<br><br>
+      Example: 10M input tokens + 3M output tokens = $25 + $30 = <strong>$55/month</strong>
+    </div>
+    <p>For cached prompts (using OpenAI's prompt caching feature), input tokens are billed at 50% of the standard rate, dropping to $1.25/M — useful for applications that repeat the same system prompt or context across many requests.</p>
+
+    <h2>GPT-4o Pricing FAQs</h2>
+
+    <h3>Does OpenAI charge for failed API calls?</h3>
+    <p>No. You are only billed for tokens actually processed. If a request fails before processing, there is no charge. If it fails mid-response, you are charged for the tokens generated up to that point.</p>
+
+    <h3>Are there volume discounts for GPT-4o?</h3>
+    <p>OpenAI's standard API uses pay-as-you-go pricing with no automatic volume discounts. Enterprise customers can negotiate custom pricing. Batch API processing (asynchronous requests) is available at a 50% discount for non-time-sensitive workloads.</p>
+
+    <h3>How does GPT-4o compare to GPT-4 Turbo?</h3>
+    <p>GPT-4o replaced GPT-4 Turbo as OpenAI's flagship model. It is faster, cheaper, and matches or exceeds GPT-4 Turbo quality across most benchmarks, making GPT-4 Turbo essentially obsolete for new applications.</p>
+
+    <div class="cta-box">
+      <p>Calculate exactly what GPT-4o will cost for your specific usage — enter your token counts and get an instant estimate.</p>
+      <a href="/" class="cta-btn">Open Free Cost Calculator →</a>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="ad-wrap bottom">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Calculator</a>
+    <a href="/cheapest-ai-api.html">Cheapest AI APIs</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </div>
+  <p class="footer-copy">AIModelCalc © 2026 — Free AI model cost calculator. Prices are estimates; verify with official provider documentation.</p>
+</footer>
+
+</body>
+</html>
