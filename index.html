@@ -471,8 +471,8 @@
   <h1>Compare <em>AI Model Costs</em> Instantly</h1>
   <p>Calculate and compare API pricing across GPT-4o, Claude, Gemini, Llama, Mistral and more. Know your exact AI costs before you build.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>14</strong><span>Models tracked</span></div>
-    <div class="hero-stat"><strong>6</strong><span>Providers</span></div>
+    <div class="hero-stat"><strong>18</strong><span>Models tracked</span></div>
+    <div class="hero-stat"><strong>7</strong><span>Providers</span></div>
     <div class="hero-stat"><strong>Free</strong><span>No signup needed</span></div>
   </div>
 </div>
@@ -747,7 +747,7 @@
     <div class="info-card">
       <span class="info-card-icon">🏆</span>
       <h3>Cheapest models in 2026</h3>
-      <p>For high-volume applications, Gemini 1.5 Flash, GPT-4o mini, and Claude 3 Haiku offer the best price-to-performance ratio. For complex reasoning, GPT-4o and Claude 3.5 Sonnet lead on quality.</p>
+      <p>For high-volume applications, Gemini 2.5 Flash, GPT-4o mini, and Claude 3.5 Haiku offer the best price-to-performance ratio. For complex reasoning, GPT-4o and Claude Sonnet 4 lead on quality.</p>
     </div>
     <div class="info-card">
       <span class="info-card-icon">📉</span>
@@ -869,7 +869,7 @@ function calcCost() {
 
   const cachedInput = inputTok * (cacheP / 100);
   const freshInput  = inputTok - cachedInput;
-  const cacheDisc   = 0.1; // 90% discount on cached tokens (Anthropic/OpenAI standard)
+  const cacheDisc   = model.provider === 'anthropic' ? 0.1 : 0.5; // Anthropic=90% off, OpenAI=50% off
 
   const inputCostPerReq  = (freshInput * model.input / 1e6) + (cachedInput * model.input * cacheDisc / 1e6);
   const outputCostPerReq = outputTok * model.output / 1e6;
