@@ -760,6 +760,50 @@
 
 </div><!-- /page -->
 
+<!-- EDITORIAL CONTENT SECTION -->
+<div style="max-width:1120px;margin:0 auto;padding:48px 20px 16px;">
+
+  <div style="background:#1c2333;border:1px solid #2d3a52;border-radius:12px;padding:40px 44px;margin-bottom:16px;">
+    <h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">How AI API Pricing Works: A Plain-English Guide</h2>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">AI APIs like GPT-4o, Claude, and Gemini don't charge a flat monthly fee — they charge per token, where a token is roughly 0.75 words (or about 4 characters) of text. This means costs scale directly with how much text you send and receive. Understanding this model is essential for anyone building on top of AI APIs, because costs can range from fractions of a cent for a short query to hundreds of dollars per day for a high-volume production application.</p>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">Every AI API request has two components: the <strong style="color:#cdd9e5;">prompt (input tokens)</strong> — everything you send to the model, including the system prompt, conversation history, and user message — and the <strong style="color:#cdd9e5;">completion (output tokens)</strong> — the text the model generates in response. Output tokens are almost always more expensive than input tokens, because generating text is computationally more intensive than reading it.</p>
+
+    <h3 style="font-size:16px;font-weight:700;color:#cdd9e5;margin:24px 0 10px;">Input vs. Output Tokens: Why the Ratio Matters</h3>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:12px;">The split between input and output tokens in your application dramatically affects your cost per request. Consider two common use cases:</p>
+    <ul style="font-size:14px;color:#8b949e;line-height:1.85;margin:0 0 14px 20px;">
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Document summarization</strong> — You send a large document (many input tokens) and ask for a short summary (few output tokens). Input-heavy. At GPT-4o's pricing of $2.50/M input vs $10/M output, the low output ratio keeps costs manageable even for long documents.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Content generation</strong> — You send a short prompt but receive a long, detailed response. Output-heavy. The same GPT-4o can become significantly more expensive because output is 4× the cost of input.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Chat applications with long history</strong> — Every turn in a multi-turn conversation re-sends the entire conversation history as context. As conversations grow, input token costs compound quickly — a 20-turn conversation can cost 10× more per turn than a fresh one-shot query.</li>
+    </ul>
+
+    <h3 style="font-size:16px;font-weight:700;color:#cdd9e5;margin:24px 0 10px;">Choosing the Right Model for Your Use Case</h3>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The most expensive model is rarely the right choice for every task. AI API pricing spans several orders of magnitude — from sub-$0.10/M token models like Gemini Flash to $15+/M token models like GPT-4o's output tier. The key is matching model capability to task complexity.</p>
+    <ul style="font-size:14px;color:#8b949e;line-height:1.85;margin:0 0 14px 20px;">
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Simple classification, routing, and extraction</strong> — Small, fast models (GPT-4o Mini, Gemini Flash, Claude Haiku) are sufficient and dramatically cheaper. Running a flagship model on tasks that don't require it wastes 10–50× on costs.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Complex reasoning, coding, and analysis</strong> — This is where flagship models earn their premium. GPT-4o, Claude Sonnet, and Gemini Pro significantly outperform cheaper tiers on tasks requiring multi-step reasoning, code generation, and nuanced analysis.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">High-volume production workloads</strong> — The cheapest model that reliably achieves your quality bar is the correct choice. At scale, the cost difference between models can mean thousands of dollars per month. Always benchmark quality vs. cost before committing to a model for production.</li>
+    </ul>
+
+    <h3 style="font-size:16px;font-weight:700;color:#cdd9e5;margin:24px 0 10px;">Practical Tips for Reducing AI API Costs</h3>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:12px;">Once you understand how pricing works, several strategies can meaningfully reduce your bill without sacrificing quality:</p>
+    <ul style="font-size:14px;color:#8b949e;line-height:1.85;margin:0 0 14px 20px;">
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Prompt caching</strong> — Both Anthropic and OpenAI offer prompt caching, where repeated system prompts and context are cached and charged at a significantly reduced rate (typically 50–90% discount on cached tokens). If your system prompt is long and reused across many requests, caching can dramatically cut costs.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Batch processing</strong> — OpenAI's Batch API and Anthropic's Message Batches API offer 50% discounts on requests that don't need real-time responses. If you're running evaluations, offline analysis, or bulk content generation, batch mode cuts your bill in half.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Trim your context window</strong> — Ruthlessly remove unnecessary context from your prompts. Old conversation turns, repeated instructions, and verbose system prompts all add tokens that cost money on every request.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Use structured outputs</strong> — Asking models to respond in JSON with a defined schema reduces output verbosity, which reduces output tokens. A structured response is typically shorter than the equivalent prose response.</li>
+    </ul>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Use AIModelCalc to model different scenarios — change the model, adjust the input/output ratio, and vary the request volume — to find the cost-optimal configuration for your specific workload before you start building.</p>
+  </div>
+
+  <div style="background:#1c2333;border:1px solid #2d3a52;border-radius:12px;padding:40px 44px;margin-bottom:24px;">
+    <h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">AI Model Pricing in 2026: What's Changed</h2>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">AI API pricing has dropped dramatically over the past two years. GPT-4-class capability that cost $30–60 per million tokens in 2023 is now available for $2.50–10 per million tokens in 2026, with smaller distilled models delivering 80–90% of that quality for a fraction of the price. Competition between OpenAI, Anthropic, Google, and Meta has accelerated this deflation — and it shows no signs of stopping.</p>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The emergence of reasoning models (OpenAI o-series, Claude's extended thinking mode) has added a new pricing dimension: "thinking tokens" used during the model's internal reasoning process before it produces a response. These models are significantly more expensive per request than standard models, but can be dramatically more accurate on complex reasoning tasks — making cost-per-correct-answer the relevant metric rather than cost-per-token.</p>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Keeping up with model releases and pricing updates across providers is a constant challenge for developers and builders. AIModelCalc is updated regularly to reflect current pricing, so you can always compare models on an apples-to-apples basis. Check the <a href="/gpt-4o-pricing.html" style="color:#3c84ff;text-decoration:none;">GPT-4o pricing breakdown</a> or the <a href="/cheapest-ai-api.html" style="color:#3c84ff;text-decoration:none;">cheapest AI API comparison</a> for detailed provider breakdowns.</p>
+  </div>
+
+</div>
+
 <!-- BOTTOM AD -->
 <div class="ad-center">
   <div class="ad-zone ad-leader">Advertisement</div>
@@ -769,6 +813,7 @@
   <div class="footer-inner">
     <div class="footer-links">
       <a href="/">Calculator</a>
+      <a href="/about.html">About</a>
       <a href="/faq.html">FAQs</a>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Use</a>
