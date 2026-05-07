@@ -58,12 +58,15 @@
     .legal-card a:hover { text-decoration: underline; }
 
     .highlight-box { background: var(--primary-pale); border-left: 3px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: var(--text2); }
-
-    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
     .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; transition: color 0.15s; }
     .footer-links a:hover { color: var(--text); }
-    .footer-copy { font-size: 12px; color: var(--muted); }
+    footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); line-height: 1.8; }
   </style>
 </head>
 <body>
@@ -149,11 +152,13 @@
   <div class="footer-links">
     <a href="/">Calculator</a>
     <a href="/about.html">About</a>
-    <a href="/faq.html">FAQ</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/gpt-4o-pricing.html">GPT-4o Pricing</a>
+    <a href="/cheapest-ai-api.html">Cheapest AI API</a>
     <a href="/privacy.html">Privacy Policy</a>
     <a href="/terms.html">Terms of Use</a>
   </div>
-  <p class="footer-copy">AIModelCalc © 2026 — Free AI model cost calculator. Prices are estimates; verify with official provider documentation.</p>
+  <p class="footer-copy">AIModelCalc &copy; 2026 &mdash; Free AI model cost calculator &amp; API pricing comparison.<br>Prices are approximate and may vary. Always verify with the provider&rsquo;s official pricing page.</p>
 </footer>
 
 </body>

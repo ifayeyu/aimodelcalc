@@ -69,6 +69,7 @@
     .article-card ul { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
     .article-card ul li { margin-bottom: 6px; }
     .article-card a { color: var(--primary); text-decoration: none; }
+    .article-card .cta-btn, .article-card .cta-btn:hover { color: #fff; text-decoration: none; }
     .article-card a:hover { text-decoration: underline; }
     strong { color: var(--text2); }
 
@@ -92,14 +93,17 @@
 
     .cta-box { background: var(--primary-pale); border: 1px solid rgba(60,132,255,0.3); border-radius: var(--radius-sm); padding: 24px 28px; text-align: center; margin: 24px 0; }
     .cta-box p { color: var(--text2); margin-bottom: 14px; }
-    .cta-btn { display: inline-block; background: var(--primary); color: #fff; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: var(--radius-pill); text-decoration: none; transition: opacity 0.15s; }
+    .cta-btn { display: inline-block; background: var(--primary); color: #fff !important; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: var(--radius-pill); text-decoration: none; transition: opacity 0.15s; }
     .cta-btn:hover { opacity: 0.88; text-decoration: none; }
-
-    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
     .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
     .footer-links a:hover { color: var(--text); }
-    .footer-copy { font-size: 12px; color: var(--muted); }
+    footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); line-height: 1.8; }
   </style>
 </head>
 <body>
@@ -267,13 +271,14 @@
 <footer>
   <div class="footer-links">
     <a href="/">Calculator</a>
-      <a href="/about.html">About</a>
+    <a href="/about.html">About</a>
+    <a href="/faq.html">FAQs</a>
     <a href="/gpt-4o-pricing.html">GPT-4o Pricing</a>
-    <a href="/faq.html">FAQ</a>
+    <a href="/cheapest-ai-api.html">Cheapest AI API</a>
     <a href="/privacy.html">Privacy Policy</a>
     <a href="/terms.html">Terms of Use</a>
   </div>
-  <p class="footer-copy">AIModelCalc © 2026 — Free AI model cost calculator. Prices are estimates; verify with official provider documentation.</p>
+  <p class="footer-copy">AIModelCalc &copy; 2026 &mdash; Free AI model cost calculator &amp; API pricing comparison.<br>Prices are approximate and may vary. Always verify with the provider&rsquo;s official pricing page.</p>
 </footer>
 
 </body>

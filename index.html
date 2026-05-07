@@ -430,20 +430,18 @@
     .info-card p  { font-size: 13px; color: var(--muted); line-height: 1.75; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      padding: 36px 40px;
-      text-align: center;
-    }
-    .footer-inner { max-width: 1120px; margin: 0 auto; }
-    .footer-links { display: flex; gap: 28px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
     .footer-links a {
       font-size: 13px; color: var(--primary-mid);
       text-decoration: none; font-weight: 500;
       transition: color 0.15s;
     }
     .footer-links a:hover { color: var(--text); }
+    footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
     .footer-copy { font-size: 12px; color: var(--muted); line-height: 1.8; }
   </style>
 </head>
@@ -810,19 +808,16 @@
 </div>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="/">Calculator</a>
-      <a href="/about.html">About</a>
-      <a href="/faq.html">FAQs</a>
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Use</a>
-    </div>
-    <div class="footer-copy">
-      AIModelCalc © 2026 — Free AI model cost calculator & API pricing comparison.<br>
-      Prices are approximate and may vary. Always verify with the provider's official pricing page. Not financial advice.
-    </div>
+  <div class="footer-links">
+    <a href="/">Calculator</a>
+    <a href="/about.html">About</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/gpt-4o-pricing.html">GPT-4o Pricing</a>
+    <a href="/cheapest-ai-api.html">Cheapest AI API</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
   </div>
+  <p class="footer-copy">AIModelCalc &copy; 2026 &mdash; Free AI model cost calculator &amp; API pricing comparison.<br>Prices are approximate and may vary. Always verify with the provider&rsquo;s official pricing page.</p>
 </footer>
 
 <script>
