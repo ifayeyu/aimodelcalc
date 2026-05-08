@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About AIModelCalc — AI API Cost Calculator</title>
-  <meta name="description" content="AIModelCalc is a free AI model cost calculator and API pricing comparison tool for developers and businesses comparing GPT-4o, Claude, Gemini, and other AI APIs.">
+  <title>About AIModelCalc — Built by Gia Gray</title>
+  <meta name="description" content="AIModelCalc was built by Gia Gray after getting blindsided by an unexpected AI API bill. Learn about the tool, its pricing methodology, and editorial standards.">
   <link rel="canonical" href="https://aimodelcalc.com/about.html">
+  <meta property="og:title" content="About AIModelCalc — Built by Gia Gray">
+  <meta property="og:description" content="AIModelCalc was built after getting blindsided by an unexpected AI API bill. Learn about the tool, pricing methodology, and editorial standards.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aimodelcalc.com/about.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About AIModelCalc — Built by Gia Gray">
+  <meta name="twitter:description" content="AIModelCalc was built after getting blindsided by an unexpected AI API bill.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +34,8 @@
     header { background: var(--card); border-bottom: 1px solid var(--border); padding: 0 32px; height: 58px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 20px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
+    .header-nav { display: flex; gap: 8px; align-items: center; }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
     .nav-btn:hover { background: var(--primary); color: #fff; }
 
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; letter-spacing: 0.04em; }
@@ -42,6 +50,15 @@
 
     .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
 
+    .founder-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 44px; margin-bottom: 16px; display: flex; gap: 32px; align-items: flex-start; }
+    .founder-avatar { flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; background: var(--primary-light); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; color: var(--primary); }
+    .founder-info h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .founder-info .title { font-size: 13px; color: var(--primary); margin-bottom: 14px; font-weight: 500; }
+    .founder-info p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
+    @media (max-width: 600px) {
+      .founder-card { flex-direction: column; padding: 24px 20px; }
+    }
+
     .article-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 44px; margin-bottom: 16px; }
     @media (max-width: 600px) { .article-card { padding: 24px 20px; } }
 
@@ -51,7 +68,6 @@
     .article-card ul { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
     .article-card ul li { margin-bottom: 6px; }
     .article-card a { color: var(--primary); text-decoration: none; }
-    .article-card .cta-btn, .article-card .cta-btn:hover { color: #fff; text-decoration: none; }
     .article-card a:hover { text-decoration: underline; }
     strong { color: var(--text2); }
 
@@ -60,13 +76,10 @@
     .cta-box { background: var(--primary-light); border: 1px solid rgba(60,132,255,0.3); border-radius: var(--radius); padding: 24px 28px; text-align: center; margin: 24px 0; }
     .cta-box p { color: var(--text2); margin-bottom: 14px; font-size: 14px; }
     .cta-btn { display: inline-block; background: var(--primary); color: #fff !important; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 999px; text-decoration: none; transition: background 0.15s; }
-    .cta-btn:hover { background: var(--primary-hover); text-decoration: none; }
-    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
-    .footer-links a:hover { text-decoration: underline; }
-    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
-    .footer-links a:hover { text-decoration: underline; }
+    .cta-btn:hover { background: var(--primary-hover); text-decoration: none !important; }
+
     footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
-    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
     .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
     .footer-links a:hover { text-decoration: underline; }
     .footer-copy { font-size: 12px; color: var(--muted); line-height: 1.8; }
@@ -76,9 +89,10 @@
 
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav style="display:flex;gap:8px;">
+  <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
-    <a href="/faq.html" class="nav-btn">FAQs</a>
+    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
 
@@ -88,43 +102,41 @@
 
 <div class="page-hero">
   <h1>About <em>AIModelCalc</em></h1>
-  <p>A free tool for developers and businesses to compare AI API costs and estimate real-world spending across GPT-4o, Claude, Gemini, and more.</p>
+  <p>Who built this, why it exists, and how we keep the pricing data honest.</p>
 </div>
 
 <div class="wrap">
+
+  <!-- Founder Card -->
+  <div class="founder-card">
+    <div class="founder-avatar">G</div>
+    <div class="founder-info">
+      <h2>Gia Gray</h2>
+      <div class="title">Founder &amp; Editor, AIModelCalc</div>
+      <p>I've spent the last several years building and shipping products that use AI APIs as a core component — everything from internal tools to customer-facing features. In that time I've burned through a lot of API budget figuring out which models actually make sense for which workloads, and I've made plenty of expensive mistakes along the way.</p>
+      <p>AIModelCalc started as a personal spreadsheet I kept updating every time OpenAI, Anthropic, or Google changed their pricing. Eventually the spreadsheet got complex enough that I just built a proper tool instead. The goal was simple: one place to see what AI actually costs before you commit to building something on top of it.</p>
+      <p>I update pricing manually when providers make announcements and cross-check against official documentation. If you spot an error, I want to know — reach out via the <a href="/contact.html">contact page</a>.</p>
+    </div>
+  </div>
+
   <div class="article-card">
 
-    <h2>What Is AIModelCalc?</h2>
-    <p>AIModelCalc is a free, browser-based AI model cost calculator and API pricing comparison tool. It was built to help developers, product teams, and businesses understand what they'll actually spend when building on top of AI APIs — before they commit to a model, an architecture, or a pricing plan.</p>
-    <p>The AI API landscape has expanded dramatically. Where there were once two or three credible options, there are now dozens of models from multiple providers, each with different pricing tiers, context window limits, speed characteristics, and quality profiles. Choosing the right model for a production workload without modeling the cost is a costly mistake. AIModelCalc makes it easy to compare models side by side and project monthly costs at any request volume.</p>
+    <h2>Why This Tool Exists</h2>
+    <p>The first time I got a surprise AI API bill, it was for a feature I had assumed would cost roughly $200/month. The actual invoice was over $900. The difference came down to a model choice I hadn't thought carefully about — a newer, more capable model I'd left as the default, combined with longer-than-expected average outputs in production.</p>
+    <p>After that I started modeling AI costs more carefully before deploying anything. The problem was that the information was scattered everywhere: each provider had their own pricing page formatted differently, comparisons required manual spreadsheet work, and the numbers changed frequently enough that any static comparison article was outdated within weeks.</p>
+    <p>So I built a calculator that did the math automatically and kept the data in one place. It started as a private internal tool, and eventually I cleaned it up and made it public. That was early 2025. Since then I've added more models, more providers, and a growing set of guides based on questions I kept seeing come up in developer communities.</p>
 
     <div class="highlight-box">
-      <strong>Free and private:</strong> AIModelCalc runs entirely in your browser. Your token counts, usage estimates, and cost projections are calculated locally and never stored. No account, no subscription, no data collection.
+      <strong>No account required. No data collected.</strong> AIModelCalc runs entirely in your browser. Your token counts, usage estimates, and cost projections are calculated locally and never transmitted anywhere. I built it this way on purpose — this kind of data is often sensitive.
     </div>
 
-    <h2>Who Uses AIModelCalc</h2>
-    <p>AIModelCalc is used by a wide range of people who need to understand AI API costs:</p>
-    <ul>
-      <li><strong>Developers</strong> building AI-powered applications who need to choose the right model for their cost and quality requirements</li>
-      <li><strong>Startup founders</strong> modeling AI infrastructure costs as part of their unit economics before raising or spending on engineering</li>
-      <li><strong>Enterprise teams</strong> evaluating AI API vendors and comparing total cost of ownership across providers</li>
-      <li><strong>Consultants and agencies</strong> estimating AI costs for client projects and including them in project proposals</li>
-      <li><strong>Researchers and analysts</strong> tracking AI API pricing trends across the industry</li>
-    </ul>
-
-    <h2>How AIModelCalc Works</h2>
-    <p>AI APIs charge per token, where a token is roughly 0.75 words or 4 characters of text. Every API request consists of input tokens (your prompt, system instructions, and conversation history) and output tokens (the model's response). Input and output tokens are priced separately — output tokens are typically 3–5× more expensive than input tokens because generating text requires more computation than reading it.</p>
-    <p>AIModelCalc lets you specify:</p>
-    <ul>
-      <li>The model you want to evaluate</li>
-      <li>Your average input token count per request</li>
-      <li>Your average output token count per request</li>
-      <li>Your projected number of requests per month</li>
-    </ul>
-    <p>The calculator then computes your estimated monthly cost, cost per request, and cost per 1,000 requests — and shows you how those numbers compare across every model in our database. Prices are updated regularly to reflect current published rates from each provider.</p>
+    <h2>How We Keep Pricing Accurate</h2>
+    <p>Every price in the calculator comes directly from the provider's official pricing documentation. We don't rely on third-party scrapes or automated feeds. When a provider updates their pricing, we update the calculator manually after verifying the new rates against the official page.</p>
+    <p>That said, AI pricing changes fast. New models launch, promotional pricing ends, enterprise tiers get reshuffled. We do our best to stay current, but there will always be a lag. <strong>Always verify current rates directly with the provider</strong> before making budget commitments based on our projections. Our estimates are for planning and comparison — not billing.</p>
+    <p>See our full <a href="/pricing-methodology.html">pricing methodology</a> for details on how we source and validate data, handle caching discounts, and flag uncertainty.</p>
 
     <h2>Models We Cover</h2>
-    <p>AIModelCalc tracks pricing for the major AI API providers and their model families:</p>
+    <p>AIModelCalc currently tracks pricing across 7 providers and 18 models:</p>
     <ul>
       <li><strong>OpenAI</strong> — GPT-4o, GPT-4o mini, GPT-3.5 Turbo, o1, o3-mini</li>
       <li><strong>Anthropic</strong> — Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Haiku, Claude 3 Opus</li>
@@ -134,27 +146,32 @@
       <li><strong>xAI</strong> — Grok-2</li>
       <li><strong>Cohere</strong> — Command R+</li>
     </ul>
-    <p>AI API pricing changes frequently as providers compete and introduce new models. We update AIModelCalc's pricing data regularly, but always verify current rates directly with the provider before making production decisions based on our projections.</p>
+    <p>I add models when they reach meaningful production usage and have stable published pricing. I don't add every research preview or model that doesn't yet have clear API pricing.</p>
 
-    <h2>Our Resources</h2>
-    <p>Beyond the calculator, AIModelCalc publishes guides to help developers and businesses understand AI API pricing:</p>
+    <h2>Editorial Standards</h2>
+    <p>The guides and articles published on AIModelCalc reflect my own experience and research, not content generated to fill pages. A few things I try to hold to:</p>
     <ul>
-      <li><a href="/gpt-4o-pricing.html">GPT-4o API pricing breakdown</a> — detailed pricing analysis with comparison to Claude and Gemini</li>
-      <li><a href="/cheapest-ai-api.html">Cheapest AI API comparison 2026</a> — ranked table of the most cost-effective models by use case</li>
-      <li><a href="/faq.html">Frequently asked questions about AI model pricing</a></li>
+      <li><strong>Real numbers over generalities.</strong> Any cost estimate or benchmark I publish includes the specific inputs used to produce it — model, token counts, request volume, date.</li>
+      <li><strong>No affiliate relationships.</strong> I don't receive payment from any AI provider. My comparisons aren't influenced by commercial relationships.</li>
+      <li><strong>Update dates matter.</strong> Every article shows when it was last updated. AI pricing is volatile enough that a six-month-old article can be meaningfully wrong.</li>
+      <li><strong>I say when I'm not sure.</strong> There are parts of AI pricing — like enterprise volume discounts — where I don't have visibility. I say so rather than guess.</li>
     </ul>
+    <p>See the full <a href="/editorial-policy.html">editorial policy</a> for more detail on how content is written, reviewed, and updated.</p>
+
+    <h2>Who Uses AIModelCalc</h2>
+    <p>Based on feedback I've gotten, the people who find this most useful tend to fall into a few groups:</p>
+    <ul>
+      <li><strong>Developers</strong> choosing between models for a production feature and needing to factor cost into the decision, not just quality</li>
+      <li><strong>Startup founders</strong> building AI cost projections into their financial model before they start spending on engineering</li>
+      <li><strong>Product managers</strong> trying to understand the cost implications of AI features before committing to a roadmap</li>
+      <li><strong>Consultants and agencies</strong> who need to estimate AI API costs for client project scopes and proposals</li>
+    </ul>
+    <p>If you're using it for something else and want to tell me about it, I'm genuinely curious — reach out through the <a href="/contact.html">contact page</a>.</p>
 
     <div class="cta-box">
-      <p>Ready to calculate your AI API costs? Enter your token estimates and compare every major model in seconds.</p>
+      <p>Ready to run your numbers? Enter your token estimates and compare every major model side by side.</p>
       <a href="/" class="cta-btn">Open the Calculator →</a>
     </div>
-
-    <h2>A Note on Accuracy</h2>
-    <p>AIModelCalc's calculations are based on publicly published pricing from each AI provider. Actual costs may differ due to volume discounts, enterprise agreements, promotional pricing, changes in provider pricing, or differences in how your application uses context windows. We recommend using AIModelCalc's projections as estimates for planning purposes, and verifying final pricing directly with each provider before committing to production infrastructure decisions.</p>
-    <p>The AI model landscape is evolving rapidly. New models are released frequently, pricing changes on short notice, and new pricing mechanisms (like prompt caching, batch processing discounts, and tiered volume pricing) are regularly introduced. We work to keep AIModelCalc current, but always cross-reference with the provider's official pricing page for the most accurate figures.</p>
-
-    <h2>Contact</h2>
-    <p>For questions, feedback, or to report a pricing error, reach us at <a href="mailto:hello@aimodelcalc.com">hello@aimodelcalc.com</a>. We appreciate corrections and update our pricing data as quickly as possible when providers make changes.</p>
 
   </div>
 </div>
@@ -166,14 +183,18 @@
 <footer>
   <div class="footer-links">
     <a href="/">Calculator</a>
+    <a href="/guides/">Guides</a>
     <a href="/about.html">About</a>
     <a href="/faq.html">FAQs</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/editorial-policy.html">Editorial Policy</a>
+    <a href="/pricing-methodology.html">Methodology</a>
     <a href="/gpt-4o-pricing.html">GPT-4o Pricing</a>
     <a href="/cheapest-ai-api.html">Cheapest AI API</a>
     <a href="/privacy.html">Privacy Policy</a>
     <a href="/terms.html">Terms of Use</a>
   </div>
-  <p class="footer-copy">AIModelCalc &copy; 2026 &mdash; Free AI model cost calculator &amp; API pricing comparison.<br>Prices are approximate and may vary. Always verify with the provider&rsquo;s official pricing page.</p>
+  <p class="footer-copy">AIModelCalc &copy; 2026 &mdash; Free AI model cost calculator &amp; API pricing comparison. Built by <a href="/about.html" style="color:var(--muted);">Gia Gray</a>.<br>Prices are approximate. Always verify with the provider&rsquo;s official pricing page before production decisions.</p>
 </footer>
 
 </body>
