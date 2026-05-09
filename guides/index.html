@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI API Pricing Guides — AIModelCalc</title>
+  <meta name="description" content="Practical guides on AI API pricing, cost optimization, model comparisons, and token budgeting for developers and teams building with AI.">
+  <link rel="canonical" href="https://aimodelcalc.com/guides/">
+  <meta property="og:title" content="AI API Pricing Guides — AIModelCalc">
+  <meta property="og:description" content="Practical guides on AI API pricing, cost optimization, model comparisons, and token budgeting.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aimodelcalc.com/guides/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI API Pricing Guides — AIModelCalc">
+  <meta name="twitter:description" content="Practical guides on AI API pricing, cost optimization, and model comparisons.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0d1117; --card: #1c2333; --card2: #161b27; --border: #2d3a52;
+      --text: #e6edf3; --text2: #cdd9e5; --muted: #8b949e;
+      --primary: #3c84ff; --primary-hover: #2f70e0; --primary-light: rgba(60,132,255,0.12);
+      --radius: 12px;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+    header { background: var(--card); border-bottom: 1px solid var(--border); padding: 0 32px; height: 58px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
+    .logo span { color: var(--primary); }
+    .header-nav { display: flex; gap: 8px; }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
+    .nav-btn:hover { background: var(--primary); color: #fff; }
+    .nav-btn.active { background: var(--primary); color: #fff; }
+    .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
+    .ad-center.bottom { border-bottom: none; border-top: 1px solid var(--border); }
+    .page-hero { text-align: center; padding: 44px 20px 32px; max-width: 900px; margin: 0 auto; }
+    .page-hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px; }
+    .page-hero h1 em { color: var(--primary); font-style: normal; }
+    .page-hero p { font-size: 15px; color: var(--muted); max-width: 580px; margin: 0 auto; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
+    .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 40px 0 16px; }
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 8px; }
+    .guide-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; transition: border-color 0.15s; }
+    .guide-card:hover { border-color: var(--primary); }
+    .card-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); margin-bottom: 10px; }
+    .guide-card h2 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+    .guide-card p { font-size: 13px; color: var(--muted); flex-grow: 1; margin-bottom: 18px; line-height: 1.7; }
+    .read-link { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; }
+    .read-link:hover { text-decoration: underline; }
+    .cta-strip { background: var(--primary-light); border: 1px solid rgba(60,132,255,0.3); border-radius: var(--radius); padding: 24px 32px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .cta-strip p { font-size: 14px; color: var(--text2); margin: 0; }
+    .cta-btn { display: inline-block; background: var(--primary); color: #fff; font-weight: 600; font-size: 14px; padding: 10px 22px; border-radius: 999px; text-decoration: none; white-space: nowrap; transition: background 0.15s; }
+    .cta-btn:hover { background: var(--primary-hover); }
+    footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); line-height: 1.8; }
+    @media (max-width: 600px) { .page-hero h1 { font-size: 24px; } .cta-strip { flex-direction: column; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">AI<span>ModelCalc</span></a>
+  <nav class="header-nav">
+    <a href="/" class="nav-btn">Calculator</a>
+    <a href="/guides/" class="nav-btn active">Guides</a>
+    <a href="/faq.html" class="nav-btn">FAQ</a>
+  </nav>
+</header>
+
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1><em>AI API Pricing</em> Guides</h1>
+  <p>Practical guides on model costs, token budgeting, and cutting your AI bill — written by someone who's actually done it.</p>
+  <p style="font-size:12px; color:var(--muted); margin-top:10px;">By <a href="/about.html" style="color:var(--primary);">Gia Gray</a> &nbsp;·&nbsp; Updated May 2026</p>
+</div>
+
+<div class="wrap">
+
+  <div class="section-label">AI Pricing Explained</div>
+  <div class="guides-grid">
+    <div class="guide-card">
+      <div class="card-tag">Fundamentals</div>
+      <h2>Cost Per Million Tokens Explained</h2>
+      <p>What tokens actually are, why input and output are priced separately, and how to translate per-token pricing into real monthly costs.</p>
+      <a href="/guides/cost-per-million-tokens.html" class="read-link">Read the guide →</a>
+    </div>
+    <div class="guide-card">
+      <div class="card-tag">Provider Deep Dive</div>
+      <h2>OpenAI API Pricing Explained (2026)</h2>
+      <p>Full breakdown of GPT-4o, GPT-4o mini, o1, and o3-mini pricing — with caching, batch discounts, and what each model is actually worth paying for.</p>
+      <a href="/guides/openai-api-pricing.html" class="read-link">Read the guide →</a>
+    </div>
+    <div class="guide-card">
+      <div class="card-tag">Provider Deep Dive</div>
+      <h2>Claude API Pricing Breakdown (2026)</h2>
+      <p>Anthropic's pricing across the Claude 3.5 and Claude 3 family — including prompt caching discounts and when Claude beats GPT on cost.</p>
+      <a href="/guides/claude-api-pricing.html" class="read-link">Read the guide →</a>
+    </div>
+  </div>
+
+  <div class="section-label">Model Comparisons</div>
+  <div class="guides-grid">
+    <div class="guide-card">
+      <div class="card-tag">Comparison</div>
+      <h2>GPT-4o vs Claude 3.5 Sonnet: Cost Comparison</h2>
+      <p>Side-by-side pricing at different token volumes. Which model is cheaper for chatbots, RAG pipelines, document processing, and high-volume APIs.</p>
+      <a href="/guides/gpt-4o-vs-claude-sonnet.html" class="read-link">Read the guide →</a>
+    </div>
+    <div class="guide-card">
+      <div class="card-tag">Comparison</div>
+      <h2>Gemini vs GPT-4o: Cost &amp; Value Analysis</h2>
+      <p>Google's Gemini 2.0 Flash vs OpenAI's GPT-4o — pricing, context windows, and which makes more sense for different workload types.</p>
+      <a href="/guides/gemini-vs-gpt4o-cost.html" class="read-link">Read the guide →</a>
+    </div>
+  </div>
+
+  <div class="section-label">Cost Optimization</div>
+  <div class="guides-grid">
+    <div class="guide-card">
+      <div class="card-tag">Engineering</div>
+      <h2>How to Reduce Your AI API Costs by 40–60%</h2>
+      <p>The actual techniques that cut AI API bills — model tiering, prompt compression, caching, batching, and knowing when to switch providers.</p>
+      <a href="/guides/reduce-ai-api-costs.html" class="read-link">Read the guide →</a>
+    </div>
+    <div class="guide-card">
+      <div class="card-tag">Planning</div>
+      <h2>Token Budgeting for Startups Building on AI</h2>
+      <p>How to estimate your monthly AI spend before you build, set per-feature token budgets, and avoid the surprise bill that catches most teams at scale.</p>
+      <a href="/guides/token-budgeting-startups.html" class="read-link">Read the guide →</a>
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <p>Ready to run your own numbers? Enter your token estimates and compare every major model side by side.</p>
+    <a href="/" class="cta-btn">Open the Calculator →</a>
+  </div>
+
+</div>
+
+<div class="ad-center bottom">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Calculator</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about.html">About</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/editorial-policy.html">Editorial Policy</a>
+    <a href="/pricing-methodology.html">Methodology</a>
+    <a href="/gpt-4o-pricing.html">GPT-4o Pricing</a>
+    <a href="/cheapest-ai-api.html">Cheapest AI API</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </div>
+  <p class="footer-copy">AIModelCalc &copy; 2026 &mdash; Free AI model cost calculator &amp; API pricing comparison. Built by <a href="/about.html" style="color:var(--muted);">Gia Gray</a>.<br>Prices are approximate. Always verify with the provider&rsquo;s official pricing page before production decisions.</p>
+</footer>
+
+</body>
+</html>
