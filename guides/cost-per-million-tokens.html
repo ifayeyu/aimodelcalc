@@ -44,8 +44,9 @@
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
     .header-nav { display: flex; gap: 8px; }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
-    .nav-btn:hover { background: var(--primary); color: #fff; }
+        .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+        .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
     .ad-leader { width: 100%; max-width: 728px; height: 90px; }
     .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
@@ -90,9 +91,9 @@
 
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav class="header-nav">
+    <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
-    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/guides/" class="nav-btn active">Guides</a>
     <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
@@ -107,8 +108,8 @@
   <h1>Cost Per Million Tokens Explained</h1>
   <p class="meta">By <a href="/about.html">Gia Gray</a> · Last updated May 2026 · 7 min read</p>
 
-  <p>Every AI API provider prices their models the same way: per token. But if you've never built something that actually calls an AI API in production, the pricing page can be confusing. "$2.50 per million input tokens" sounds abstract until you try to figure out what that means for your specific use case and request volume.</p>
-  <p>This guide explains the basics clearly — what tokens are, why input and output are priced differently, and how to translate those numbers into a real monthly cost estimate before you build anything.</p>
+  <p>I built this calculator partly because I kept having the same conversation. Someone asks how much their AI project will cost, I say "it depends on your tokens," and they look at me like I said something in another language. Which is fair — tokens are genuinely confusing if you haven't encountered them before, and "per million" pricing makes the numbers feel fake until they show up on your invoice.</p>
+  <p>I've watched people dramatically underprice what they're building because they estimated in "words" instead of tokens. I've also seen teams pick the wrong model because they couldn't translate the pricing page into what a single request actually costs them. This guide fixes both of those problems.</p>
 
   <h2>What Is a Token?</h2>
   <p>A token is the basic unit of text that language models work with. It's not a word, and it's not a character — it's somewhere in between. As a rough rule of thumb:</p>

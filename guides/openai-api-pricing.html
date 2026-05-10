@@ -26,8 +26,9 @@
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
     .header-nav { display: flex; gap: 8px; }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
-    .nav-btn:hover { background: var(--primary); color: #fff; }
+        .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+        .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
     .ad-leader { width: 100%; max-width: 728px; height: 90px; }
     .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
@@ -69,9 +70,9 @@
 <body>
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav class="header-nav">
+    <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
-    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/guides/" class="nav-btn active">Guides</a>
     <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
@@ -82,7 +83,8 @@
   <h1>OpenAI API Pricing Explained (2026)</h1>
   <p class="meta">By <a href="/about.html">Gia Gray</a> · Last updated May 2026 · 8 min read</p>
 
-  <p>OpenAI has the most complex pricing structure of any major AI provider. Between GPT-4o, GPT-4o mini, the reasoning models (o1, o3-mini), batch discounts, and prompt caching, it's easy to lose track of what you're actually paying and why. This guide breaks it all down.</p>
+  <p>OpenAI's model lineup has changed enough times in the past year that I've seen teams accidentally running on deprecated models, paying for caching they never enabled, and defaulting to o1 for tasks that GPT-4o mini handles identically at 13× lower cost. The pricing structure is genuinely complex and the documentation doesn't make it easy to figure out what actually applies to your situation.</p>
+  <p>Here's what I actually use to think through which model to pick and what it'll cost — with real numbers instead of abstract pricing tables.</p>
 
   <h2>OpenAI's Current Model Lineup and Pricing</h2>
   <table>

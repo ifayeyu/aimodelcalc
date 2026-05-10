@@ -94,15 +94,10 @@
     .logo-model { color: #ffffff; }
     .logo-calc  { color: #677a9a; }
 
-    .header-nav { display: flex; gap: 4px; }
-    .header-nav a {
-      font-size: 13px; font-weight: 500;
-      color: var(--muted); text-decoration: none;
-      padding: 7px 16px; border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      transition: all 0.15s;
-    }
-    .header-nav a:hover { color: var(--primary); border-color: var(--border); background: var(--card); }
+    .header-nav { display: flex; gap: 8px; }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: var(--radius-pill); transition: all 0.15s; }
+    .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     @media (max-width: 680px) { .header-nav { display: none; } header { padding: 0 20px; } }
 
     /* ── AD ZONES ── */
@@ -460,11 +455,9 @@
     <span class="logo-ai">AI</span><span class="logo-model">Model</span><span class="logo-calc">Calc</span>
   </a>
   <nav class="header-nav">
-    <a href="#calculator">Cost Calculator</a>
-    <a href="#compare">Compare Models</a>
-    <a href="#estimator">Monthly Bill</a>
-    <a href="/guides/">Guides</a>
-    <a href="/faq.html">FAQ</a>
+    <a href="/" class="nav-btn active">Calculator</a>
+    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
 

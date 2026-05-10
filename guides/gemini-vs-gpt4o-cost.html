@@ -24,8 +24,9 @@
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
     .header-nav { display: flex; gap: 8px; }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
-    .nav-btn:hover { background: var(--primary); color: #fff; }
+        .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+        .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
     .ad-leader { width: 100%; max-width: 728px; height: 90px; }
     .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
@@ -67,9 +68,9 @@
 <body>
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav class="header-nav">
+    <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
-    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/guides/" class="nav-btn active">Guides</a>
     <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
@@ -80,7 +81,8 @@
   <h1>Gemini vs GPT-4o: Cost &amp; Value Analysis (2026)</h1>
   <p class="meta">By <a href="/about.html">Gia Gray</a> · Last updated May 2026 · 7 min read</p>
 
-  <p>Gemini 2.0 Flash is the most aggressively priced capable model in the market right now. At $0.10/$0.40 per million tokens — 25× cheaper than GPT-4o on input — it's hard to ignore from a cost perspective. But "cheap" only matters if the quality holds for your specific use case. Here's the real comparison.</p>
+  <p>Most developers I talk to who haven't tried Gemini are overpaying for at least part of their workload. At $0.10/$0.40 per million tokens, Gemini 2.0 Flash is 25× cheaper than GPT-4o on input — and that's not a marginal difference, it's a different budget category. I've seen teams switch specific use cases to Gemini and cut those costs by 90% with no user-visible quality change.</p>
+  <p>But I've also seen teams switch everything to Gemini, skip the evaluation, and spend two weeks chasing reliability issues that never existed with GPT-4o. The quality gap depends entirely on your task. Here's where Gemini actually beats GPT-4o, and where GPT-4o is still worth the premium.</p>
 
   <h2>Pricing Side by Side</h2>
   <table>

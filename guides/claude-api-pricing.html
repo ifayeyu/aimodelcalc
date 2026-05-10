@@ -24,8 +24,9 @@
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
     .header-nav { display: flex; gap: 8px; }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
-    .nav-btn:hover { background: var(--primary); color: #fff; }
+        .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+        .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
     .ad-leader { width: 100%; max-width: 728px; height: 90px; }
     .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
@@ -67,9 +68,9 @@
 <body>
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav class="header-nav">
+    <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
-    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/guides/" class="nav-btn active">Guides</a>
     <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
@@ -80,7 +81,8 @@
   <h1>Claude API Pricing Breakdown (2026)</h1>
   <p class="meta">By <a href="/about.html">Gia Gray</a> · Last updated May 2026 · 7 min read</p>
 
-  <p>Anthropic's Claude API has gotten significantly more competitive on pricing over the past year. The Claude 3.5 family — particularly Claude 3.5 Haiku — is one of the better deals in AI APIs right now for teams that prioritize instruction-following and long-context work. Here's what you need to know.</p>
+  <p>I'll be direct about where I've landed after running Claude in a few production contexts: the instruction-following is more reliable than GPT-4o for anything that requires structured output, the 200K context window is genuinely useful (not just a benchmark number), and the prompt caching discount — 90% off cached tokens — is the most aggressive in the industry and not talked about enough.</p>
+  <p>That said, the output pricing ($15/M vs GPT-4o's $10/M) is a real cost that adds up fast on output-heavy workloads. Whether Claude ends up cheaper than GPT-4o for your use case depends on one thing: how much repeated context you're sending. Here's the breakdown.</p>
 
   <h2>Claude Model Lineup and Current Pricing</h2>
   <table>

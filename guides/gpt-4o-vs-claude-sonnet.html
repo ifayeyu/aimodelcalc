@@ -24,8 +24,9 @@
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
     .header-nav { display: flex; gap: 8px; }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
-    .nav-btn:hover { background: var(--primary); color: #fff; }
+        .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+        .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
     .ad-leader { width: 100%; max-width: 728px; height: 90px; }
     .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
@@ -68,9 +69,9 @@
 <body>
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav class="header-nav">
+    <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
-    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/guides/" class="nav-btn active">Guides</a>
     <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
@@ -81,8 +82,8 @@
   <h1>GPT-4o vs Claude 3.5 Sonnet: Cost Comparison (2026)</h1>
   <p class="meta">By <a href="/about.html">Gia Gray</a> · Last updated May 2026 · 8 min read</p>
 
-  <p>GPT-4o and Claude 3.5 Sonnet are the two most popular flagship AI models for production applications right now. They're close in capability, and the question of which is cheaper depends almost entirely on what your application actually does — specifically your prompt structure, context reuse, and output length.</p>
-  <p>This is a head-to-head cost comparison across the most common workload types, using real numbers.</p>
+  <p>The question I get most often from developers building on AI APIs is some version of "GPT-4o or Claude — which is cheaper?" And the honest answer is: the sticker prices are misleading. I've seen workloads where Claude 3.5 Sonnet ends up 24% cheaper than GPT-4o despite having higher listed rates, and others where GPT-4o is the clear winner. It comes down to one thing — how much of your input context repeats across requests.</p>
+  <p>Instead of arguing from pricing pages, here's a side-by-side calculation across five real workload types. Run your own numbers at the end.</p>
 
   <h2>Base Pricing: GPT-4o Wins on Sticker Price</h2>
   <table>

@@ -32,9 +32,9 @@
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
     .header-nav { display: flex; gap: 8px; }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
-    .nav-btn:hover { background: var(--primary); color: #fff; }
-    .nav-btn.active { background: var(--primary); color: #fff; }
+        .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+        .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
     .ad-leader { width: 100%; max-width: 728px; height: 90px; }
     .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
@@ -69,7 +69,7 @@
 
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav class="header-nav">
+    <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
     <a href="/guides/" class="nav-btn active">Guides</a>
     <a href="/faq.html" class="nav-btn">FAQ</a>
@@ -93,19 +93,19 @@
     <div class="guide-card">
       <div class="card-tag">Fundamentals</div>
       <h2>Cost Per Million Tokens Explained</h2>
-      <p>What tokens actually are, why input and output are priced separately, and how to translate per-token pricing into real monthly costs.</p>
+      <p>What tokens actually are, why input costs 3–5× less than output, and how to turn "$2.50 per million tokens" into a real monthly cost estimate for your specific app.</p>
       <a href="/guides/cost-per-million-tokens.html" class="read-link">Read the guide →</a>
     </div>
     <div class="guide-card">
       <div class="card-tag">Provider Deep Dive</div>
       <h2>OpenAI API Pricing Explained (2026)</h2>
-      <p>Full breakdown of GPT-4o, GPT-4o mini, o1, and o3-mini pricing — with caching, batch discounts, and what each model is actually worth paying for.</p>
+      <p>GPT-4o, GPT-4o mini, o1, o3-mini — which model is actually worth what it costs, when caching changes the math, and how the Batch API cuts your bill in half.</p>
       <a href="/guides/openai-api-pricing.html" class="read-link">Read the guide →</a>
     </div>
     <div class="guide-card">
       <div class="card-tag">Provider Deep Dive</div>
       <h2>Claude API Pricing Breakdown (2026)</h2>
-      <p>Anthropic's pricing across the Claude 3.5 and Claude 3 family — including prompt caching discounts and when Claude beats GPT on cost.</p>
+      <p>Claude's 90% prompt caching discount is the most aggressive in the industry — and most teams aren't using it. Here's the full breakdown of when Claude actually beats GPT-4o on cost.</p>
       <a href="/guides/claude-api-pricing.html" class="read-link">Read the guide →</a>
     </div>
   </div>
@@ -114,14 +114,14 @@
   <div class="guides-grid">
     <div class="guide-card">
       <div class="card-tag">Comparison</div>
-      <h2>GPT-4o vs Claude 3.5 Sonnet: Cost Comparison</h2>
-      <p>Side-by-side pricing at different token volumes. Which model is cheaper for chatbots, RAG pipelines, document processing, and high-volume APIs.</p>
+      <h2>GPT-4o vs Claude 3.5 Sonnet: Real Cost Comparison</h2>
+      <p>The sticker prices say GPT-4o wins. The actual numbers across chatbot, RAG, document analysis, and content generation workloads are more complicated. See the math.</p>
       <a href="/guides/gpt-4o-vs-claude-sonnet.html" class="read-link">Read the guide →</a>
     </div>
     <div class="guide-card">
       <div class="card-tag">Comparison</div>
       <h2>Gemini vs GPT-4o: Cost &amp; Value Analysis</h2>
-      <p>Google's Gemini 2.0 Flash vs OpenAI's GPT-4o — pricing, context windows, and which makes more sense for different workload types.</p>
+      <p>Gemini 2.0 Flash is 25× cheaper than GPT-4o on input. Here's where that holds up in production, where it doesn't, and when the 1M token context window actually changes your architecture.</p>
       <a href="/guides/gemini-vs-gpt4o-cost.html" class="read-link">Read the guide →</a>
     </div>
   </div>
@@ -131,13 +131,13 @@
     <div class="guide-card">
       <div class="card-tag">Engineering</div>
       <h2>How to Reduce Your AI API Costs by 40–60%</h2>
-      <p>The actual techniques that cut AI API bills — model tiering, prompt compression, caching, batching, and knowing when to switch providers.</p>
+      <p>Model tiering, prompt compression, caching, output length control, and batch processing — ranked by impact. I've seen teams go from $800 to $280/month in a week with these changes.</p>
       <a href="/guides/reduce-ai-api-costs.html" class="read-link">Read the guide →</a>
     </div>
     <div class="guide-card">
       <div class="card-tag">Planning</div>
       <h2>Token Budgeting for Startups Building on AI</h2>
-      <p>How to estimate your monthly AI spend before you build, set per-feature token budgets, and avoid the surprise bill that catches most teams at scale.</p>
+      <p>How to estimate your monthly AI costs before you ship — with a 3-scenario model, per-feature token budgets, and the unit economics check that tells you if your pricing makes sense.</p>
       <a href="/guides/token-budgeting-startups.html" class="read-link">Read the guide →</a>
     </div>
   </div>

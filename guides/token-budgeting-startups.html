@@ -24,8 +24,9 @@
     .logo { font-size: 20px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
     .logo span { color: var(--primary); }
     .header-nav { display: flex; gap: 8px; }
-    .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--primary); border-radius: 999px; transition: all 0.15s; }
-    .nav-btn:hover { background: var(--primary); color: #fff; }
+        .nav-btn { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+        .nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .nav-btn.active { border-color: var(--primary); background: transparent; color: var(--primary); }
     .ad-zone { background: var(--card2); border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
     .ad-leader { width: 100%; max-width: 728px; height: 90px; }
     .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--border); }
@@ -67,9 +68,9 @@
 <body>
 <header>
   <a href="/" class="logo">AI<span>ModelCalc</span></a>
-  <nav class="header-nav">
+    <nav class="header-nav">
     <a href="/" class="nav-btn">Calculator</a>
-    <a href="/guides/" class="nav-btn">Guides</a>
+    <a href="/guides/" class="nav-btn active">Guides</a>
     <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
@@ -80,8 +81,8 @@
   <h1>Token Budgeting for Startups Building on AI APIs</h1>
   <p class="meta">By <a href="/about.html">Gia Gray</a> · Last updated May 2026 · 8 min read</p>
 
-  <p>The surprise AI bill is a rite of passage for a lot of early-stage startups. You build the feature, users love it, usage climbs, and then the OpenAI invoice shows up and it's five times what you estimated. It doesn't have to work that way — the math is predictable if you do it upfront.</p>
-  <p>This guide is about building an AI cost model before you write the code, not after you've already committed to an architecture.</p>
+  <p>The $6,000 OpenAI bill that appears two weeks after a product launch is becoming a startup cliché — and I say that having talked to multiple founders who went through exactly that. The feature worked great, users kept using it, and nobody had done the math on what "users keep using it" actually costs per month. The AI bill doesn't care about your runway.</p>
+  <p>The frustrating thing is that the math is not hard. It's just math most teams skip because they're focused on shipping. This guide is about doing that math before you commit to an architecture, a model, or a pricing plan — not after the invoice arrives.</p>
 
   <h2>Step 1: Profile Your Request Structure Before You Build</h2>
   <p>Before you can budget, you need to know what a typical request looks like in token terms. For each AI-powered feature you're planning, estimate:</p>
