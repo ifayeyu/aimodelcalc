@@ -99,6 +99,69 @@
     .footer-links a:hover { text-decoration: underline; }
     .footer-copy { font-size: 12px; color: var(--muted); line-height: 1.8; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AIModelCalc?",
+        "acceptedAnswer": { "@type": "Answer", "text": "AIModelCalc is a free, browser-based tool that lets you calculate and compare AI API costs across all major providers — OpenAI, Anthropic, Google, Meta, Mistral, xAI, and Cohere. No signup required, no data sent to our servers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is AIModelCalc free to use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free. AIModelCalc is supported by display advertising. You'll never be asked to create an account or pay anything." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does AIModelCalc store my inputs?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. All calculations run entirely in your browser using JavaScript. Your token counts, request volumes, and any other inputs are never transmitted to our servers and are gone when you close the tab." }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is the AI pricing data?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We aim to keep pricing current with official provider documentation. However, AI providers change their prices frequently — always verify against the official pricing pages before making financial decisions. Our data is reviewed and updated at least monthly." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI providers and models are covered?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We currently track models across 6 providers: OpenAI (GPT-4o, GPT-4o mini, GPT-3.5 Turbo, o1, o3-mini), Anthropic (Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Haiku, Claude 3 Opus), Google (Gemini 1.5 Flash, Gemini 1.5 Pro, Gemini 2.0 Flash), Meta (Llama 3.1 70B, Llama 3.1 8B), Mistral (Mistral Large, Mistral 7B), xAI (Grok-2), and Cohere (Command R+)." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the calculator account for cached tokens?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Cost Calculator includes a Cached Input % field. Anthropic applies a 90% discount on cached tokens; OpenAI's prompt caching offers roughly a 50% discount. The calculator uses these rates per provider automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Cost Calculator tool?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The Cost Calculator lets you enter your expected token usage — input tokens, output tokens, monthly request volume, and cached input percentage — and instantly calculates your cost per request, monthly total, and annual total for any model." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Model Comparison Table?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The Model Comparison Table shows all AI models side-by-side with their input price, output price, context window size, speed rating, and best use case. You can filter by provider and sort any column to find the right model for your needs." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does context window mean in AI models?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The context window is the maximum number of tokens a model can process in a single request, including both the prompt and response. Larger context windows let you send longer documents or maintain longer conversations without truncation." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why are some AI models much more expensive than others?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Premium models like Claude 3 Opus and o1 are designed for complex reasoning tasks and priced accordingly. Smaller models like Gemini 1.5 Flash and GPT-4o mini are optimized for speed and cost at high volume. The best model depends on your quality requirements and budget." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do AI providers offer volume discounts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Some providers offer enterprise pricing for high-usage customers. The prices shown in AIModelCalc reflect standard pay-as-you-go API rates. Contact individual providers directly for enterprise pricing." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
