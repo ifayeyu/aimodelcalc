@@ -11,17 +11,16 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Model Cost Calculator — Compare GPT-4o, Claude, Gemini Pricing | AIModelCalc</title>
-  <meta name="description" content="Free AI model cost calculator. Compare API pricing for GPT-4o, Claude 3.5 Sonnet, Gemini, Llama, Mistral and more. Calculate your monthly AI bill instantly.">
-  <meta name="keywords" content="AI model cost calculator, GPT-4o pricing, Claude API cost, Gemini API pricing, AI API cost comparison, LLM cost calculator, AI monthly bill estimator, cheapest AI model">
+  <title>AI Model Cost Calculator — Compare GPT-5, Claude & Gemini API Pricing | AIModelCalc</title>
+  <meta name="description" content="Free AI model cost calculator. Compare API pricing for GPT-5.5, GPT-5.4, Claude Opus 4.8, Claude Sonnet 4.6, Gemini 3 and more. Calculate your monthly AI bill instantly.">
   <link rel="canonical" href="https://aimodelcalc.com/">
-  <meta property="og:title" content="AI API Cost Calculator — Compare GPT-4o, Claude & Gemini Pricing">
-  <meta property="og:description" content="Free AI model cost calculator. Compare API pricing for GPT-4o, Claude, Gemini, Llama and more. Calculate your real monthly AI bill instantly.">
+  <meta property="og:title" content="AI API Cost Calculator — Compare GPT-5, Claude & Gemini Pricing">
+  <meta property="og:description" content="Free AI model cost calculator. Compare API pricing for GPT-5, Claude 4.x, and Gemini 3 models. Calculate your real monthly AI bill instantly.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aimodelcalc.com/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AI API Cost Calculator — Compare GPT-4o, Claude & Gemini Pricing">
-  <meta name="twitter:description" content="Free AI model cost calculator. Compare API pricing for GPT-4o, Claude, Gemini, Llama and more.">
+  <meta name="twitter:title" content="AI API Cost Calculator — Compare GPT-5, Claude & Gemini Pricing">
+  <meta name="twitter:description" content="Free AI model cost calculator. Compare API pricing for GPT-5, Claude 4.x, and Gemini 3 models.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +33,7 @@
       "@type": "WebApplication",
       "name": "AIModelCalc — AI API Cost Calculator",
       "url": "https://aimodelcalc.com",
-      "description": "Free AI API cost calculator — compare GPT-4o, Claude, Gemini, Llama, Mistral and more. Calculate exact monthly costs by token volume. No signup required.",
+      "description": "Free AI API cost calculator — compare GPT-5.5, GPT-5.4, Claude Opus 4.8, Claude Sonnet 4.6, Gemini 3 and more. Calculate exact monthly costs by token volume. No signup required.",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web Browser",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -47,7 +46,7 @@
       "@type": "WebSite",
       "name": "AIModelCalc",
       "url": "https://aimodelcalc.com",
-      "description": "Free AI API pricing tools and guides for developers building with GPT-4o, Claude, Gemini, and more.",
+      "description": "Free AI API pricing tools and guides for developers building with GPT-5, Claude, Gemini, and more.",
       "publisher": { "@type": "Organization", "name": "AIModelCalc", "url": "https://aimodelcalc.com" }
     }
   ]
@@ -154,8 +153,8 @@
       font-size: 36px; font-weight: 800;
       line-height: 1.12; letter-spacing: -1px;
       margin-bottom: 15px; color: var(--text);
-      white-space: nowrap;
     }
+    @media (max-width: 480px) { .hero h1 { font-size: 30px; } }
     .hero h1 em { color: var(--primary-mid); font-style: normal; }
     .hero p { font-size: 14px; color: var(--muted); max-width: 580px; margin: 0 auto 15px; line-height: 1.75; }
 
@@ -482,19 +481,14 @@
   </nav>
 </header>
 
-<!-- TOP AD -->
-<div class="ad-center">
-  <div class="ad-zone ad-leader">Advertisement</div>
-</div>
-
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge"><span class="hero-badge-dot"></span> Updated April 2026 — Live pricing</div>
+  <div class="hero-badge"><span class="hero-badge-dot"></span> Updated June 2026 · Verify rates before production</div>
   <h1>Compare <em>AI Model Costs</em> Instantly</h1>
-  <p>Calculate and compare API pricing across GPT-4o, Claude, Gemini, Llama, Mistral and more. Know your exact AI costs before you build.</p>
+  <p>Calculate and compare API pricing across OpenAI GPT-5, Anthropic Claude, and Google Gemini models. Know your exact AI costs before you build.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>18</strong><span>Models tracked</span></div>
-    <div class="hero-stat"><strong>7</strong><span>Providers</span></div>
+    <div class="hero-stat"><strong>14</strong><span>Models tracked</span></div>
+    <div class="hero-stat"><strong>3</strong><span>Providers</span></div>
     <div class="hero-stat"><strong>Free</strong><span>No signup needed</span></div>
   </div>
 </div>
@@ -529,36 +523,24 @@
             <div class="ig">
               <select class="ig-field" id="calc-model" onchange="calcCost()">
                 <optgroup label="OpenAI">
-                  <option value="gpt4o">GPT-4o</option>
-                  <option value="gpt4omini">GPT-4o mini</option>
-                  <option value="gpt35turbo">GPT-3.5 Turbo</option>
-                  <option value="o1">o1</option>
-                  <option value="o3mini">o3-mini</option>
+                  <option value="gpt55">GPT-5.5</option>
+                  <option value="gpt54" selected>GPT-5.4</option>
+                  <option value="gpt54mini">GPT-5.4 mini</option>
+                  <option value="gpt4o">GPT-4o (legacy)</option>
+                  <option value="gpt4omini">GPT-4o mini (legacy)</option>
                 </optgroup>
                 <optgroup label="Anthropic">
-                  <option value="claude35sonnet">Claude 3.5 Sonnet</option>
-                  <option value="claude35haiku">Claude 3.5 Haiku</option>
-                  <option value="claude3haiku">Claude 3 Haiku</option>
-                  <option value="claude3opus">Claude 3 Opus</option>
+                  <option value="opus48">Claude Opus 4.8</option>
+                  <option value="sonnet46">Claude Sonnet 4.6</option>
+                  <option value="haiku45">Claude Haiku 4.5</option>
                 </optgroup>
                 <optgroup label="Google">
-                  <option value="gemini15flash">Gemini 1.5 Flash</option>
-                  <option value="gemini15pro">Gemini 1.5 Pro</option>
-                  <option value="gemini20flash">Gemini 2.0 Flash</option>
-                </optgroup>
-                <optgroup label="Meta">
-                  <option value="llama3170b">Llama 3.1 70B</option>
-                  <option value="llama318b">Llama 3.1 8B</option>
-                </optgroup>
-                <optgroup label="Mistral">
-                  <option value="mistrallarge">Mistral Large</option>
-                  <option value="mistral7b">Mistral 7B</option>
-                </optgroup>
-                <optgroup label="xAI">
-                  <option value="grok2">Grok-2</option>
-                </optgroup>
-                <optgroup label="Cohere">
-                  <option value="commandrplus">Command R+</option>
+                  <option value="gemini31pro">Gemini 3.1 Pro</option>
+                  <option value="gemini3flash">Gemini 3 Flash</option>
+                  <option value="gemini31flashlite">Gemini 3.1 Flash-Lite</option>
+                  <option value="gemini25pro">Gemini 2.5 Pro</option>
+                  <option value="gemini25flash">Gemini 2.5 Flash</option>
+                  <option value="gemini25flashlite">Gemini 2.5 Flash-Lite</option>
                 </optgroup>
               </select>
             </div>
@@ -597,8 +579,6 @@
           </div>
         </div>
 
-        <!-- 300×250 AD inside left column, below inputs -->
-        <div class="ad-zone ad-rect" style="margin-top: 20px;">Advertisement · 300 × 250</div>
       </div><!-- /left col -->
 
       <!-- RESULTS PANEL — right column -->
@@ -629,11 +609,6 @@
     </div><!-- /card Tool 1 -->
   </div>
 
-  <!-- MID AD -->
-  <div class="ad-center">
-    <div class="ad-zone ad-leader">Advertisement</div>
-  </div>
-
   <!-- ══════════════════════════════════════
        TOOL 2 — COMPARISON TABLE
   ══════════════════════════════════════ -->
@@ -652,9 +627,6 @@
         <button class="filter-btn" onclick="filterTable('openai', this)">OpenAI</button>
         <button class="filter-btn" onclick="filterTable('anthropic', this)">Anthropic</button>
         <button class="filter-btn" onclick="filterTable('google', this)">Google</button>
-        <button class="filter-btn" onclick="filterTable('meta', this)">Meta</button>
-        <button class="filter-btn" onclick="filterTable('mistral', this)">Mistral</button>
-        <button class="filter-btn" onclick="filterTable('other', this)">Other</button>
       </div>
 
       <div class="table-wrap">
@@ -675,11 +647,6 @@
       </div>
 
     </div><!-- /card Tool 2 -->
-  </div>
-
-  <!-- MID AD -->
-  <div class="ad-center">
-    <div class="ad-zone ad-leader">Advertisement</div>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -749,8 +716,6 @@
           </div>
         </div>
 
-        <!-- 300×250 AD — bottom left -->
-        <div class="ad-zone ad-rect" style="margin-top: 16px;">Advertisement · 300 × 250</div>
       </div>
 
       <!-- BILL RESULTS — scrollable -->
@@ -769,7 +734,7 @@
     <div class="info-card">
       <span class="info-card-icon">🏆</span>
       <h3>Cheapest models in 2026</h3>
-      <p>For high-volume applications, Gemini 2.5 Flash, GPT-4o mini, and Claude 3.5 Haiku offer the best price-to-performance ratio. For complex reasoning, GPT-4o and Claude Sonnet 4 lead on quality.</p>
+      <p>For high-volume applications, Gemini 2.5 Flash-Lite, GPT-5.4 mini, and Claude Haiku 4.5 offer the best price-to-performance ratio. For complex reasoning, GPT-5.5, Claude Opus 4.8, and Gemini 3.1 Pro lead on quality.</p>
     </div>
     <div class="info-card">
       <span class="info-card-icon">📉</span>
@@ -791,16 +756,16 @@
     <h3 style="font-size:16px;font-weight:700;color:#cdd9e5;margin:24px 0 10px;">Input vs. Output Tokens: Why the Ratio Matters</h3>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:12px;">The split between input and output tokens in your application dramatically affects your cost per request. Consider two common use cases:</p>
     <ul style="font-size:14px;color:#8b949e;line-height:1.85;margin:0 0 14px 20px;">
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Document summarization</strong> — You send a large document (many input tokens) and ask for a short summary (few output tokens). Input-heavy. At GPT-4o's pricing of $2.50/M input vs $10/M output, the low output ratio keeps costs manageable even for long documents.</li>
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Content generation</strong> — You send a short prompt but receive a long, detailed response. Output-heavy. The same GPT-4o can become significantly more expensive because output is 4× the cost of input.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Document summarization</strong> — You send a large document (many input tokens) and ask for a short summary (few output tokens). Input-heavy. At GPT-5.4's pricing of $2.50/M input vs $15/M output, the low output ratio keeps costs manageable even for long documents.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Content generation</strong> — You send a short prompt but receive a long, detailed response. Output-heavy. The same GPT-5.4 can become significantly more expensive because output is 6× the cost of input.</li>
       <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Chat applications with long history</strong> — Every turn in a multi-turn conversation re-sends the entire conversation history as context. As conversations grow, input token costs compound quickly — a 20-turn conversation can cost 10× more per turn than a fresh one-shot query.</li>
     </ul>
 
     <h3 style="font-size:16px;font-weight:700;color:#cdd9e5;margin:24px 0 10px;">Choosing the Right Model for Your Use Case</h3>
-    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The most expensive model is rarely the right choice for every task. AI API pricing spans several orders of magnitude — from sub-$0.10/M token models like Gemini Flash to $15+/M token models like GPT-4o's output tier. The key is matching model capability to task complexity.</p>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The most expensive model is rarely the right choice for every task. AI API pricing spans several orders of magnitude — from sub-$0.10/M token models like Gemini Flash-Lite to $25–30/M token models like GPT-5.5's and Claude Opus 4.8's output tiers. The key is matching model capability to task complexity.</p>
     <ul style="font-size:14px;color:#8b949e;line-height:1.85;margin:0 0 14px 20px;">
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Simple classification, routing, and extraction</strong> — Small, fast models (GPT-4o Mini, Gemini Flash, Claude Haiku) are sufficient and dramatically cheaper. Running a flagship model on tasks that don't require it wastes 10–50× on costs.</li>
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Complex reasoning, coding, and analysis</strong> — This is where flagship models earn their premium. GPT-4o, Claude Sonnet, and Gemini Pro significantly outperform cheaper tiers on tasks requiring multi-step reasoning, code generation, and nuanced analysis.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Simple classification, routing, and extraction</strong> — Small, fast models (GPT-5.4 mini, Gemini Flash-Lite, Claude Haiku 4.5) are sufficient and dramatically cheaper. Running a flagship model on tasks that don't require it wastes 10–50× on costs.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Complex reasoning, coding, and analysis</strong> — This is where flagship models earn their premium. GPT-5.5, Claude Opus 4.8, and Gemini 3.1 Pro significantly outperform cheaper tiers on tasks requiring multi-step reasoning, code generation, and nuanced analysis.</li>
       <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">High-volume production workloads</strong> — The cheapest model that reliably achieves your quality bar is the correct choice. At scale, the cost difference between models can mean thousands of dollars per month. Always benchmark quality vs. cost before committing to a model for production.</li>
     </ul>
 
@@ -819,7 +784,7 @@
     <h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">AI Model Pricing in 2026: What's Changed</h2>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">AI API pricing has dropped dramatically over the past two years. GPT-4-class capability that cost $30–60 per million tokens in 2023 is now available for $2.50–10 per million tokens in 2026, with smaller distilled models delivering 80–90% of that quality for a fraction of the price. Competition between OpenAI, Anthropic, Google, and Meta has accelerated this deflation — and it shows no signs of stopping.</p>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The emergence of reasoning models (OpenAI o-series, Claude's extended thinking mode) has added a new pricing dimension: "thinking tokens" used during the model's internal reasoning process before it produces a response. These models are significantly more expensive per request than standard models, but can be dramatically more accurate on complex reasoning tasks — making cost-per-correct-answer the relevant metric rather than cost-per-token.</p>
-    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Keeping up with model releases and pricing updates across providers is a constant challenge for developers and builders. AIModelCalc is updated regularly to reflect current pricing, so you can always compare models on an apples-to-apples basis. Check the <a href="/guides/gpt-4o-pricing.html" style="color:#3c84ff;text-decoration:none;">GPT-4o pricing breakdown</a> or the <a href="/guides/cheapest-ai-api.html" style="color:#3c84ff;text-decoration:none;">cheapest AI API comparison</a> for detailed provider breakdowns.</p>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Keeping up with model releases and pricing updates across providers is a constant challenge for developers and builders. AIModelCalc is updated regularly to reflect current pricing, so you can always compare models on an apples-to-apples basis. See the <a href="/guides/ai-api-pricing-2026.html" style="color:#3c84ff;text-decoration:none;">2026 AI API pricing guide</a> for the full current GPT-5, Claude 4.x and Gemini 3 comparison, or the <a href="/guides/cheapest-ai-api.html" style="color:#3c84ff;text-decoration:none;">cheapest AI API comparison</a> for the lowest-cost options.</p>
   </div>
 
 </div>
@@ -860,32 +825,27 @@
 
 <script>
 // ── MODEL DATA ──────────────────────────────────────────────────────────────
+// Pricing verified June 20, 2026 against the official OpenAI, Anthropic and
+// Google pricing pages. Pro/Flagship tiers show standard (<=200K context) rates.
+// Prices are approximate — always confirm on the provider's pricing page.
 const MODELS = [
-  // OpenAI
-  { id:'gpt4o',         name:'GPT-4o',            provider:'openai',    badge:'OpenAI',    input:2.50,  output:10.00, ctx:'128K', speed:4, best:'General purpose, vision',       tier:'flagship' },
-  { id:'gpt4omini',     name:'GPT-4o mini',        provider:'openai',    badge:'OpenAI',    input:0.15,  output:0.60,  ctx:'128K', speed:5, best:'High-volume, cost-sensitive',   tier:'budget'   },
-  { id:'gpt35turbo',    name:'GPT-3.5 Turbo',      provider:'openai',    badge:'OpenAI',    input:0.50,  output:1.50,  ctx:'16K',  speed:5, best:'Legacy apps, simple tasks',     tier:'budget'   },
-  { id:'o1',            name:'o1',                  provider:'openai',    badge:'OpenAI',    input:15.00, output:60.00, ctx:'128K', speed:2, best:'Complex reasoning, math',       tier:'premium'  },
-  { id:'o3mini',        name:'o3-mini',             provider:'openai',    badge:'OpenAI',    input:1.10,  output:4.40,  ctx:'128K', speed:3, best:'Reasoning on a budget',         tier:'mid'      },
-  // Anthropic
-  { id:'claude35sonnet',name:'Claude 3.5 Sonnet',  provider:'anthropic', badge:'Anthropic', input:3.00,  output:15.00, ctx:'200K', speed:4, best:'Coding, analysis, writing',     tier:'flagship' },
-  { id:'claude35haiku', name:'Claude 3.5 Haiku',   provider:'anthropic', badge:'Anthropic', input:0.80,  output:4.00,  ctx:'200K', speed:5, best:'Fast tasks, large context',     tier:'budget'   },
-  { id:'claude3haiku',  name:'Claude 3 Haiku',     provider:'anthropic', badge:'Anthropic', input:0.25,  output:1.25,  ctx:'200K', speed:5, best:'Cheapest Anthropic model',      tier:'budget'   },
-  { id:'claude3opus',   name:'Claude 3 Opus',      provider:'anthropic', badge:'Anthropic', input:15.00, output:75.00, ctx:'200K', speed:2, best:'Most capable, complex tasks',   tier:'premium'  },
-  // Google
-  { id:'gemini15flash', name:'Gemini 1.5 Flash',   provider:'google',    badge:'Google',    input:0.075, output:0.30,  ctx:'1M',   speed:5, best:'Cheapest model, huge context',  tier:'budget'   },
-  { id:'gemini15pro',   name:'Gemini 1.5 Pro',     provider:'google',    badge:'Google',    input:1.25,  output:5.00,  ctx:'2M',   speed:3, best:'Largest context window',        tier:'mid'      },
-  { id:'gemini20flash', name:'Gemini 2.0 Flash',   provider:'google',    badge:'Google',    input:0.10,  output:0.40,  ctx:'1M',   speed:5, best:'Fastest Google model',          tier:'budget'   },
-  // Meta
-  { id:'llama3170b',    name:'Llama 3.1 70B',      provider:'meta',      badge:'Meta',      input:0.88,  output:0.88,  ctx:'128K', speed:4, best:'Open source, self-hostable',    tier:'mid'      },
-  { id:'llama318b',     name:'Llama 3.1 8B',       provider:'meta',      badge:'Meta',      input:0.18,  output:0.18,  ctx:'128K', speed:5, best:'Cheapest open source',          tier:'budget'   },
-  // Mistral
-  { id:'mistrallarge',  name:'Mistral Large',      provider:'mistral',   badge:'Mistral',   input:2.00,  output:6.00,  ctx:'128K', speed:4, best:'European data compliance',      tier:'flagship' },
-  { id:'mistral7b',     name:'Mistral 7B',         provider:'mistral',   badge:'Mistral',   input:0.25,  output:0.25,  ctx:'32K',  speed:5, best:'Lightweight, fast inference',   tier:'budget'   },
-  // xAI
-  { id:'grok2',         name:'Grok-2',             provider:'xai',       badge:'xAI',       input:2.00,  output:10.00, ctx:'131K', speed:4, best:'Real-time data, X integration', tier:'flagship' },
-  // Cohere
-  { id:'commandrplus',  name:'Command R+',         provider:'cohere',    badge:'Cohere',    input:2.50,  output:10.00, ctx:'128K', speed:3, best:'RAG, enterprise search',        tier:'flagship' },
+  // OpenAI — current GPT-5 line (GPT-4o kept as legacy, still callable)
+  { id:'gpt55',     name:'GPT-5.5',            provider:'openai',    badge:'OpenAI',    input:5.00, output:30.00, ctx:'400K', speed:4, best:'Frontier coding & reasoning',   tier:'premium'  },
+  { id:'gpt54',     name:'GPT-5.4',            provider:'openai',    badge:'OpenAI',    input:2.50, output:15.00, ctx:'400K', speed:4, best:'Coding & professional work',    tier:'flagship' },
+  { id:'gpt54mini', name:'GPT-5.4 mini',       provider:'openai',    badge:'OpenAI',    input:0.75, output:4.50,  ctx:'400K', speed:5, best:'High-volume, agents, tools',    tier:'budget'   },
+  { id:'gpt4o',     name:'GPT-4o (legacy)',    provider:'openai',    badge:'OpenAI',    input:2.50, output:10.00, ctx:'128K', speed:4, best:'Legacy general purpose',        tier:'mid'      },
+  { id:'gpt4omini', name:'GPT-4o mini (legacy)',provider:'openai',   badge:'OpenAI',    input:0.15, output:0.60,  ctx:'128K', speed:5, best:'Legacy budget model',           tier:'budget'   },
+  // Anthropic — current Claude 4.x line (3.x retired/deprecated)
+  { id:'opus48',    name:'Claude Opus 4.8',    provider:'anthropic', badge:'Anthropic', input:5.00, output:25.00, ctx:'1M',   speed:3, best:'Most capable, complex reasoning',tier:'premium'  },
+  { id:'sonnet46',  name:'Claude Sonnet 4.6',  provider:'anthropic', badge:'Anthropic', input:3.00, output:15.00, ctx:'1M',   speed:4, best:'Coding, analysis, agents',      tier:'flagship' },
+  { id:'haiku45',   name:'Claude Haiku 4.5',   provider:'anthropic', badge:'Anthropic', input:1.00, output:5.00,  ctx:'200K', speed:5, best:'Fast, cost-efficient tasks',    tier:'budget'   },
+  // Google — current Gemini 3.x line plus still-live 2.5 (1.5 & 2.0 discontinued)
+  { id:'gemini31pro',      name:'Gemini 3.1 Pro',       provider:'google', badge:'Google', input:2.00, output:12.00, ctx:'1M', speed:3, best:'Multimodal, agentic, coding',  tier:'flagship' },
+  { id:'gemini3flash',     name:'Gemini 3 Flash',       provider:'google', badge:'Google', input:0.50, output:3.00,  ctx:'1M', speed:5, best:'Fast frontier + grounding',    tier:'mid'      },
+  { id:'gemini31flashlite',name:'Gemini 3.1 Flash-Lite',provider:'google', badge:'Google', input:0.25, output:1.50,  ctx:'1M', speed:5, best:'High-volume, low cost',        tier:'budget'   },
+  { id:'gemini25pro',      name:'Gemini 2.5 Pro',       provider:'google', badge:'Google', input:1.25, output:10.00, ctx:'1M', speed:3, best:'Reasoning, large context',     tier:'mid'      },
+  { id:'gemini25flash',    name:'Gemini 2.5 Flash',     provider:'google', badge:'Google', input:0.30, output:2.50,  ctx:'1M', speed:5, best:'Balanced speed & price',       tier:'budget'   },
+  { id:'gemini25flashlite',name:'Gemini 2.5 Flash-Lite',provider:'google', badge:'Google', input:0.10, output:0.40,  ctx:'1M', speed:5, best:'Cheapest Google model',        tier:'budget'   },
 ];
 
 const BADGE_CLASS = { openai:'badge-openai', anthropic:'badge-anthropic', google:'badge-google', meta:'badge-meta', mistral:'badge-mistral', xai:'badge-xai', cohere:'badge-cohere' };
@@ -907,7 +867,7 @@ function calcCost() {
 
   const cachedInput = inputTok * (cacheP / 100);
   const freshInput  = inputTok - cachedInput;
-  const cacheDisc   = model.provider === 'anthropic' ? 0.1 : 0.5; // Anthropic=90% off, OpenAI=50% off
+  const cacheDisc   = 0.1; // cached input ≈ 10% of base input for OpenAI, Anthropic & Google
 
   const inputCostPerReq  = (freshInput * model.input / 1e6) + (cachedInput * model.input * cacheDisc / 1e6);
   const outputCostPerReq = outputTok * model.output / 1e6;

@@ -11,11 +11,11 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claude API Pricing Breakdown (2026) — Anthropic Model Costs</title>
-  <meta name="description" content="Full Anthropic Claude API pricing in 2026 — Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Opus, prompt caching discounts, and when Claude beats GPT-4o on cost.">
+  <title>Claude API Pricing 2026: Opus 4.8, Sonnet 4.6 &amp; Haiku 4.5 Per Million Tokens</title>
+  <meta name="description" content="Current Anthropic Claude API pricing in 2026 — Claude Opus 4.8, Sonnet 4.6 and Haiku 4.5 cost per million tokens, prompt caching discounts, and when Claude beats GPT-5 on cost.">
   <link rel="canonical" href="https://aimodelcalc.com/guides/claude-api-pricing.html">
-  <meta property="og:title" content="Claude API Pricing Breakdown (2026)">
-  <meta property="og:description" content="Full Anthropic Claude pricing — Claude 3.5 Sonnet, Haiku, Opus, caching discounts, and when Claude beats GPT on cost.">
+  <meta property="og:title" content="Claude API Pricing 2026: Opus 4.8, Sonnet 4.6 & Haiku 4.5">
+  <meta property="og:description" content="Current Anthropic Claude pricing — Opus 4.8, Sonnet 4.6, Haiku 4.5, caching discounts, and when Claude beats GPT-5 on cost.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://aimodelcalc.com/guides/claude-api-pricing.html">
   <meta name="twitter:card" content="summary">
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude API Pricing Breakdown (2026)","description":"Full Anthropic Claude API pricing — Claude 3.5 Sonnet, Haiku, Opus, caching discounts, and when Claude beats GPT-4o on cost.","url":"https://aimodelcalc.com/guides/claude-api-pricing.html","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Person","name":"Gia Gray","url":"https://aimodelcalc.com/about.html"},"publisher":{"@type":"Organization","name":"AIModelCalc","url":"https://aimodelcalc.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aimodelcalc.com/guides/claude-api-pricing.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude API Pricing 2026: Opus 4.8, Sonnet 4.6 & Haiku 4.5 Per Million Tokens","description":"Current Anthropic Claude API pricing — Claude Opus 4.8, Sonnet 4.6 and Haiku 4.5 cost per million tokens, caching discounts, and when Claude beats GPT-5 on cost.","url":"https://aimodelcalc.com/guides/claude-api-pricing.html","datePublished":"2026-05-07","dateModified":"2026-06-20","author":{"@type":"Person","name":"Gia Gray","url":"https://aimodelcalc.com/about.html"},"publisher":{"@type":"Organization","name":"AIModelCalc","url":"https://aimodelcalc.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aimodelcalc.com/guides/claude-api-pricing.html"}}</script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root { --bg: #0d1117; --card: #1c2333; --card2: #161b27; --border: #2d3a52; --text: #e6edf3; --text2: #cdd9e5; --muted: #8b949e; --primary: #3c84ff; --primary-hover: #2f70e0; --primary-light: rgba(60,132,255,0.12); --radius: 12px; }
@@ -82,70 +82,63 @@
     <a href="/faq.html" class="nav-btn">FAQ</a>
   </nav>
 </header>
-<div class="ad-center"><div class="ad-zone ad-leader">Advertisement</div></div>
 
 <div class="article-wrap">
   <div class="breadcrumb"><a href="/">AIModelCalc</a> › <a href="/guides/">Guides</a> › Claude API Pricing</div>
   <h1>Claude API Pricing Breakdown (2026)</h1>
-  <p class="meta">By <a href="/about.html">Gia Gray</a> · Last updated May 2026 · 7 min read</p>
+  <p class="meta">By <a href="/about.html">Gia Gray</a> · Updated June 2026 · 7 min read</p>
 
-  <p>I'll be direct about where I've landed after running Claude in a few production contexts: the instruction-following is more reliable than GPT-4o for anything that requires structured output, the 200K context window is genuinely useful (not just a benchmark number), and the prompt caching discount — 90% off cached tokens — is the most aggressive in the industry and not talked about enough.</p>
-  <p>That said, the output pricing ($15/M vs GPT-4o's $10/M) is a real cost that adds up fast on output-heavy workloads. Whether Claude ends up cheaper than GPT-4o for your use case depends on one thing: how much repeated context you're sending. Here's the breakdown.</p>
+  <p>Anthropic retired the Claude 3.x family — the current line is Claude Opus 4.8, Sonnet 4.6, and Haiku 4.5. After running Claude across a few production contexts, here's where I've landed: the instruction-following is more reliable than the comparable GPT tier for anything that needs structured output, the context window is now a full 1M tokens on Opus and Sonnet, and the prompt caching discount — 90% off cached tokens — is still the most aggressive in the industry and not talked about enough.</p>
+  <p>That said, output pricing is where Claude costs add up: Sonnet 4.6's $15/M output matches GPT-5.4, and Opus 4.8's $25/M is real money on output-heavy workloads. Whether Claude ends up cheaper than the GPT-5 tier for your use case depends mostly on one thing: how much repeated context you're sending. Here's the breakdown.</p>
 
   <h2>Claude Model Lineup and Current Pricing</h2>
   <table>
     <thead><tr><th>Model</th><th>Input (per 1M tokens)</th><th>Output (per 1M tokens)</th><th>Context window</th></tr></thead>
     <tbody>
-      <tr><td>Claude 3.5 Sonnet</td><td>$3.00</td><td>$15.00</td><td>200K</td></tr>
-      <tr><td>Claude 3.5 Haiku</td><td>$0.80</td><td>$4.00</td><td>200K</td></tr>
-      <tr><td>Claude 3 Haiku</td><td>$0.25</td><td>$1.25</td><td>200K</td></tr>
-      <tr><td>Claude 3 Opus</td><td>$15.00</td><td>$75.00</td><td>200K</td></tr>
+      <tr><td>Claude Opus 4.8</td><td>$5.00</td><td>$25.00</td><td>1M</td></tr>
+      <tr><td>Claude Sonnet 4.6</td><td>$3.00</td><td>$15.00</td><td>1M</td></tr>
+      <tr><td>Claude Haiku 4.5</td><td>$1.00</td><td>$5.00</td><td>200K</td></tr>
     </tbody>
   </table>
-  <p>Source: anthropic.com/api/pricing, May 2026.</p>
+  <p>Source: <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="nofollow">platform.claude.com/docs pricing</a>, June 2026. Claude 3.5 Sonnet, 3.5 Haiku, 3 Haiku and 3 Opus are now retired or deprecated. For the full cross-provider table, see the <a href="/guides/ai-api-pricing-2026.html">2026 AI API pricing guide</a>.</p>
 
-  <h2>Claude 3.5 Sonnet: The Flagship</h2>
-  <p>Claude 3.5 Sonnet is Anthropic's most capable general-purpose model and is priced at $3.00/$15.00 per million tokens — slightly more expensive than GPT-4o on input, and more expensive on output. The output premium ($15/M vs GPT-4o's $10/M) is a meaningful difference for output-heavy applications.</p>
-  <p>Where Claude 3.5 Sonnet consistently outperforms GPT-4o in practice: complex instruction-following, long-document reasoning, and tasks that require careful adherence to structured output formats. Teams building on Claude tend to find they need fewer retry attempts and less prompt engineering to get consistent structured outputs.</p>
-  <p>The 200K context window (vs GPT-4o's 128K) is a legitimate advantage for document-heavy workloads — you can fit entire long contracts, technical manuals, or codebases into a single request without chunking.</p>
+  <h2>Claude Sonnet 4.6: The Workhorse</h2>
+  <p>Claude Sonnet 4.6 is the model most teams should default to, priced at $3.00/$15.00 per million tokens — marginally above GPT-5.4 on input and level on output. Where it consistently shines in practice: complex instruction-following, long-document reasoning, and careful adherence to structured output formats. Teams building on Sonnet tend to need fewer retries and less prompt engineering to get consistent structured outputs.</p>
+  <p>The headline upgrade this generation is context: Sonnet 4.6 now includes the full 1M-token window at standard pricing, so entire contracts, technical manuals, or codebases fit in a single request without chunking.</p>
 
-  <h2>Claude 3.5 Haiku: The Value Model Worth Paying Attention To</h2>
-  <p>Claude 3.5 Haiku at $0.80/$4.00 per million tokens is where things get interesting. It's more expensive than GPT-4o mini ($0.15/$0.60) but delivers significantly higher quality — closer to Claude 3.5 Sonnet than the gap between GPT-4o and GPT-4o mini.</p>
-  <p>If your workload requires better instruction-following or structured output quality than GPT-4o mini delivers, but you can't justify full Sonnet pricing, Claude 3.5 Haiku is worth evaluating seriously. It's especially strong at coding tasks relative to its price point.</p>
+  <h2>Claude Haiku 4.5: The Value Model Worth Paying Attention To</h2>
+  <p>Claude Haiku 4.5 at $1.00/$5.00 per million tokens is where things get interesting. It's more expensive than the cheapest budget models (Gemini Flash-Lite, legacy GPT-4o mini) but delivers significantly higher quality — closer to Sonnet than the usual gap between a flagship and its mini tier.</p>
+  <p>If your workload needs better instruction-following or structured-output quality than a bottom-tier model delivers, but you can't justify full Sonnet pricing, Haiku 4.5 is worth evaluating seriously. It's especially strong at coding tasks relative to its price point.</p>
 
-  <h2>Claude 3 Opus: Expensive, Usually Skip It</h2>
-  <p>Claude 3 Opus at $15/$75 per million tokens was competitive when it launched as the top-of-market model. It's not anymore. Claude 3.5 Sonnet outperforms it on most benchmarks at $3/$15 — a fraction of the price. There are narrow use cases where Opus still leads, but for 99% of production workloads, start with Sonnet first.</p>
+  <h2>Claude Opus 4.8: Frontier Reasoning, Now Much Cheaper</h2>
+  <p>Opus used to be a luxury — Claude 3 Opus launched at $15/$75 per million tokens. Opus 4.8 lands at $5/$25, a dramatic drop that makes top-tier reasoning far more practical. It's the one to reach for on genuinely hard reasoning, coding, and analysis; for the other 90% of production work, start with Sonnet 4.6 and only escalate when quality demands it.</p>
 
   <h2>Anthropic's Prompt Caching: 90% Off Cached Input</h2>
-  <p>This is Anthropic's biggest competitive pricing advantage and it's often overlooked. Claude's prompt caching is significantly more aggressive than OpenAI's:</p>
-  <ul>
-    <li><strong>Anthropic cache hit rate:</strong> 10% of standard input token cost (90% discount)</li>
-    <li><strong>OpenAI cache hit rate:</strong> 50% of standard input token cost (50% discount)</li>
-  </ul>
-  <p>For applications with large, consistent system prompts or document contexts that repeat across requests, this is a massive difference. A 3,000-token system prompt on Claude costs $0.30 per million tokens on cache hits vs $3.00 for uncached — on OpenAI it would be $1.25 vs $2.50.</p>
+  <p>This is Anthropic's biggest competitive pricing advantage and it's often overlooked. A cache hit costs just 10% of the standard input token rate — a 90% discount on cached tokens. (OpenAI and Google now price cache reads at roughly the same 10%, so the gap has narrowed, but Claude's caching remains best-in-class in practice.)</p>
+  <p>For applications with large, consistent system prompts or document contexts that repeat across requests, this is a massive lever. A 3,000-token system prompt on Sonnet 4.6 costs $0.30 per million tokens on cache hits vs $3.00 uncached.</p>
 
   <h3>Concrete example: RAG application with a large context</h3>
-  <p>Imagine you're building a RAG system that sends a 4,000-token document context plus a 500-token system prompt with each request. At 30,000 requests/month on Claude 3.5 Sonnet:</p>
+  <p>Imagine you're building a RAG system that sends a 4,000-token document context plus a 500-token system prompt with each request. At 30,000 requests/month on Claude Sonnet 4.6 ($3/$15, unchanged from the previous Sonnet generation):</p>
   <table>
     <thead><tr><th>Scenario</th><th>Input cost</th><th>Output cost (300 tokens avg)</th><th>Monthly total</th></tr></thead>
     <tbody>
-      <tr><td>No caching</td><td>$409.50</td><td>$135.00</td><td>$544.50</td></tr>
+      <tr><td>No caching</td><td>$405.00</td><td>$135.00</td><td>$540.00</td></tr>
       <tr class="highlight-row"><td>With caching (system prompt + doc)</td><td>$57.00</td><td>$135.00</td><td>$192.00</td></tr>
     </tbody>
   </table>
-  <p>That's a 65% reduction just from caching, with no quality change. This is one of the most impactful optimizations available for high-volume Claude applications.</p>
+  <p>That's roughly a 65% reduction just from caching, with no quality change. This is one of the most impactful optimizations available for high-volume Claude applications.</p>
 
-  <h2>When Claude Is Cheaper Than GPT-4o</h2>
-  <p>The headline comparison — Claude 3.5 Sonnet at $3/$15 vs GPT-4o at $2.50/$10 — makes it look like Claude is always more expensive. But with caching, that can reverse:</p>
+  <h2>When Claude Is Cheaper Than GPT-5</h2>
+  <p>The headline comparison — Sonnet 4.6 at $3/$15 vs GPT-5.4 at $2.50/$15 — makes Claude look slightly pricier on input and level on output. But with caching, that can reverse:</p>
   <ul>
-    <li>Applications with long, stable system prompts (Claude caching cuts input cost to 10%)</li>
-    <li>Document Q&A where the same document context repeats across sessions</li>
-    <li>High-volume coding assistants where the language context and coding guidelines repeat</li>
+    <li>Applications with long, stable system prompts (caching cuts the cached input cost to 10%)</li>
+    <li>Document Q&amp;A where the same document context repeats across sessions</li>
+    <li>High-volume coding assistants where language context and coding guidelines repeat</li>
   </ul>
-  <p>For workloads with minimal repeated context and short prompts, GPT-4o or GPT-4o mini is usually cheaper. For workloads with large reusable context, Claude's caching can make it the better deal.</p>
+  <p>For workloads with minimal repeated context and short prompts, GPT-5.4 mini or a Gemini Flash tier is usually cheaper. For workloads with large reusable context, Claude's caching can make it the better deal.</p>
 
   <div class="cta-box">
-    <p>Compare Claude vs GPT-4o vs Gemini for your exact token volumes and request rate.</p>
+    <p>Compare Claude 4.x vs GPT-5 vs Gemini 3 for your exact token volumes and request rate.</p>
     <a href="/" class="cta-btn">Open the Calculator →</a>
   </div>
 
@@ -159,7 +152,6 @@
   </div>
 </div>
 
-<div class="ad-center bottom"><div class="ad-zone ad-leader">Advertisement</div></div>
 <footer>
   <div class="footer-links">
     <a href="/">Calculator</a><a href="/guides/">Guides</a><a href="/about.html">About</a><a href="/faq.html">FAQs</a><a href="/contact.html">Contact</a><a href="/editorial-policy.html">Editorial Policy</a><a href="/guides/pricing-methodology.html">Methodology</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a>
