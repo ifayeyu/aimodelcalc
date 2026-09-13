@@ -487,8 +487,8 @@
   <h1>Compare <em>AI Model Costs</em> Instantly</h1>
   <p>Calculate and compare API pricing across OpenAI GPT-5, Anthropic Claude, and Google Gemini models. Know your exact AI costs before you build.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>13</strong><span>Models tracked</span></div>
-    <div class="hero-stat"><strong>3</strong><span>Providers</span></div>
+    <div class="hero-stat"><strong><!--GEN:modelcount-->13<!--/GEN:modelcount--></strong><span>Models tracked</span></div>
+    <div class="hero-stat"><strong><!--GEN:providercount-->3<!--/GEN:providercount--></strong><span>Providers</span></div>
     <div class="hero-stat"><strong>Free</strong><span>No signup needed</span></div>
   </div>
 </div>
@@ -522,6 +522,8 @@
             <label>Select Model</label>
             <div class="ig">
               <select class="ig-field" id="calc-model" onchange="calcCost()">
+<!--GEN:dropdown-->
+
                 <optgroup label="OpenAI">
                   <option value="gpt56sol">GPT-5.6 Sol</option>
                   <option value="gpt56terra" selected>GPT-5.6 Terra</option>
@@ -541,6 +543,7 @@
                   <option value="gemini25pro">Gemini 2.5 Pro</option>
                   <option value="gemini25flashlite">Gemini 2.5 Flash-Lite</option>
                 </optgroup>
+              <!--/GEN:dropdown-->
               </select>
             </div>
           </div>
@@ -828,22 +831,21 @@
 // Google pricing pages. Pro/Flagship tiers show standard (<=200K context) rates.
 // Prices are approximate — always confirm on the provider's pricing page.
 const MODELS = [
-  // OpenAI — current GPT-5.6 line (GPT-4o kept as legacy, still callable)
-  { id:'gpt56sol',  name:'GPT-5.6 Sol',        provider:'openai',    badge:'OpenAI',    input:5.00, output:30.00, ctx:'400K', speed:4, best:'Frontier agentic work',        tier:'premium'  },
-  { id:'gpt56terra',name:'GPT-5.6 Terra',      provider:'openai',    badge:'OpenAI',    input:2.00, output:12.00, ctx:'400K', speed:4, best:'Balanced, high-volume work',   tier:'flagship' },
-  { id:'gpt56luna', name:'GPT-5.6 Luna',       provider:'openai',    badge:'OpenAI',    input:0.20, output:1.20,  ctx:'400K', speed:5, best:'Fast, affordable everyday',    tier:'budget'   },
-  { id:'gpt4o',     name:'GPT-4o (legacy)',    provider:'openai',    badge:'OpenAI',    input:2.50, output:10.00, ctx:'128K', speed:4, best:'Legacy general purpose',        tier:'mid'      },
-  { id:'gpt4omini', name:'GPT-4o mini (legacy)',provider:'openai',   badge:'OpenAI',    input:0.15, output:0.60,  ctx:'128K', speed:5, best:'Legacy budget model',           tier:'budget'   },
-  // Anthropic — current Claude 5 / 4.x line (3.x retired)
-  { id:'opus5',     name:'Claude Opus 5',      provider:'anthropic', badge:'Anthropic', input:5.00, output:25.00, ctx:'1M',   speed:3, best:'Most capable, complex reasoning',tier:'premium'  },
-  { id:'sonnet5',   name:'Claude Sonnet 5',    provider:'anthropic', badge:'Anthropic', input:2.00, output:10.00, ctx:'1M',   speed:4, best:'Coding, analysis, agents',      tier:'flagship' },
-  { id:'haiku45',   name:'Claude Haiku 4.5',   provider:'anthropic', badge:'Anthropic', input:1.00, output:5.00,  ctx:'200K', speed:5, best:'Fast, cost-efficient tasks',    tier:'budget'   },
-  // Google — current Gemini 3.x line plus still-live 2.5 (1.5 & 2.0 discontinued)
-  { id:'gemini31pro',      name:'Gemini 3.1 Pro',       provider:'google', badge:'Google', input:2.00, output:12.00, ctx:'1M', speed:3, best:'Multimodal, agentic, coding',  tier:'flagship' },
-  { id:'gemini38flash',    name:'Gemini 3.8 Flash',     provider:'google', badge:'Google', input:0.75, output:3.75,  ctx:'1M', speed:5, best:'Fast frontier + grounding',    tier:'mid'      },
-  { id:'gemini35flashlite',name:'Gemini 3.5 Flash-Lite',provider:'google', badge:'Google', input:0.30, output:2.50,  ctx:'1M', speed:5, best:'High-volume, low cost',        tier:'budget'   },
-  { id:'gemini25pro',      name:'Gemini 2.5 Pro',       provider:'google', badge:'Google', input:1.25, output:10.00, ctx:'1M', speed:3, best:'Reasoning, large context',     tier:'mid'      },
-  { id:'gemini25flashlite',name:'Gemini 2.5 Flash-Lite',provider:'google', badge:'Google', input:0.10, output:0.40,  ctx:'1M', speed:5, best:'Cheapest Google model',        tier:'budget'   },
+/*GEN:models*/
+  { id:'gpt56sol', name:'GPT-5.6 Sol', provider:'openai', badge:'OpenAI', input:5.00, output:30.00, ctx:'400K', speed:4, best:'Frontier agentic work', tier:'premium' },
+  { id:'gpt56terra', name:'GPT-5.6 Terra', provider:'openai', badge:'OpenAI', input:2.00, output:12.00, ctx:'400K', speed:4, best:'Balanced, high-volume work', tier:'flagship' },
+  { id:'gpt56luna', name:'GPT-5.6 Luna', provider:'openai', badge:'OpenAI', input:0.20, output:1.20, ctx:'400K', speed:5, best:'Fast, affordable everyday', tier:'budget' },
+  { id:'gpt4o', name:'GPT-4o (legacy)', provider:'openai', badge:'OpenAI', input:2.50, output:10.00, ctx:'128K', speed:4, best:'Legacy general purpose', tier:'mid' },
+  { id:'gpt4omini', name:'GPT-4o mini (legacy)', provider:'openai', badge:'OpenAI', input:0.15, output:0.60, ctx:'128K', speed:5, best:'Legacy budget model', tier:'budget' },
+  { id:'opus5', name:'Claude Opus 5', provider:'anthropic', badge:'Anthropic', input:5.00, output:25.00, ctx:'1M', speed:3, best:'Most capable, complex reasoning', tier:'premium' },
+  { id:'sonnet5', name:'Claude Sonnet 5', provider:'anthropic', badge:'Anthropic', input:2.00, output:10.00, ctx:'1M', speed:4, best:'Coding, analysis, agents', tier:'flagship' },
+  { id:'haiku45', name:'Claude Haiku 4.5', provider:'anthropic', badge:'Anthropic', input:1.00, output:5.00, ctx:'200K', speed:5, best:'Fast, cost-efficient tasks', tier:'budget' },
+  { id:'gemini31pro', name:'Gemini 3.1 Pro', provider:'google', badge:'Google', input:2.00, output:12.00, ctx:'1M', speed:3, best:'Multimodal, agentic, coding', tier:'flagship' },
+  { id:'gemini38flash', name:'Gemini 3.8 Flash', provider:'google', badge:'Google', input:0.75, output:3.75, ctx:'1M', speed:5, best:'Fast frontier + grounding', tier:'mid' },
+  { id:'gemini35flashlite', name:'Gemini 3.5 Flash-Lite', provider:'google', badge:'Google', input:0.30, output:2.50, ctx:'1M', speed:5, best:'High-volume, low cost', tier:'budget' },
+  { id:'gemini25pro', name:'Gemini 2.5 Pro', provider:'google', badge:'Google', input:1.25, output:10.00, ctx:'1M', speed:3, best:'Reasoning, large context', tier:'mid' },
+  { id:'gemini25flashlite', name:'Gemini 2.5 Flash-Lite', provider:'google', badge:'Google', input:0.10, output:0.40, ctx:'1M', speed:5, best:'Cheapest Google model', tier:'budget' },
+/*GEN:/models*/
 ];
 
 const BADGE_CLASS = { openai:'badge-openai', anthropic:'badge-anthropic', google:'badge-google', meta:'badge-meta', mistral:'badge-mistral', xai:'badge-xai', cohere:'badge-cohere' };

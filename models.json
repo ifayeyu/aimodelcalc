@@ -1,0 +1,35 @@
+{
+  "_comment": "SINGLE SOURCE OF TRUTH for all AI model pricing on aimodelcalc.com. Edit prices/models HERE ONLY, then run: python3 scripts/generate.py  — it rewrites the auto-generated regions (marked GEN:... in the HTML) across the site. Prose/worked-examples in guides are still hand-written; see scripts/README.md.",
+  "site": {
+    "last_checked": "2026-09-13",
+    "next_check": "2026-11-01",
+    "default_calc_model": "gpt56terra",
+    "sources": {
+      "OpenAI": "https://openai.com/api/pricing/",
+      "Anthropic": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "Google": "https://ai.google.dev/gemini-api/docs/pricing"
+    }
+  },
+  "providers": [
+    { "key": "openai",    "badge": "OpenAI" },
+    { "key": "anthropic", "badge": "Anthropic" },
+    { "key": "google",    "badge": "Google" }
+  ],
+  "models": [
+    { "id": "gpt56sol",         "name": "GPT-5.6 Sol",         "provider": "openai",    "input": 5.00,  "output": 30.00, "context": "400K", "speed": 4, "best": "Frontier agentic work",         "tier": "premium",  "legacy": false, "in_calculator": true, "in_cheapest": false, "cheapest_badge": "",                  "cheapest_color": "" },
+    { "id": "gpt56terra",       "name": "GPT-5.6 Terra",       "provider": "openai",    "input": 2.00,  "output": 12.00, "context": "400K", "speed": 4, "best": "Balanced, high-volume work",     "tier": "flagship", "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Balanced flagship", "cheapest_color": "amber" },
+    { "id": "gpt56luna",        "name": "GPT-5.6 Luna",        "provider": "openai",    "input": 0.20,  "output": 1.20,  "context": "400K", "speed": 5, "best": "Fast, affordable everyday",      "tier": "budget",   "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Cheapest frontier", "cheapest_color": "green" },
+    { "id": "gpt4o",            "name": "GPT-4o",              "provider": "openai",    "input": 2.50,  "output": 10.00, "context": "128K", "speed": 4, "best": "Legacy general purpose",         "tier": "mid",      "legacy": true,  "in_calculator": true, "in_cheapest": false, "cheapest_badge": "",                  "cheapest_color": "" },
+    { "id": "gpt4omini",        "name": "GPT-4o mini",         "provider": "openai",    "input": 0.15,  "output": 0.60,  "context": "128K", "speed": 5, "best": "Legacy budget model",           "tier": "budget",   "legacy": true,  "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "High volume",       "cheapest_color": "green" },
+
+    { "id": "opus5",            "name": "Claude Opus 5",       "provider": "anthropic", "input": 5.00,  "output": 25.00, "context": "1M",   "speed": 3, "best": "Most capable, complex reasoning","tier": "premium",  "legacy": false, "in_calculator": true, "in_cheapest": false, "cheapest_badge": "",                  "cheapest_color": "" },
+    { "id": "sonnet5",          "name": "Claude Sonnet 5",     "provider": "anthropic", "input": 2.00,  "output": 10.00, "context": "1M",   "speed": 4, "best": "Coding, analysis, agents",       "tier": "flagship", "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Workhorse",         "cheapest_color": "amber" },
+    { "id": "haiku45",          "name": "Claude Haiku 4.5",    "provider": "anthropic", "input": 1.00,  "output": 5.00,  "context": "200K", "speed": 5, "best": "Fast, cost-efficient tasks",     "tier": "budget",   "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Quality budget",    "cheapest_color": "amber" },
+
+    { "id": "gemini31pro",      "name": "Gemini 3.1 Pro",      "provider": "google",    "input": 2.00,  "output": 12.00, "context": "1M",   "speed": 3, "best": "Multimodal, agentic, coding",    "tier": "flagship", "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Premium multimodal","cheapest_color": "amber" },
+    { "id": "gemini38flash",    "name": "Gemini 3.8 Flash",    "provider": "google",    "input": 0.75,  "output": 3.75,  "context": "1M",   "speed": 5, "best": "Fast frontier + grounding",      "tier": "mid",      "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Fast frontier",     "cheapest_color": "green" },
+    { "id": "gemini35flashlite","name": "Gemini 3.5 Flash-Lite","provider": "google",   "input": 0.30,  "output": 2.50,  "context": "1M",   "speed": 5, "best": "High-volume, low cost",          "tier": "budget",   "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Budget reasoning",  "cheapest_color": "green" },
+    { "id": "gemini25pro",      "name": "Gemini 2.5 Pro",      "provider": "google",    "input": 1.25,  "output": 10.00, "context": "1M",   "speed": 3, "best": "Reasoning, large context",       "tier": "mid",      "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Reasoning",         "cheapest_color": "amber" },
+    { "id": "gemini25flashlite","name": "Gemini 2.5 Flash-Lite","provider": "google",   "input": 0.10,  "output": 0.40,  "context": "1M",   "speed": 5, "best": "Cheapest Google model",          "tier": "budget",   "legacy": false, "in_calculator": true, "in_cheapest": true,  "cheapest_badge": "Ultra budget",      "cheapest_color": "green" }
+  ]
+}
