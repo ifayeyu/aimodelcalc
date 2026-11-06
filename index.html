@@ -11,16 +11,16 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI API Cost Calculator — GPT-5, Claude & Gemini Pricing</title>
-  <meta name="description" content="Free AI API cost calculator. Compare live pricing for GPT-5.6, Claude Opus 5, Gemini 3.1 Pro and more, and estimate your monthly AI bill instantly.">
+  <title>AI API Cost Calculator — GPT-6, Claude & Gemini Pricing</title>
+  <meta name="description" content="Free AI API cost calculator. Compare live pricing for GPT-6, Claude Opus 5.5, Gemini 4 Argon and more, and estimate your monthly AI bill instantly.">
   <link rel="canonical" href="https://aimodelcalc.com/">
-  <meta property="og:title" content="AI API Cost Calculator — Compare GPT-5, Claude & Gemini Pricing">
-  <meta property="og:description" content="Free AI model cost calculator. Compare API pricing for GPT-5, Claude 5, and Gemini 3 models. Calculate your real monthly AI bill instantly.">
+  <meta property="og:title" content="AI API Cost Calculator — Compare GPT-6, Claude & Gemini Pricing">
+  <meta property="og:description" content="Free AI model cost calculator. Compare API pricing for GPT-6, Claude 5.5, and Gemini 4 models. Calculate your real monthly AI bill instantly.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aimodelcalc.com/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AI API Cost Calculator — Compare GPT-5, Claude & Gemini Pricing">
-  <meta name="twitter:description" content="Free AI model cost calculator. Compare API pricing for GPT-5, Claude 5, and Gemini 3 models.">
+  <meta name="twitter:title" content="AI API Cost Calculator — Compare GPT-6, Claude & Gemini Pricing">
+  <meta name="twitter:description" content="Free AI model cost calculator. Compare API pricing for GPT-6, Claude 5.5, and Gemini 4 models.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
       "@type": "WebApplication",
       "name": "AIModelCalc — AI API Cost Calculator",
       "url": "https://aimodelcalc.com",
-      "description": "Free AI API cost calculator — compare GPT-5.6, Claude Opus 5, Claude Sonnet 5, Gemini 3 and more. Calculate exact monthly costs by token volume. No signup required.",
+      "description": "Free AI API cost calculator — compare GPT-6, Claude Opus 5.5, Claude Sonnet 5.5, Gemini 4 and more. Calculate exact monthly costs by token volume. No signup required.",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web Browser",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -46,7 +46,7 @@
       "@type": "WebSite",
       "name": "AIModelCalc",
       "url": "https://aimodelcalc.com",
-      "description": "Free AI API pricing tools and guides for developers building with GPT-5, Claude, Gemini, and more.",
+      "description": "Free AI API pricing tools and guides for developers building with GPT-6, Claude, Gemini, and more.",
       "publisher": { "@type": "Organization", "name": "AIModelCalc", "url": "https://aimodelcalc.com" }
     }
   ]
@@ -483,11 +483,11 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge"><span class="hero-badge-dot"></span> Updated September 2026 · Verify rates before production</div>
+  <div class="hero-badge"><span class="hero-badge-dot"></span> Updated November 2026 · Verify rates before production</div>
   <h1>Compare <em>AI Model Costs</em> Instantly</h1>
-  <p>Calculate and compare API pricing across OpenAI GPT-5, Anthropic Claude, and Google Gemini models. Know your exact AI costs before you build.</p>
+  <p>Calculate and compare API pricing across OpenAI GPT-6, Anthropic Claude, and Google Gemini models. Know your exact AI costs before you build.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong><!--GEN:modelcount-->13<!--/GEN:modelcount--></strong><span>Models tracked</span></div>
+    <div class="hero-stat"><strong><!--GEN:modelcount-->18<!--/GEN:modelcount--></strong><span>Models tracked</span></div>
     <div class="hero-stat"><strong><!--GEN:providercount-->3<!--/GEN:providercount--></strong><span>Providers</span></div>
     <div class="hero-stat"><strong>Free</strong><span>No signup needed</span></div>
   </div>
@@ -525,23 +525,28 @@
 <!--GEN:dropdown-->
 
                 <optgroup label="OpenAI">
-                  <option value="gpt56sol">GPT-5.6 Sol</option>
-                  <option value="gpt56terra" selected>GPT-5.6 Terra</option>
-                  <option value="gpt56luna">GPT-5.6 Luna</option>
+                  <option value="gpt6astra">GPT-6 Astra</option>
+                  <option value="gpt61sol" selected>GPT-6.1 Sol</option>
+                  <option value="gpt61terra">GPT-6.1 Terra</option>
+                  <option value="gpt6luna">GPT-6 Luna</option>
                   <option value="gpt4o">GPT-4o (legacy)</option>
                   <option value="gpt4omini">GPT-4o mini (legacy)</option>
                 </optgroup>
                 <optgroup label="Anthropic">
-                  <option value="opus5">Claude Opus 5</option>
-                  <option value="sonnet5">Claude Sonnet 5</option>
-                  <option value="haiku45">Claude Haiku 4.5</option>
+                  <option value="fable51">Claude Fable 5.1</option>
+                  <option value="opus55">Claude Opus 5.5</option>
+                  <option value="sonnet55">Claude Sonnet 5.5</option>
+                  <option value="haiku55">Claude Haiku 5.5</option>
+                  <option value="opus5">Claude Opus 5 (legacy)</option>
+                  <option value="sonnet5">Claude Sonnet 5 (legacy)</option>
+                  <option value="haiku45">Claude Haiku 4.5 (legacy)</option>
                 </optgroup>
                 <optgroup label="Google">
-                  <option value="gemini31pro">Gemini 3.1 Pro</option>
+                  <option value="gemini4argon">Gemini 4 Argon</option>
                   <option value="gemini38flash">Gemini 3.8 Flash</option>
+                  <option value="gemini31pro">Gemini 3.1 Pro (Preview)</option>
                   <option value="gemini35flashlite">Gemini 3.5 Flash-Lite</option>
                   <option value="gemini25pro">Gemini 2.5 Pro</option>
-                  <option value="gemini25flashlite">Gemini 2.5 Flash-Lite</option>
                 </optgroup>
               <!--/GEN:dropdown-->
               </select>
@@ -736,7 +741,7 @@
     <div class="info-card">
       <span class="info-card-icon">🏆</span>
       <h3>Cheapest models in 2026</h3>
-      <p>For high-volume applications, Gemini 2.5 Flash-Lite, GPT-5.6 Luna, and Claude Haiku 4.5 offer the best price-to-performance ratio. For complex reasoning, GPT-5.6 Sol, Claude Opus 5, and Gemini 3.1 Pro lead on quality.</p>
+      <p>For high-volume applications, GPT-6 Luna, Claude Haiku 5.5, and Gemini 3.5 Flash-Lite offer the best price-to-performance ratio. For complex reasoning, GPT-6 Astra, Claude Fable 5.1, Claude Opus 5.5, and Gemini 4 Argon lead on quality.</p>
     </div>
     <div class="info-card">
       <span class="info-card-icon">📉</span>
@@ -758,16 +763,16 @@
     <h3 style="font-size:16px;font-weight:700;color:#cdd9e5;margin:24px 0 10px;">Input vs. Output Tokens: Why the Ratio Matters</h3>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:12px;">The split between input and output tokens in your application dramatically affects your cost per request. Consider two common use cases:</p>
     <ul style="font-size:14px;color:#8b949e;line-height:1.85;margin:0 0 14px 20px;">
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Document summarization</strong> — You send a large document (many input tokens) and ask for a short summary (few output tokens). Input-heavy. At GPT-5.6 Terra's pricing of $2/M input vs $12/M output, the low output ratio keeps costs manageable even for long documents.</li>
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Content generation</strong> — You send a short prompt but receive a long, detailed response. Output-heavy. The same GPT-5.6 Terra can become significantly more expensive because output is 6× the cost of input.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Document summarization</strong> — You send a large document (many input tokens) and ask for a short summary (few output tokens). Input-heavy. At GPT-6.1 Sol's pricing of $2/M input vs $10/M output, the low output ratio keeps costs manageable even for long documents.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Content generation</strong> — You send a short prompt but receive a long, detailed response. Output-heavy. The same GPT-6.1 Sol can become significantly more expensive because output is 5× the cost of input.</li>
       <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Chat applications with long history</strong> — Every turn in a multi-turn conversation re-sends the entire conversation history as context. As conversations grow, input token costs compound quickly — a 20-turn conversation can cost 10× more per turn than a fresh one-shot query.</li>
     </ul>
 
     <h3 style="font-size:16px;font-weight:700;color:#cdd9e5;margin:24px 0 10px;">Choosing the Right Model for Your Use Case</h3>
-    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The most expensive model is rarely the right choice for every task. AI API pricing spans several orders of magnitude — from sub-$0.10/M token models like Gemini Flash-Lite to $25–30/M token models like GPT-5.6 Sol's and Claude Opus 5's output tiers. The key is matching model capability to task complexity.</p>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The most expensive model is rarely the right choice for every task. AI API pricing spans several orders of magnitude — from $0.10/M input models like GPT-6 Luna and Claude Haiku 5.5 to $50/M output tiers on GPT-6 Astra and Claude Fable 5.1. The key is matching model capability to task complexity.</p>
     <ul style="font-size:14px;color:#8b949e;line-height:1.85;margin:0 0 14px 20px;">
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Simple classification, routing, and extraction</strong> — Small, fast models (GPT-5.6 Luna, Gemini Flash-Lite, Claude Haiku 4.5) are sufficient and dramatically cheaper. Running a flagship model on tasks that don't require it wastes 10–50× on costs.</li>
-      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Complex reasoning, coding, and analysis</strong> — This is where flagship models earn their premium. GPT-5.6 Sol, Claude Opus 5, and Gemini 3.1 Pro significantly outperform cheaper tiers on tasks requiring multi-step reasoning, code generation, and nuanced analysis.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Simple classification, routing, and extraction</strong> — Small, fast models (GPT-6 Luna, Claude Haiku 5.5, Gemini Flash-Lite) are sufficient and dramatically cheaper. Running a flagship model on tasks that don't require it wastes 10–50× on costs.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Complex reasoning, coding, and analysis</strong> — This is where flagship models earn their premium. GPT-6 Astra, Claude Opus 5.5, and Gemini 4 Argon significantly outperform cheaper tiers on tasks requiring multi-step reasoning, code generation, and nuanced analysis.</li>
       <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">High-volume production workloads</strong> — The cheapest model that reliably achieves your quality bar is the correct choice. At scale, the cost difference between models can mean thousands of dollars per month. Always benchmark quality vs. cost before committing to a model for production.</li>
     </ul>
 
@@ -786,7 +791,7 @@
     <h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">AI Model Pricing in 2026: What's Changed</h2>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">AI API pricing has dropped dramatically over the past two years. GPT-4-class capability that cost $30–60 per million tokens in 2023 is now available for $2.50–10 per million tokens in 2026, with smaller distilled models delivering 80–90% of that quality for a fraction of the price. Competition between OpenAI, Anthropic, Google, and Meta has accelerated this deflation — and it shows no signs of stopping.</p>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The emergence of reasoning models (OpenAI o-series, Claude's extended thinking mode) has added a new pricing dimension: "thinking tokens" used during the model's internal reasoning process before it produces a response. These models are significantly more expensive per request than standard models, but can be dramatically more accurate on complex reasoning tasks — making cost-per-correct-answer the relevant metric rather than cost-per-token.</p>
-    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Keeping up with model releases and pricing updates across providers is a constant challenge for developers and builders. AIModelCalc is updated regularly to reflect current pricing, so you can always compare models on an apples-to-apples basis. See the <a href="/guides/ai-api-pricing-2026.html" style="color:#3c84ff;text-decoration:none;">2026 AI API pricing guide</a> for the full current GPT-5, Claude 4.x and Gemini 3 comparison, or the <a href="/guides/cheapest-ai-api.html" style="color:#3c84ff;text-decoration:none;">cheapest AI API comparison</a> for the lowest-cost options.</p>
+    <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Keeping up with model releases and pricing updates across providers is a constant challenge for developers and builders. AIModelCalc is updated regularly to reflect current pricing, so you can always compare models on an apples-to-apples basis. See the <a href="/guides/ai-api-pricing-2026.html" style="color:#3c84ff;text-decoration:none;">2026 AI API pricing guide</a> for the full current GPT-6, Claude 5.5 and Gemini 4 comparison, or the <a href="/guides/cheapest-ai-api.html" style="color:#3c84ff;text-decoration:none;">cheapest AI API comparison</a> for the lowest-cost options.</p>
   </div>
 
 </div>
@@ -808,9 +813,20 @@
 <img src="https://www.ftjcfx.com/image-101758675-13914989" width="1" height="1" border="0" alt="" style="display:none;" />
 <!-- ── END NORDVPN ── -->
 
+<!--GEN:support-->
+<div style="max-width:860px;margin:0 auto 32px;padding:0 24px;">
+  <div style="background:#1c2333;border:1px solid #2d3a52;border-radius:12px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#e6edf3;margin:0 0 4px;">☕ Keep AIModelCalc free &amp; up to date</p>
+      <p style="font-size:13px;color:#8b949e;margin:0;line-height:1.6;max-width:520px;">This calculator is free and updated by hand whenever providers change their prices. If it saved you time, a small tip helps cover hosting and keeps it current.</p>
+    </div>
+    <a href="https://ko-fi.com/REPLACE_ME" target="_blank" rel="noopener" style="flex-shrink:0;background:#3c84ff;color:#fff;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;text-decoration:none;white-space:nowrap;">Support this site →</a>
+  </div>
+</div>
+<!--/GEN:support-->
 <footer>
   <div class="footer-links">
-    <a href="/">Calculator</a>
+    <!--GEN:supportlink--><a href="https://ko-fi.com/REPLACE_ME" target="_blank" rel="noopener">☕ Support</a><!--/GEN:supportlink--><a href="/">Calculator</a>
     <a href="/guides/">Guides</a>
     <a href="/about.html">About</a>
     <a href="/faq.html">FAQs</a>
@@ -832,19 +848,24 @@
 // Prices are approximate — always confirm on the provider's pricing page.
 const MODELS = [
 /*GEN:models*/
-  { id:'gpt56sol', name:'GPT-5.6 Sol', provider:'openai', badge:'OpenAI', input:5.00, output:30.00, ctx:'400K', speed:4, best:'Frontier agentic work', tier:'premium' },
-  { id:'gpt56terra', name:'GPT-5.6 Terra', provider:'openai', badge:'OpenAI', input:2.00, output:12.00, ctx:'400K', speed:4, best:'Balanced, high-volume work', tier:'flagship' },
-  { id:'gpt56luna', name:'GPT-5.6 Luna', provider:'openai', badge:'OpenAI', input:0.20, output:1.20, ctx:'400K', speed:5, best:'Fast, affordable everyday', tier:'budget' },
+  { id:'gpt6astra', name:'GPT-6 Astra', provider:'openai', badge:'OpenAI', input:10.00, output:50.00, ctx:'1M', speed:3, best:'Frontier reasoning & agents', tier:'premium' },
+  { id:'gpt61sol', name:'GPT-6.1 Sol', provider:'openai', badge:'OpenAI', input:2.00, output:10.00, ctx:'1M', speed:4, best:'Near-Astra quality, lower cost', tier:'flagship' },
+  { id:'gpt61terra', name:'GPT-6.1 Terra', provider:'openai', badge:'OpenAI', input:1.00, output:5.00, ctx:'1M', speed:4, best:'Balanced, high-volume work', tier:'mid' },
+  { id:'gpt6luna', name:'GPT-6 Luna', provider:'openai', badge:'OpenAI', input:0.10, output:0.50, ctx:'1M', speed:5, best:'Fast, affordable everyday', tier:'budget' },
   { id:'gpt4o', name:'GPT-4o (legacy)', provider:'openai', badge:'OpenAI', input:2.50, output:10.00, ctx:'128K', speed:4, best:'Legacy general purpose', tier:'mid' },
   { id:'gpt4omini', name:'GPT-4o mini (legacy)', provider:'openai', badge:'OpenAI', input:0.15, output:0.60, ctx:'128K', speed:5, best:'Legacy budget model', tier:'budget' },
-  { id:'opus5', name:'Claude Opus 5', provider:'anthropic', badge:'Anthropic', input:5.00, output:25.00, ctx:'1M', speed:3, best:'Most capable, complex reasoning', tier:'premium' },
-  { id:'sonnet5', name:'Claude Sonnet 5', provider:'anthropic', badge:'Anthropic', input:2.00, output:10.00, ctx:'1M', speed:4, best:'Coding, analysis, agents', tier:'flagship' },
-  { id:'haiku45', name:'Claude Haiku 4.5', provider:'anthropic', badge:'Anthropic', input:1.00, output:5.00, ctx:'200K', speed:5, best:'Fast, cost-efficient tasks', tier:'budget' },
-  { id:'gemini31pro', name:'Gemini 3.1 Pro', provider:'google', badge:'Google', input:2.00, output:12.00, ctx:'1M', speed:3, best:'Multimodal, agentic, coding', tier:'flagship' },
+  { id:'fable51', name:'Claude Fable 5.1', provider:'anthropic', badge:'Anthropic', input:10.00, output:50.00, ctx:'1M', speed:2, best:'Demanding long-horizon reasoning', tier:'premium' },
+  { id:'opus55', name:'Claude Opus 5.5', provider:'anthropic', badge:'Anthropic', input:4.00, output:20.00, ctx:'1M', speed:3, best:'Agentic coding & knowledge work', tier:'premium' },
+  { id:'sonnet55', name:'Claude Sonnet 5.5', provider:'anthropic', badge:'Anthropic', input:2.00, output:10.00, ctx:'1M', speed:4, best:'Coding, analysis, agents', tier:'flagship' },
+  { id:'haiku55', name:'Claude Haiku 5.5', provider:'anthropic', badge:'Anthropic', input:0.10, output:0.50, ctx:'1M', speed:5, best:'High-volume (rate for prompts ≤100K)', tier:'budget' },
+  { id:'opus5', name:'Claude Opus 5 (legacy)', provider:'anthropic', badge:'Anthropic', input:5.00, output:25.00, ctx:'1M', speed:3, best:'Most capable, complex reasoning', tier:'premium' },
+  { id:'sonnet5', name:'Claude Sonnet 5 (legacy)', provider:'anthropic', badge:'Anthropic', input:2.00, output:10.00, ctx:'1M', speed:4, best:'Coding, analysis, agents', tier:'flagship' },
+  { id:'haiku45', name:'Claude Haiku 4.5 (legacy)', provider:'anthropic', badge:'Anthropic', input:1.00, output:5.00, ctx:'200K', speed:5, best:'Fast, cost-efficient tasks', tier:'budget' },
+  { id:'gemini4argon', name:'Gemini 4 Argon', provider:'google', badge:'Google', input:2.00, output:10.00, ctx:'1M', speed:3, best:'Flagship reasoning (promo to Nov 30)', tier:'flagship' },
   { id:'gemini38flash', name:'Gemini 3.8 Flash', provider:'google', badge:'Google', input:0.75, output:3.75, ctx:'1M', speed:5, best:'Fast frontier + grounding', tier:'mid' },
+  { id:'gemini31pro', name:'Gemini 3.1 Pro (Preview)', provider:'google', badge:'Google', input:2.00, output:12.00, ctx:'1M', speed:3, best:'Multimodal, agentic, coding', tier:'mid' },
   { id:'gemini35flashlite', name:'Gemini 3.5 Flash-Lite', provider:'google', badge:'Google', input:0.30, output:2.50, ctx:'1M', speed:5, best:'High-volume, low cost', tier:'budget' },
   { id:'gemini25pro', name:'Gemini 2.5 Pro', provider:'google', badge:'Google', input:1.25, output:10.00, ctx:'1M', speed:3, best:'Reasoning, large context', tier:'mid' },
-  { id:'gemini25flashlite', name:'Gemini 2.5 Flash-Lite', provider:'google', badge:'Google', input:0.10, output:0.40, ctx:'1M', speed:5, best:'Cheapest Google model', tier:'budget' },
 /*GEN:/models*/
 ];
 
