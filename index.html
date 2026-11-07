@@ -483,7 +483,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge"><span class="hero-badge-dot"></span> Updated November 2026 · Verify rates before production</div>
+  <div class="hero-badge"><span class="hero-badge-dot"></span> All pricing updated in November 2026</div>
   <h1>Compare <em>AI Model Costs</em> Instantly</h1>
   <p>Calculate and compare API pricing across OpenAI GPT-6, Anthropic Claude, and Google Gemini models. Know your exact AI costs before you build.</p>
   <div class="hero-stats">
@@ -996,18 +996,22 @@ function calcBill() {
     return { ...m, cost };
   }).sort((a,b) => a.cost - b.cost);
 
-  $('bill-results').innerHTML = costs.map((m, i) => `
-    <div class="bill-model-row ${i===0?'cheapest':''}">
+  // Mark every model that ties for the lowest displayed price as "Cheapest"
+  const cheapestLabel = costs.length ? fmt(costs[0].cost) : null;
+  $('bill-results').innerHTML = costs.map((m) => {
+    const cheap = fmt(m.cost) === cheapestLabel;
+    return `
+    <div class="bill-model-row ${cheap?'cheapest':''}">
       <div class="bill-model-left">
         <div class="bill-model-name">${m.name}</div>
         <div class="bill-model-sub"><span class="provider-badge ${BADGE_CLASS[m.provider]}">${m.badge}</span></div>
       </div>
       <div class="bill-right">
-        ${i===0 ? '<span class="cheapest-tag">Cheapest</span>' : ''}
-        <div class="bill-cost ${i===0?'cheapest':''}">$${fmt(m.cost)}</div>
+        ${cheap ? '<span class="cheapest-tag">Cheapest</span>' : ''}
+        <div class="bill-cost ${cheap?'cheapest':''}">$${fmt(m.cost)}</div>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────
