@@ -12,7 +12,7 @@
     "support": {
       "_comment": "Donation links. Paste your real URLs below, then run: python3 scripts/add_support.py  (kofi_url is the primary button; github_sponsors_url is an optional secondary link — leave blank to hide it). Set enabled:false to remove all donation UI.",
       "enabled": true,
-      "kofi_url": "https://ko-fi.com/REPLACE_ME",
+      "kofi_url": "https://ko-fi.com/fayelivia",
       "github_sponsors_url": ""
     }
   },
