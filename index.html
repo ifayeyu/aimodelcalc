@@ -765,10 +765,19 @@
 </div><!-- /page -->
 
 <!-- EDITORIAL CONTENT SECTION -->
+<style>
+  details.acc > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  details.acc > summary::-webkit-details-marker { display:none; }
+  details.acc > summary::after { content:"⌄"; color:#8b949e; font-size:22px; line-height:1; transition:transform .2s; flex-shrink:0; }
+  details.acc[open] > summary::after { transform:rotate(180deg); }
+  details.acc > summary > h2 { margin:0 !important; }
+  details.acc[open] > summary { margin-bottom:16px; }
+  details.acc > summary:hover h2 { color:#ffffff; }
+</style>
 <div style="max-width:1120px;margin:0 auto;padding:48px 20px 16px;">
 
-  <div style="background:#1c2333;border:1px solid #2d3a52;border-radius:12px;padding:40px 44px;margin-bottom:16px;">
-    <h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">How AI API Pricing Works: A Plain-English Guide</h2>
+  <details class="acc" style="background:#1c2333;border:1px solid #2d3a52;border-radius:12px;padding:24px 44px;margin-bottom:16px;">
+    <summary><h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">How AI API Pricing Works: A Plain-English Guide</h2></summary>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">AI APIs like GPT-4o, Claude, and Gemini don't charge a flat monthly fee — they charge per token, where a token is roughly 0.75 words (or about 4 characters) of text. This means costs scale directly with how much text you send and receive. Understanding this model is essential for anyone building on top of AI APIs, because costs can range from fractions of a cent for a short query to hundreds of dollars per day for a high-volume production application.</p>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">Every AI API request has two components: the <strong style="color:#cdd9e5;">prompt (input tokens)</strong> — everything you send to the model, including the system prompt, conversation history, and user message — and the <strong style="color:#cdd9e5;">completion (output tokens)</strong> — the text the model generates in response. Output tokens are almost always more expensive than input tokens, because generating text is computationally more intensive than reading it.</p>
 
@@ -797,14 +806,14 @@
       <li style="margin-bottom:8px;"><strong style="color:#cdd9e5;">Use structured outputs</strong> — Asking models to respond in JSON with a defined schema reduces output verbosity, which reduces output tokens. A structured response is typically shorter than the equivalent prose response.</li>
     </ul>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Use AIModelCalc to model different scenarios — change the model, adjust the input/output ratio, and vary the request volume — to find the cost-optimal configuration for your specific workload before you start building.</p>
-  </div>
+  </details>
 
-  <div style="background:#1c2333;border:1px solid #2d3a52;border-radius:12px;padding:40px 44px;margin-bottom:24px;">
-    <h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">AI Model Pricing in 2026: What's Changed</h2>
+  <details class="acc" style="background:#1c2333;border:1px solid #2d3a52;border-radius:12px;padding:24px 44px;margin-bottom:24px;">
+    <summary><h2 style="font-size:22px;font-weight:800;color:#e6edf3;margin:0 0 14px;letter-spacing:-0.3px;">AI Model Pricing in 2026: What's Changed</h2></summary>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">AI API pricing has dropped dramatically over the past two years. GPT-4-class capability that cost $30–60 per million tokens in 2023 is now available for $2.50–10 per million tokens in 2026, with smaller distilled models delivering 80–90% of that quality for a fraction of the price. Competition between OpenAI, Anthropic, Google, and Meta has accelerated this deflation — and it shows no signs of stopping.</p>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:14px;">The emergence of reasoning models (OpenAI o-series, Claude's extended thinking mode) has added a new pricing dimension: "thinking tokens" used during the model's internal reasoning process before it produces a response. These models are significantly more expensive per request than standard models, but can be dramatically more accurate on complex reasoning tasks — making cost-per-correct-answer the relevant metric rather than cost-per-token.</p>
     <p style="font-size:14px;color:#8b949e;line-height:1.85;margin-bottom:0;">Keeping up with model releases and pricing updates across providers is a constant challenge for developers and builders. AIModelCalc is updated regularly to reflect current pricing, so you can always compare models on an apples-to-apples basis. See the <a href="/guides/ai-api-pricing-2026.html" style="color:#3c84ff;text-decoration:none;">2026 AI API pricing guide</a> for the full current GPT-6, Claude 5.5 and Gemini 4 comparison, or the <a href="/guides/cheapest-ai-api.html" style="color:#3c84ff;text-decoration:none;">cheapest AI API comparison</a> for the lowest-cost options.</p>
-  </div>
+  </details>
 
 </div>
 
