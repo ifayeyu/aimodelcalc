@@ -92,7 +92,7 @@ def build_pillar_table(data):
 def build_cheapest_table(data):
     models = [m for m in data["models"] if m.get("in_cheapest")]
     models = sorted(models, key=lambda m: m["input"])
-    badge = {"openai": "OpenAI", "anthropic": "Anthropic", "google": "Google"}
+    badge = {p["key"]: p["badge"] for p in data["providers"]}
     out = ["\n"]
     for i, m in enumerate(models, 1):
         rank_cls = {1: "rank-1", 2: "rank-2", 3: "rank-3"}.get(i, "rank-other")
@@ -107,7 +107,7 @@ def build_cheapest_table(data):
                               money(m["input"]), money(m["output"]), color, m["cheapest_badge"]))
     return "\n" + "\n".join(out) + "\n      "
 
-BADGES = {"openai": "OpenAI", "anthropic": "Anthropic", "google": "Google"}
+BADGES = {}             # filled from models.json "providers" in main()
 def badge_for(key):
     return BADGES[key]
 
@@ -145,6 +145,7 @@ def ensure_and_fill(path, name, new_inner, anchor_re, html=True, count=1):
 
 def main():
     data = load()
+    BADGES.update({p["key"]: p["badge"] for p in data["providers"]})
     models = data["models"]
     calc = [m for m in models if m["in_calculator"]]
 

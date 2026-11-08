@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI API Pricing 2026: GPT-6, Claude 5.5 & Gemini 4 Cost Per Million Tokens","description":"Current AI API pricing for 2026 — GPT-6 Astra/Sol/Terra/Luna, Claude Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5, Gemini 4 Argon and Gemini 3.8 Flash. Input and output cost per million tokens, side by side.","url":"https://aimodelcalc.com/guides/ai-api-pricing-2026.html","datePublished":"2026-09-13","dateModified":"2026-11-01","author":{"@type":"Person","name":"Gia Gray","url":"https://aimodelcalc.com/about.html"},"publisher":{"@type":"Organization","name":"AIModelCalc","url":"https://aimodelcalc.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aimodelcalc.com/guides/ai-api-pricing-2026.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI API Pricing 2026: GPT-6, Claude 5.5 & Gemini 4 Cost Per Million Tokens","description":"Current AI API pricing for 2026 — GPT-6 Astra/Sol/Terra/Luna, Claude Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5, Gemini 4 Argon and Gemini 3.8 Flash. Input and output cost per million tokens, side by side.","url":"https://aimodelcalc.com/guides/ai-api-pricing-2026.html","datePublished":"2026-09-13","dateModified":"2026-11-07","author":{"@type":"Person","name":"Gia Gray","url":"https://aimodelcalc.com/about.html"},"publisher":{"@type":"Organization","name":"AIModelCalc","url":"https://aimodelcalc.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aimodelcalc.com/guides/ai-api-pricing-2026.html"}}</script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root { --bg: #0d1117; --card: #1c2333; --card2: #161b27; --border: #2d3a52; --text: #e6edf3; --text2: #cdd9e5; --muted: #8b949e; --primary: #3c84ff; --primary-hover: #2f70e0; --primary-light: rgba(60,132,255,0.12); --green: #3fb950; --radius: 12px; }
@@ -113,10 +113,16 @@
       <tr><td>Gemini 3.1 Pro (Preview)</td><td>$2.00</td><td>$12.00</td><td>1M</td></tr>
       <tr><td>Gemini 3.5 Flash-Lite</td><td>$0.30</td><td>$2.50</td><td>1M</td></tr>
       <tr><td>Gemini 2.5 Pro</td><td>$1.25</td><td>$10.00</td><td>1M</td></tr>
+      <tr><td class="prov" colspan="4">DeepSeek</td></tr>
+      <tr><td>DeepSeek Flash (V4.1)</td><td>$0.30</td><td>$1.20</td><td>1M</td></tr>
+      <tr><td>DeepSeek V4 Pro</td><td>$1.32</td><td>$3.96</td><td>1M</td></tr>
+      <tr><td class="prov" colspan="4">Qwen</td></tr>
+      <tr><td>Qwen3.8-Max</td><td>$2.00</td><td>$6.00</td><td>1M</td></tr>
+      <tr><td>Qwen3.8-Flash</td><td>$0.15</td><td>$0.47</td><td>1M</td></tr>
     <!--/GEN:pillartable-->
     </tbody>
   </table>
-  <p>Sources: <a href="https://developers.openai.com/api/docs/pricing" rel="nofollow">OpenAI</a>, <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="nofollow">Anthropic</a>, and <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="nofollow">Google</a> pricing pages, November 2026. Always confirm before making production decisions — these rates change often. (Promotional pricing: Gemini 4 Argon is $2/$10 through Nov 30, 2026, rising to $4/$20 on Dec 1; Gemini 3.8 Flash is $0.75/$3.75 through Dec 31, 2026, rising to $1.50/$7.50 on Jan 1, 2027.)</p>
+  <p>Sources: <a href="https://developers.openai.com/api/docs/pricing" rel="nofollow">OpenAI</a>, <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="nofollow">Anthropic</a>, <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="nofollow">Google</a>, <a href="https://api-docs.deepseek.com/quick_start/pricing" rel="nofollow">DeepSeek</a> and <a href="https://www.alibabacloud.com/help/en/model-studio/model-pricing" rel="nofollow">Alibaba Qwen</a> pricing pages, November 2026. DeepSeek rates shown are peak-hour prices (off-peak is half price); Qwen rates are Alibaba's international (Singapore) prices. Always confirm before making production decisions — these rates change often. (Promotional pricing: Gemini 4 Argon is $2/$10 through Nov 30, 2026, rising to $4/$20 on Dec 1; Gemini 3.8 Flash is $0.75/$3.75 through Dec 31, 2026, rising to $1.50/$7.50 on Jan 1, 2027.)</p>
 
   <div class="cta-box">
     <p>Plug in your own token volumes and request rate to see the real monthly cost for any model.</p>
@@ -131,11 +137,14 @@
   <h2>The cheapest models right now</h2>
   <p>For pure cost-per-token, it's now a tie between <strong>GPT-6 Luna and Claude Haiku 5.5 at $0.10 input / $0.50 output</strong> (Haiku's rate applies to prompts up to 100K tokens). Google's cheapest current text model is <strong>Gemini 3.5 Flash-Lite ($0.30/$2.50)</strong> — Gemini 2.5 Flash-Lite no longer appears on Google's pricing page — and the legacy GPT-4o mini ($0.15/$0.60) is still callable until its January 14, 2027 shutdown. But "cheapest per token" rarely equals "cheapest per result" — a smarter model that solves the task in one pass can beat a cheaper one that needs three attempts. Benchmark on your actual task before committing.</p>
 
+  <h2>The Chinese providers: DeepSeek and Qwen</h2>
+  <p>Two Chinese labs now publish English-language API pricing that undercuts most US mid-tier models. <strong>DeepSeek</strong> bills by time of day: DeepSeek Flash (V4.1) is $0.30/$1.20 at peak and $0.15/$0.60 off-peak, and DeepSeek V4 Pro is $1.32/$3.96 at peak and half that off-peak. Peak hours are weekdays 01:00–04:00 and 06:00–10:00 UTC, so most US working hours land in the cheaper window. <strong>Alibaba's Qwen</strong> has Qwen3.8-Max at $2/$6, which is notably cheap on output for a flagship, and Qwen3.8-Flash at $0.15/$0.47, the lowest output price we track. Before you switch, check where your requests are processed and whether that fits your data and compliance rules.</p>
+
   <h2>Watch the new cost driver: thinking tokens</h2>
   <p>The current generation leans heavily on reasoning ("thinking") tokens — internal tokens a model generates before its visible answer. On most current models these are billed at the output rate and can dominate the cost of a single request on hard problems. That shifts the metric that matters from <em>cost per token</em> to <strong>cost per correct answer</strong>: a pricier reasoning model that gets it right the first time can be cheaper end-to-end than a cheap model you have to re-run. Budget for thinking tokens explicitly on reasoning-heavy workloads.</p>
 
   <h2>Prompt caching still pays for itself</h2>
-  <p>All three providers now price cached input at roughly 2.5–10% of the base input rate (a 90%+ discount on the cached portion). If your app re-sends a large, stable system prompt, document, or conversation history on every request, caching is the single biggest lever you have — often a 50–70% cut to total input cost with zero quality change. Batch APIs add another ~50% off for work that doesn't need a real-time response.</p>
+  <p>OpenAI, Anthropic and Google all price cached input at roughly 2.5–10% of the base input rate (a 90%+ discount on the cached portion). If your app re-sends a large, stable system prompt, document, or conversation history on every request, caching is the single biggest lever you have — often a 50–70% cut to total input cost with zero quality change. Batch APIs add another ~50% off for work that doesn't need a real-time response.</p>
 
   <div class="highlight-box">
     <strong>Quick rule of thumb:</strong> default to a workhorse model (GPT-6.1 Sol or Claude Sonnet 5.5), route simple/high-volume calls down to a Flash-Lite or Luna tier, reserve premium models for genuinely hard reasoning, and turn on prompt caching the moment you have a repeated context.</div>

@@ -12,15 +12,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI API Cost Calculator — GPT-6, Claude & Gemini Pricing</title>
-  <meta name="description" content="Free AI API cost calculator. Compare live pricing for GPT-6, Claude Opus 5.5, Gemini 4 Argon and more, and estimate your monthly AI bill instantly.">
+  <meta name="description" content="Free AI API cost calculator. Compare pricing for GPT-6, Claude, Gemini, DeepSeek and Qwen, count prompt tokens, and estimate your monthly AI bill.">
   <link rel="canonical" href="https://aimodelcalc.com/">
   <meta property="og:title" content="AI API Cost Calculator — Compare GPT-6, Claude & Gemini Pricing">
-  <meta property="og:description" content="Free AI model cost calculator. Compare API pricing for GPT-6, Claude 5.5, and Gemini 4 models. Calculate your real monthly AI bill instantly.">
+  <meta property="og:description" content="Free AI model cost calculator. Compare API pricing for GPT-6, Claude 5.5, Gemini 4, DeepSeek and Qwen models. Calculate your real monthly AI bill instantly.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aimodelcalc.com/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AI API Cost Calculator — Compare GPT-6, Claude & Gemini Pricing">
-  <meta name="twitter:description" content="Free AI model cost calculator. Compare API pricing for GPT-6, Claude 5.5, and Gemini 4 models.">
+  <meta name="twitter:description" content="Free AI model cost calculator. Compare API pricing for GPT-6, Claude 5.5, Gemini 4, DeepSeek and Qwen models.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -365,6 +365,8 @@
     .badge-mistral   { background: rgba(220,90,0,0.18);   color: #f0783c; }
     .badge-xai       { background: rgba(180,180,180,0.1); color: #aaa; }
     .badge-cohere    { background: rgba(130,60,200,0.18); color: #b47fe8; }
+    .badge-deepseek  { background: rgba(77,107,254,0.18); color: #8ea2ff; }
+    .badge-qwen      { background: rgba(140,90,250,0.18); color: #b79bff; }
 
     .price-cell { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; font-weight: 600; color: var(--text); }
     .price-cheap { color: var(--green); }
@@ -443,6 +445,36 @@
     }
     .bill-right { display: flex; align-items: center; gap: 8px; }
 
+    /* ── TOOL 4: PROMPT TOKEN COUNTER ── */
+    .tc-textarea {
+      width: 100%; box-sizing: border-box; display: block; resize: vertical; min-height: 180px;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      background: var(--primary-pale); color: var(--text);
+      padding: 12px 14px; font-size: 13px; line-height: 1.6;
+      font-family: 'Inter', sans-serif; outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .tc-textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(60,132,255,0.2); }
+    .tc-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); }
+    .tc-link { background: none; border: none; color: var(--primary-mid); font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; padding: 0; }
+    .tc-link:hover { text-decoration: underline; }
+    .tc-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
+    @media (max-width: 560px) { .tc-stats { grid-template-columns: 1fr 1fr; } }
+    .tc-stat { background: var(--bg2); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
+    .tc-stat strong { display: block; font-size: 20px; font-weight: 800; color: var(--text); font-family: 'SF Mono', 'Fira Code', monospace; letter-spacing: -0.5px; }
+    .tc-stat span { font-size: 11px; color: var(--muted); font-weight: 500; }
+    #token-counter .estimator-grid > * { min-width: 0; }
+    .tc-per { font-size: 11px; color: var(--muted); font-family: 'SF Mono', 'Fira Code', monospace; }
+    @media (max-width: 560px) {
+      #tc-results .bill-model-row { padding: 12px 14px; }
+      #tc-results .bill-cost { font-size: 16px; }
+      #tc-results .bill-right { flex-direction: column; align-items: flex-end; gap: 4px; }
+    }
+    .tc-presets { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tc-presets .filter-btn { padding: 7px 14px; }
+    .tc-note { font-size: 12px; color: var(--muted); line-height: 1.65; margin-top: 14px; }
+    .tc-empty { font-size: 13px; color: var(--muted); padding: 18px; border: 1.5px dashed var(--border); border-radius: var(--radius-sm); text-align: center; line-height: 1.6; }
+
     /* ── PROVIDER KEY ── */
     .provider-key { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
     .key-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
@@ -495,10 +527,10 @@
 <div class="hero">
   <div class="hero-badge"><span class="hero-badge-dot"></span> All pricing updated in November 2026</div>
   <h1>Compare <em>AI Model Costs</em> Instantly</h1>
-  <p>Calculate and compare API pricing across OpenAI GPT-6, Anthropic Claude, and Google Gemini models. Know your exact AI costs before you build.</p>
+  <p>Calculate and compare API pricing across OpenAI GPT-6, Anthropic Claude, Google Gemini, DeepSeek and Alibaba Qwen models. Know your exact AI costs before you build.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong><!--GEN:modelcount-->18<!--/GEN:modelcount--></strong><span>Models tracked</span></div>
-    <div class="hero-stat"><strong><!--GEN:providercount-->3<!--/GEN:providercount--></strong><span>Providers</span></div>
+    <div class="hero-stat"><strong><!--GEN:modelcount-->22<!--/GEN:modelcount--></strong><span>Models tracked</span></div>
+    <div class="hero-stat"><strong><!--GEN:providercount-->5<!--/GEN:providercount--></strong><span>Providers</span></div>
     <div class="hero-stat"><strong>Free</strong><span>No signup needed</span></div>
   </div>
 </div>
@@ -508,6 +540,7 @@
   <a href="#calculator">⚡ Cost Calculator</a>
   <a href="#compare">📊 Compare Models</a>
   <a href="#estimator">💰 Monthly Bill Estimator</a>
+  <a href="#token-counter">🔢 Token Counter</a>
 </div>
 
 <div class="page">
@@ -557,6 +590,14 @@
                   <option value="gemini31pro">Gemini 3.1 Pro (Preview)</option>
                   <option value="gemini35flashlite">Gemini 3.5 Flash-Lite</option>
                   <option value="gemini25pro">Gemini 2.5 Pro</option>
+                </optgroup>
+                <optgroup label="DeepSeek">
+                  <option value="deepseekflash">DeepSeek Flash (V4.1)</option>
+                  <option value="deepseekv4pro">DeepSeek V4 Pro</option>
+                </optgroup>
+                <optgroup label="Qwen">
+                  <option value="qwen38max">Qwen3.8-Max</option>
+                  <option value="qwen38flash">Qwen3.8-Flash</option>
                 </optgroup>
               <!--/GEN:dropdown-->
               </select>
@@ -644,6 +685,8 @@
         <button class="filter-btn" onclick="filterTable('openai', this)">OpenAI</button>
         <button class="filter-btn" onclick="filterTable('anthropic', this)">Anthropic</button>
         <button class="filter-btn" onclick="filterTable('google', this)">Google</button>
+        <button class="filter-btn" onclick="filterTable('deepseek', this)">DeepSeek</button>
+        <button class="filter-btn" onclick="filterTable('qwen', this)">Qwen</button>
       </div>
 
       <div class="table-wrap">
@@ -739,6 +782,80 @@
       <div class="bill-results" id="bill-results"></div>
     </div>
     </div><!-- /card Tool 3 -->
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TOOL 4 — PROMPT TOKEN COUNTER
+  ══════════════════════════════════════ -->
+  <div class="section" id="token-counter">
+    <div class="card">
+      <div class="section-header">
+        <div class="step-pill">Tool 4</div>
+        <div>
+          <h2>Prompt Token Counter</h2>
+          <p>Paste a prompt to estimate its tokens and see what it costs on every model</p>
+        </div>
+      </div>
+
+    <div class="estimator-grid">
+      <div>
+        <div class="field">
+          <label for="tc-text">Your prompt or context</label>
+          <textarea id="tc-text" class="tc-textarea" rows="9" placeholder="Paste a prompt, a document, or a chat transcript here…" oninput="countTokens()"></textarea>
+          <div class="tc-meta">
+            <span>Runs in your browser. Nothing you paste is sent anywhere.</span>
+            <button type="button" class="tc-link" onclick="clearTokens()">Clear</button>
+          </div>
+        </div>
+
+        <div class="tc-stats">
+          <div class="tc-stat"><strong id="tc-chars">0</strong><span>Characters</span></div>
+          <div class="tc-stat"><strong id="tc-words">0</strong><span>Words</span></div>
+          <div class="tc-stat"><strong id="tc-in">0</strong><span>Input tokens</span></div>
+          <div class="tc-stat"><strong id="tc-out">0</strong><span>Output tokens</span></div>
+        </div>
+
+        <div class="field" style="margin-top:18px;">
+          <label>Expected reply length</label>
+          <div class="tc-presets">
+            <button type="button" class="filter-btn" onclick="setOutputRatio(0.1, this)">Short answer · 10%</button>
+            <button type="button" class="filter-btn" onclick="setOutputRatio(0.25, this)">Q&amp;A / RAG · 25%</button>
+            <button type="button" class="filter-btn active" onclick="setOutputRatio(0.5, this)">Chat · 50%</button>
+            <button type="button" class="filter-btn" onclick="setOutputRatio(1, this)">Full response · 100%</button>
+            <button type="button" class="filter-btn" onclick="setOutputRatio(2, this)">Long write-up · 200%</button>
+          </div>
+        </div>
+
+        <div class="form-grid" style="margin-top:18px;">
+          <div class="field">
+            <label for="tc-requests">Times you'll send it</label>
+            <div class="ig">
+              <div class="ig-sym">#</div>
+              <input class="ig-field" type="number" id="tc-requests" value="1000" min="1" oninput="countTokens()">
+            </div>
+          </div>
+          <div class="field">
+            <label for="tc-legacy">Models shown</label>
+            <div class="ig">
+              <select class="ig-field" id="tc-legacy" onchange="countTokens()">
+                <option value="current" selected>Current models only</option>
+                <option value="all">Include legacy models</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="calc-btn" onclick="sendToCalculator()">Use these tokens in the Cost Calculator ↑</button>
+        <p class="tc-note">Token counts are estimates, usually within 10–20% of what you'll be billed. Each provider uses its own tokenizer, so the same text can come out a little higher or lower depending on the model. Code, numbers and non-English text tend to use more tokens per word.</p>
+      </div>
+
+      <!-- TOKEN COST RESULTS — scrollable -->
+      <div>
+        <div class="result-title" style="margin-bottom:10px;">Cost for <span id="tc-req-label">1,000</span> sends</div>
+        <div class="bill-results" id="tc-results"></div>
+      </div>
+    </div>
+    </div><!-- /card Tool 4 -->
   </div>
 
   <!--GEN:support-->
@@ -863,8 +980,8 @@
 
 <script>
 // ── MODEL DATA ──────────────────────────────────────────────────────────────
-// Pricing verified June 20, 2026 against the official OpenAI, Anthropic and
-// Google pricing pages. Pro/Flagship tiers show standard (<=200K context) rates.
+// Pricing verified Nov 2026 against the official OpenAI, Anthropic, Google,
+// DeepSeek and Alibaba Qwen pricing pages. Standard (lowest-context-tier) rates.
 // Prices are approximate — always confirm on the provider's pricing page.
 const MODELS = [
 /*GEN:models*/
@@ -886,10 +1003,14 @@ const MODELS = [
   { id:'gemini31pro', name:'Gemini 3.1 Pro (Preview)', provider:'google', badge:'Google', input:2.00, output:12.00, ctx:'1M', speed:3, best:'Multimodal, agentic, coding', tier:'mid' },
   { id:'gemini35flashlite', name:'Gemini 3.5 Flash-Lite', provider:'google', badge:'Google', input:0.30, output:2.50, ctx:'1M', speed:5, best:'High-volume, low cost', tier:'budget' },
   { id:'gemini25pro', name:'Gemini 2.5 Pro', provider:'google', badge:'Google', input:1.25, output:10.00, ctx:'1M', speed:3, best:'Reasoning, large context', tier:'mid' },
+  { id:'deepseekflash', name:'DeepSeek Flash (V4.1)', provider:'deepseek', badge:'DeepSeek', input:0.30, output:1.20, ctx:'1M', speed:5, best:'Peak rate; half price off-peak', tier:'budget' },
+  { id:'deepseekv4pro', name:'DeepSeek V4 Pro', provider:'deepseek', badge:'DeepSeek', input:1.32, output:3.96, ctx:'1M', speed:3, best:'Peak rate; half price off-peak', tier:'mid' },
+  { id:'qwen38max', name:'Qwen3.8-Max', provider:'qwen', badge:'Qwen', input:2.00, output:6.00, ctx:'1M', speed:3, best:'Alibaba flagship, low output cost', tier:'flagship' },
+  { id:'qwen38flash', name:'Qwen3.8-Flash', provider:'qwen', badge:'Qwen', input:0.15, output:0.47, ctx:'1M', speed:5, best:'Very cheap high-volume work', tier:'budget' },
 /*GEN:/models*/
 ];
 
-const BADGE_CLASS = { openai:'badge-openai', anthropic:'badge-anthropic', google:'badge-google', meta:'badge-meta', mistral:'badge-mistral', xai:'badge-xai', cohere:'badge-cohere' };
+const BADGE_CLASS = { openai:'badge-openai', anthropic:'badge-anthropic', google:'badge-google', deepseek:'badge-deepseek', qwen:'badge-qwen', meta:'badge-meta', mistral:'badge-mistral', xai:'badge-xai', cohere:'badge-cohere' };
 
 // ── UTILS ──────────────────────────────────────────────────────────────────
 const fmt = (n, d=2) => n < 0.001 ? n.toFixed(6) : n < 0.01 ? n.toFixed(5) : n < 1 ? n.toFixed(4) : n.toFixed(d);
@@ -968,7 +1089,7 @@ function renderTable() {
 
 function filterTable(provider, btn) {
   currentFilter = provider;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.filter-row .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderTable();
 }
@@ -1034,10 +1155,96 @@ function calcBill() {
   }).join('');
 }
 
+// ── TOOL 4: PROMPT TOKEN COUNTER ─────────────────────────────────────────
+let tcOutputRatio = 0.5;
+const nf = n => Math.round(n).toLocaleString('en-US');
+
+// Estimate tokens without a tokenizer download. English prose averages about
+// 4 characters or 0.75 words per token, so we average both signals. CJK and
+// similar scripts run close to one token per character, so they're counted
+// separately.
+function estimateTokens(text) {
+  if (!text) return 0;
+  const cjk = (text.match(/[぀-ヿ㐀-䶿一-鿿가-힯豈-﫿]/g) || []).length;
+  const rest = text.replace(/[぀-ヿ㐀-䶿一-鿿가-힯豈-﫿]/g, ' ');
+  const chars = rest.replace(/\s+/g, ' ').trim().length;
+  const words = (rest.match(/\S+/g) || []).length;
+  const symbols = (rest.match(/[{}()\[\];:=<>\/\\|`~^*#@$%&+]/g) || []).length; // code is token-dense
+  const latin = chars ? (chars / 4 + words / 0.75) / 2 + symbols * 0.25 : 0;
+  return Math.max(1, Math.round(latin + cjk * 1.1));
+}
+
+function setOutputRatio(ratio, btn) {
+  tcOutputRatio = ratio;
+  document.querySelectorAll('.tc-presets .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  countTokens();
+}
+
+function countTokens() {
+  const text = $('tc-text').value;
+  const inTok = text.trim() ? estimateTokens(text) : 0;
+  const outTok = Math.round(inTok * tcOutputRatio);
+  const sends = Math.max(1, parseFloat($('tc-requests').value) || 1);
+  const showAll = $('tc-legacy').value === 'all';
+
+  $('tc-chars').textContent = nf(text.length);
+  $('tc-words').textContent = nf((text.match(/\S+/g) || []).length);
+  $('tc-in').textContent = nf(inTok);
+  $('tc-out').textContent = nf(outTok);
+  $('tc-req-label').textContent = nf(sends);
+
+  if (!inTok) {
+    $('tc-results').innerHTML = '<div class="tc-empty">Paste some text on the left to see what it costs on each model.</div>';
+    return;
+  }
+
+  const costs = MODELS
+    .filter(m => showAll || !/legacy/i.test(m.name))
+    .map(m => ({ ...m, per: (inTok * m.input + outTok * m.output) / 1e6 }))
+    .map(m => ({ ...m, cost: m.per * sends }))
+    .sort((a, b) => a.cost - b.cost);
+
+  const cheapestLabel = fmt(costs[0].cost);
+  $('tc-results').innerHTML = costs.map(m => {
+    const cheap = fmt(m.cost) === cheapestLabel;
+    return `
+    <div class="bill-model-row ${cheap ? 'cheapest' : ''}">
+      <div class="bill-model-left">
+        <div class="bill-model-name">${m.name}</div>
+        <div class="bill-model-sub"><span class="provider-badge ${BADGE_CLASS[m.provider]}">${m.badge}</span></div>
+        <div class="tc-per">$${fmt(m.per, 6)} per send</div>
+      </div>
+      <div class="bill-right">
+        ${cheap ? '<span class="cheapest-tag">Cheapest</span>' : ''}
+        <div class="bill-cost ${cheap ? 'cheapest' : ''}">$${fmt(m.cost)}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function clearTokens() {
+  $('tc-text').value = '';
+  countTokens();
+  $('tc-text').focus();
+}
+
+function sendToCalculator() {
+  const inTok = parseInt($('tc-in').textContent.replace(/,/g, ''), 10) || 0;
+  const outTok = parseInt($('tc-out').textContent.replace(/,/g, ''), 10) || 0;
+  if (!inTok) { $('tc-text').focus(); return; }
+  $('calc-input-tokens').value = inTok;
+  $('calc-output-tokens').value = outTok;
+  $('calc-requests').value = Math.max(1, parseFloat($('tc-requests').value) || 1);
+  calcCost();
+  $('calculator').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────────
 calcCost();
 renderTable();
 calcBill();
+countTokens();
 </script>
 
 </body>
